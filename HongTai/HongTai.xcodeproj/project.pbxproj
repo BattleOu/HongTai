@@ -15,8 +15,6 @@
 		5ACA9293216CA0850052EC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9291216CA0850052EC26 /* LaunchScreen.storyboard */; };
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
-		925C9EAB216CBCCB00FE97C9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925C9E9E216CBCBC00FE97C9 /* Alamofire.framework */; };
-		925C9EAC216CBCCB00FE97C9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 925C9E9E216CBCBC00FE97C9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		925C9EB1216CBD6800FE97C9 /* Alamofire-master in Resources */ = {isa = PBXBuildFile; fileRef = 925C9EB0216CBD6700FE97C9 /* Alamofire-master */; };
 /* End PBXBuildFile section */
 
@@ -84,28 +82,7 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
-		925C9EAD216CBCCB00FE97C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 925C9E92216CBCBB00FE97C9 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		925C9EAF216CBCCB00FE97C9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				925C9EAC216CBCCB00FE97C9 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5ACA9282216CA0840052EC26 /* HongTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925C9EAB216CBCCB00FE97C9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,12 +206,10 @@
 				5ACA927E216CA0840052EC26 /* Sources */,
 				5ACA927F216CA0840052EC26 /* Frameworks */,
 				5ACA9280216CA0840052EC26 /* Resources */,
-				925C9EAF216CBCCB00FE97C9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				925C9EAE216CBCCB00FE97C9 /* PBXTargetDependency */,
 			);
 			name = HongTai;
 			productName = HongTai;
@@ -447,11 +421,6 @@
 			target = 5ACA9281216CA0840052EC26 /* HongTai */;
 			targetProxy = 5ACA92A5216CA0860052EC26 /* PBXContainerItemProxy */;
 		};
-		925C9EAE216CBCCB00FE97C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = 925C9EAD216CBCCB00FE97C9 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -593,7 +562,6 @@
 		5ACA92AE216CA0860052EC26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H966LS87H7;
@@ -612,7 +580,6 @@
 		5ACA92AF216CA0860052EC26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H966LS87H7;
