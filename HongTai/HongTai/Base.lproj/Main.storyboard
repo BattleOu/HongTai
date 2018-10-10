@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--购物车-->
         <scene sceneID="Y0Z-Jo-CvS">
             <objects>
                 <viewController id="Idy-rg-PUv" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8dJ-uX-lIc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t6l-Oe-V5U"/>
+                    <tabBarItem key="tabBarItem" title="购物车" image="购物车" id="t6l-Oe-V5U"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubz-bt-G6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="817"/>
+            <point key="canvasLocation" x="442" y="534"/>
         </scene>
-        <!--Item 2-->
+        <!--分类-->
         <scene sceneID="nzl-Cz-Zye">
             <objects>
                 <viewController id="PLB-M6-Pwe" sceneMemberID="viewController">
@@ -35,11 +35,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Qgb-9D-sYK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="3S0-Iw-dsb"/>
+                    <tabBarItem key="tabBarItem" title="分类" image="类目 品类 分类 类别" id="3S0-Iw-dsb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lL1-yJ-sHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1785" y="55"/>
+        </scene>
+        <!--我-->
+        <scene sceneID="f8f-ac-8BD">
+            <objects>
+                <viewController id="9Cn-bF-ZUP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qc1-ZQ-SXq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7Cg-RW-j29"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="我" image="我" id="dOH-EK-O8s"/>
+                    <navigationItem key="navigationItem" id="xSa-aD-zEf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLk-RZ-Gxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="534"/>
         </scene>
         <!--首页-->
         <scene sceneID="GOF-Np-9p9">
@@ -51,11 +68,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="I22-Ez-Ttt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" id="xOM-7F-pOO"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="首页" id="xOM-7F-pOO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTG-If-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="-609"/>
+            <point key="canvasLocation" x="1784.8" y="-609.44527736131943"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6q8-um-HBc">
@@ -70,6 +87,7 @@
                         <segue destination="8Fm-pI-bXp" kind="relationship" relationship="viewControllers" id="7kh-Qq-hRj"/>
                         <segue destination="PLB-M6-Pwe" kind="relationship" relationship="viewControllers" id="f7s-8X-uFl"/>
                         <segue destination="Idy-rg-PUv" kind="relationship" relationship="viewControllers" id="G7O-dr-K6M"/>
+                        <segue destination="9Cn-bF-ZUP" kind="relationship" relationship="viewControllers" id="lcD-b0-cqh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZF-kW-6RC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,4 +95,10 @@
             <point key="canvasLocation" x="833" y="-278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="我" width="20" height="20"/>
+        <image name="类目 品类 分类 类别" width="20" height="20"/>
+        <image name="购物车" width="20" height="20"/>
+        <image name="首页" width="20" height="20"/>
+    </resources>
 </document>
