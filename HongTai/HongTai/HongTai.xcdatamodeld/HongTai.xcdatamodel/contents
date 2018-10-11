@@ -1,4 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
+        <attribute name="cartid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cartuser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+        <relationship name="goodscart" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goods" syncable="YES"/>
+    </entity>
+    <entity name="Collect" representedClassName="Collect" syncable="YES" codeGenerationType="class">
+        <attribute name="collectid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectupdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="goodscollect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goods" syncable="YES"/>
+        <relationship name="usercollect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Goods" representedClassName="Goods" syncable="YES" codeGenerationType="class">
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsimg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodstime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morketprice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salesnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stock" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vipprice" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Orders" representedClassName="Orders" syncable="YES" codeGenerationType="class">
+        <attribute name="deliverytype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="getadress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="getpeople" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="getpeoplephone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordermoney" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordertime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paymenttype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userorders" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="OrdersDtealis" representedClassName="OrdersDtealis" syncable="YES" codeGenerationType="class">
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsprice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderdetailid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordersid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="goodsdetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goods" syncable="YES"/>
+        <relationship name="ordersdetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Orders" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userimage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userpassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userrelaname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userupdate" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Orders" positionX="-54" positionY="45" width="128" height="210"/>
+        <element name="Goods" positionX="-36" positionY="54" width="128" height="195"/>
+        <element name="OrdersDtealis" positionX="-18" positionY="117" width="128" height="150"/>
+        <element name="Cart" positionX="0" positionY="126" width="128" height="150"/>
+        <element name="Collect" positionX="18" positionY="135" width="128" height="135"/>
+    </elements>
 </model>
