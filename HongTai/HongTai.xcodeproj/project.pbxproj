@@ -15,18 +15,7 @@
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */; };
-		922328FC216EFCCB009FED79 /* Cart+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F0216EFCCB009FED79 /* Cart+CoreDataClass.swift */; };
-		922328FD216EFCCB009FED79 /* Cart+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F1216EFCCB009FED79 /* Cart+CoreDataProperties.swift */; };
-		922328FE216EFCCB009FED79 /* Collect+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F2216EFCCB009FED79 /* Collect+CoreDataClass.swift */; };
-		922328FF216EFCCB009FED79 /* Collect+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F3216EFCCB009FED79 /* Collect+CoreDataProperties.swift */; };
-		92232900216EFCCB009FED79 /* OrdersDtealis+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F4216EFCCB009FED79 /* OrdersDtealis+CoreDataClass.swift */; };
-		92232901216EFCCB009FED79 /* OrdersDtealis+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F5216EFCCB009FED79 /* OrdersDtealis+CoreDataProperties.swift */; };
-		92232902216EFCCB009FED79 /* Orders+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F6216EFCCB009FED79 /* Orders+CoreDataClass.swift */; };
-		92232903216EFCCB009FED79 /* Orders+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F7216EFCCB009FED79 /* Orders+CoreDataProperties.swift */; };
-		92232904216EFCCB009FED79 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F8216EFCCB009FED79 /* User+CoreDataClass.swift */; };
-		92232905216EFCCB009FED79 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328F9216EFCCB009FED79 /* User+CoreDataProperties.swift */; };
-		92232906216EFCCB009FED79 /* Goods+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328FA216EFCCB009FED79 /* Goods+CoreDataClass.swift */; };
-		92232907216EFCCB009FED79 /* Goods+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922328FB216EFCCB009FED79 /* Goods+CoreDataProperties.swift */; };
+		92232909216F0CEF009FED79 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92232908216F0CEF009FED79 /* HomePage.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,18 +100,7 @@
 		5ACA92A4216CA0860052EC26 /* HongTaiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HongTaiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		922328F0216EFCCB009FED79 /* Cart+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328F1216EFCCB009FED79 /* Cart+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922328F2216EFCCB009FED79 /* Collect+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collect+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328F3216EFCCB009FED79 /* Collect+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collect+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922328F4216EFCCB009FED79 /* OrdersDtealis+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersDtealis+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328F5216EFCCB009FED79 /* OrdersDtealis+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersDtealis+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922328F6216EFCCB009FED79 /* Orders+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Orders+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328F7216EFCCB009FED79 /* Orders+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Orders+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922328F8216EFCCB009FED79 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328F9216EFCCB009FED79 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		922328FA216EFCCB009FED79 /* Goods+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goods+CoreDataClass.swift"; sourceTree = "<group>"; };
-		922328FB216EFCCB009FED79 /* Goods+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goods+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		92232908216F0CEF009FED79 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,18 +133,6 @@
 		5ACA9279216CA0840052EC26 = {
 			isa = PBXGroup;
 			children = (
-				922328F0216EFCCB009FED79 /* Cart+CoreDataClass.swift */,
-				922328F1216EFCCB009FED79 /* Cart+CoreDataProperties.swift */,
-				922328F2216EFCCB009FED79 /* Collect+CoreDataClass.swift */,
-				922328F3216EFCCB009FED79 /* Collect+CoreDataProperties.swift */,
-				922328F4216EFCCB009FED79 /* OrdersDtealis+CoreDataClass.swift */,
-				922328F5216EFCCB009FED79 /* OrdersDtealis+CoreDataProperties.swift */,
-				922328F6216EFCCB009FED79 /* Orders+CoreDataClass.swift */,
-				922328F7216EFCCB009FED79 /* Orders+CoreDataProperties.swift */,
-				922328F8216EFCCB009FED79 /* User+CoreDataClass.swift */,
-				922328F9216EFCCB009FED79 /* User+CoreDataProperties.swift */,
-				922328FA216EFCCB009FED79 /* Goods+CoreDataClass.swift */,
-				922328FB216EFCCB009FED79 /* Goods+CoreDataProperties.swift */,
 				9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */,
 				5ACA9284216CA0840052EC26 /* HongTai */,
 				5ACA929C216CA0850052EC26 /* HongTaiTests */,
@@ -189,6 +155,7 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
+				92232908216F0CEF009FED79 /* HomePage.swift */,
 				5ACA9285216CA0840052EC26 /* AppDelegate.swift */,
 				5ACA9287216CA0840052EC26 /* ViewController.swift */,
 				5ACA9289216CA0840052EC26 /* Main.storyboard */,
@@ -429,20 +396,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */,
-				922328FF216EFCCB009FED79 /* Collect+CoreDataProperties.swift in Sources */,
-				92232904216EFCCB009FED79 /* User+CoreDataClass.swift in Sources */,
-				922328FD216EFCCB009FED79 /* Cart+CoreDataProperties.swift in Sources */,
-				922328FC216EFCCB009FED79 /* Cart+CoreDataClass.swift in Sources */,
 				5ACA9288216CA0840052EC26 /* ViewController.swift in Sources */,
-				92232901216EFCCB009FED79 /* OrdersDtealis+CoreDataProperties.swift in Sources */,
-				92232902216EFCCB009FED79 /* Orders+CoreDataClass.swift in Sources */,
-				92232906216EFCCB009FED79 /* Goods+CoreDataClass.swift in Sources */,
-				922328FE216EFCCB009FED79 /* Collect+CoreDataClass.swift in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
-				92232907216EFCCB009FED79 /* Goods+CoreDataProperties.swift in Sources */,
-				92232905216EFCCB009FED79 /* User+CoreDataProperties.swift in Sources */,
-				92232903216EFCCB009FED79 /* Orders+CoreDataProperties.swift in Sources */,
-				92232900216EFCCB009FED79 /* OrdersDtealis+CoreDataClass.swift in Sources */,
+				92232909216F0CEF009FED79 /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
