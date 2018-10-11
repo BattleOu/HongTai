@@ -15,7 +15,6 @@
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */; };
-		92232909216F0CEF009FED79 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92232908216F0CEF009FED79 /* HomePage.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +99,6 @@
 		5ACA92A4216CA0860052EC26 /* HongTaiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HongTaiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92232908216F0CEF009FED79 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,7 +153,6 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
-				92232908216F0CEF009FED79 /* HomePage.swift */,
 				5ACA9285216CA0840052EC26 /* AppDelegate.swift */,
 				5ACA9287216CA0840052EC26 /* ViewController.swift */,
 				5ACA9289216CA0840052EC26 /* Main.storyboard */,
@@ -398,7 +395,6 @@
 				922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */,
 				5ACA9288216CA0840052EC26 /* ViewController.swift in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
-				92232909216F0CEF009FED79 /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
