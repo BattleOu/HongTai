@@ -10,13 +10,14 @@ import UIKit
 
 import Alamofire
 
-class ViewController: UIViewController,UISearchBarDelegate {
+class Homepage: UIViewController,UISearchBarDelegate {
 var search:UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        search = UISearchBar(frame:CGRect(x: 40, y:20, width:350, height:50))
-        // Do any additional setup after loading the view, typically from a nib.
+        search = UISearchBar(frame:CGRect(x: 60, y:30, width:350, height:40))
         search.barTintColor = UIColor.white
+        search.searchBarStyle = UISearchBar.Style.minimal
+        search.barStyle = UIBarStyle(rawValue: 0)!
         search.delegate = self
         view.addSubview(search)
     }
