@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class CoreDataManager: UIViewController {
+class CoreDataManager: NSObject {
   static let shared = CoreDataManager()
     
     
