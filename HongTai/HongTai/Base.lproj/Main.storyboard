@@ -44,7 +44,7 @@
         <!--我-->
         <scene sceneID="f8f-ac-8BD">
             <objects>
-                <viewController title="我" id="9Cn-bF-ZUP" sceneMemberID="viewController">
+                <viewController title="我" id="9Cn-bF-ZUP" customClass="PersonViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qc1-ZQ-SXq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

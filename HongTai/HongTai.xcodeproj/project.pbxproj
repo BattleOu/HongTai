@@ -27,6 +27,7 @@
 		5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7B216F3208004EE1F2 /* UIScrollView+MJExtension.m */; };
 		5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7D216F3208004EE1F2 /* UIScrollView+MJRefresh.m */; };
 		5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */; };
+		5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */; };
 		5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9285216CA0840052EC26 /* AppDelegate.swift */; };
 		5ACA9288216CA0840052EC26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9287216CA0840052EC26 /* ViewController.swift */; };
 		5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9289216CA0840052EC26 /* Main.storyboard */; };
@@ -147,6 +148,7 @@
 		5A2FDC7E216F3208004EE1F2 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		5A2FDC94216F3248004EE1F2 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		5ACA9282216CA0840052EC26 /* HongTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA9285216CA0840052EC26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ACA9287216CA0840052EC26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		5A3786BC21707C4500DBD9B7 /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+				5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */,
+			);
+			name = "个人中心";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		5ACA9279216CA0840052EC26 = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +325,7 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
+				5A3786BC21707C4500DBD9B7 /* 个人中心 */,
 				5ACA9285216CA0840052EC26 /* AppDelegate.swift */,
 				5ACA9287216CA0840052EC26 /* ViewController.swift */,
 				5ACA9289216CA0840052EC26 /* Main.storyboard */,
@@ -581,6 +593,7 @@
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
+				5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */,
 				5A2FDC8F216F3209004EE1F2 /* MJRefreshConst.m in Sources */,
 				5A2FDC89216F3209004EE1F2 /* MJRefreshBackNormalFooter.m in Sources */,
 				5A2FDC8D216F3209004EE1F2 /* MJRefreshStateHeader.m in Sources */,
