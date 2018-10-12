@@ -44,7 +44,7 @@
         <!--我-->
         <scene sceneID="f8f-ac-8BD">
             <objects>
-                <viewController title="我" id="9Cn-bF-ZUP" sceneMemberID="viewController">
+                <viewController title="我" id="9Cn-bF-ZUP" customClass="PersonViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qc1-ZQ-SXq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hhv-Pq-Y5V">
-                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                                <rect key="frame" x="10" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="dOt-yp-KYv"/>
                                     <constraint firstAttribute="height" constant="50" id="e8E-Pm-q4A"/>
@@ -76,7 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="leading" secondItem="I22-Ez-Ttt" secondAttribute="leading" id="khD-wQ-hSF"/>
+                            <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="leading" secondItem="I22-Ez-Ttt" secondAttribute="leading" constant="10" id="khD-wQ-hSF"/>
                             <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="top" secondItem="I22-Ez-Ttt" secondAttribute="top" id="rrd-rd-QfY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I22-Ez-Ttt"/>
