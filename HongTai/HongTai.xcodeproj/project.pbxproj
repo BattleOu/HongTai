@@ -35,8 +35,6 @@
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
-		748BE82321707C2B005ECDAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE82221707C2B005ECDAD /* LoginViewController.swift */; };
-		748BE82621707C5C005ECDAD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE82521707C5C005ECDAD /* RegisterViewController.swift */; };
 		922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
@@ -164,8 +162,6 @@
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		748BE82221707C2B005ECDAD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		748BE82521707C5C005ECDAD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,7 +289,6 @@
 		5ACA9279216CA0840052EC26 = {
 			isa = PBXGroup;
 			children = (
-				748BE82421707C30005ECDAD /* login and regist */,
 				5A2FDC94216F3248004EE1F2 /* bridge.h */,
 				5A2FDC51216F3208004EE1F2 /* MJRefresh */,
 				9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */,
@@ -354,15 +349,6 @@
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		748BE82421707C30005ECDAD /* login and regist */ = {
-			isa = PBXGroup;
-			children = (
-				748BE82521707C5C005ECDAD /* RegisterViewController.swift */,
-				748BE82221707C2B005ECDAD /* LoginViewController.swift */,
-			);
-			path = "login and regist";
 			sourceTree = "<group>";
 		};
 		9272AB1F216D91C10026C1C6 /* Products */ = {
@@ -588,11 +574,9 @@
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
-				748BE82321707C2B005ECDAD /* LoginViewController.swift in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
-				748BE82621707C5C005ECDAD /* RegisterViewController.swift in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
