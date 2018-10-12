@@ -61,7 +61,7 @@
         <!--首页-->
         <scene sceneID="GOF-Np-9p9">
             <objects>
-                <viewController id="8Fm-pI-bXp" customClass="ViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8Fm-pI-bXp" customClass="Homepage" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fhk-5a-q4r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
         <!--登录-->
         <scene sceneID="BDb-Ke-AL5">
             <objects>
-                <viewController id="sAW-H8-XNT" customClass="ViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sAW-H8-XNT" customClass="LoginViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB6-Oh-G2h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +220,7 @@
         <!--注册-->
         <scene sceneID="71g-TR-NCT">
             <objects>
-                <viewController id="geC-Wc-kn9" sceneMemberID="viewController">
+                <viewController id="geC-Wc-kn9" customClass="RegisterViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5q-Gx-9td">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
