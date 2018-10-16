@@ -20,8 +20,23 @@ var search:UISearchBar!
         search.barStyle = UIBarStyle(rawValue: 0)!
         search.delegate = self
         view.addSubview(search)
+        
+        let frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: view.bounds.width*0.6)
+        let imageView = ["iMac1.jpg","2.jpg","iphone8-gallery4-2017.jpg","Macbook.jpg"]
+        
+        let loopView = JHLoopView(frame: frame, images: imageView as NSArray, autoPlay: true, delay: 3, isFromNet: false)
+        loopView.delegate = self
+        
+        view.addSubview(loopView)
     }
 
 
+}
+
+//遵循协议代理，调用代理方法
+extension Homepage : JHLoopViewDelegate {
+    func adLoopView(_ adLoopView: JHLoopView, IconClick index: NSInteger) {
+        print(index)
+    }
 }
 
