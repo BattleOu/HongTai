@@ -44,6 +44,8 @@
 		926D6DA5217578F500242CE5 /* iMac1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA1217578F500242CE5 /* iMac1.jpg */; };
 		926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA2217578F500242CE5 /* iphone8-gallery4-2017.jpg */; };
 		926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA3217578F500242CE5 /* Macbook.jpg */; };
+		926D6DA9217587BE00242CE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DA8217587BE00242CE5 /* Model.swift */; };
+		926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DAB217595E800242CE5 /* fangfaViewController.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +180,8 @@
 		926D6DA1217578F500242CE5 /* iMac1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iMac1.jpg; sourceTree = "<group>"; };
 		926D6DA2217578F500242CE5 /* iphone8-gallery4-2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone8-gallery4-2017.jpg"; sourceTree = "<group>"; };
 		926D6DA3217578F500242CE5 /* Macbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Macbook.jpg; sourceTree = "<group>"; };
+		926D6DA8217587BE00242CE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		926D6DAB217595E800242CE5 /* fangfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fangfaViewController.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -393,6 +397,8 @@
 			children = (
 				924D48A72170894C00508199 /* LoginViewController.swift */,
 				924D48A92170897300508199 /* RegisterViewController.swift */,
+				926D6DA8217587BE00242CE5 /* Model.swift */,
+				926D6DAB217595E800242CE5 /* fangfaViewController.swift */,
 			);
 			path = "登录和注册";
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
+				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5ACA9288216CA0840052EC26 /* Homepage.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
 				748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */,
@@ -641,6 +648,7 @@
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
+				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,

@@ -290,6 +290,9 @@
                                 <state key="normal" title="注册">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="save:" destination="geC-Wc-kn9" eventType="touchUpInside" id="5xh-UH-czc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -334,6 +337,12 @@
                         <viewLayoutGuide key="safeArea" id="iND-tN-U9J"/>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="nVD-qj-t6d"/>
+                    <connections>
+                        <outlet property="Realname" destination="4fY-mX-7Y2" id="BxV-mV-fGe"/>
+                        <outlet property="password" destination="Vt3-oK-thm" id="wzC-lR-VIy"/>
+                        <outlet property="surepassword" destination="cca-6e-Jpc" id="tiP-Si-ZnM"/>
+                        <outlet property="usname" destination="2rX-gI-t8l" id="8bm-iu-75q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bj-bP-366" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
