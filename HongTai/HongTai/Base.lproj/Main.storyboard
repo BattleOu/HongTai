@@ -253,7 +253,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2rX-gI-t8l">
-                                <rect key="frame" x="224" y="231" width="133" height="30"/>
+                                <rect key="frame" x="224" y="231" width="137" height="30"/>
                                 <color key="backgroundColor" red="0.31553139250000001" green="0.55068437100000001" blue="0.61516497459999997" alpha="0.26677547089999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -274,7 +274,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cca-6e-Jpc">
-                                <rect key="frame" x="225" y="415" width="139" height="30"/>
+                                <rect key="frame" x="225" y="415" width="137" height="30"/>
                                 <color key="backgroundColor" red="0.31553139250000001" green="0.55068437100000001" blue="0.61516497459999997" alpha="0.26677547089999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -323,8 +323,8 @@
                             <constraint firstItem="UDv-T5-uIZ" firstAttribute="leading" secondItem="iND-tN-U9J" secondAttribute="leading" constant="53" id="kGm-xq-7ro"/>
                             <constraint firstItem="cca-6e-Jpc" firstAttribute="leading" secondItem="RnW-m2-wD9" secondAttribute="trailing" constant="82" id="oN6-lj-BNK"/>
                             <constraint firstItem="iND-tN-U9J" firstAttribute="trailing" secondItem="tWE-tP-o5Y" secondAttribute="trailing" id="pNa-D9-JJL"/>
-                            <constraint firstItem="iND-tN-U9J" firstAttribute="trailing" secondItem="cca-6e-Jpc" secondAttribute="trailing" constant="50" id="pYb-EF-Mcq"/>
-                            <constraint firstItem="iND-tN-U9J" firstAttribute="trailing" secondItem="2rX-gI-t8l" secondAttribute="trailing" constant="57" id="pii-gd-wEp"/>
+                            <constraint firstItem="iND-tN-U9J" firstAttribute="trailing" secondItem="cca-6e-Jpc" secondAttribute="trailing" constant="52" id="pYb-EF-Mcq"/>
+                            <constraint firstItem="iND-tN-U9J" firstAttribute="trailing" secondItem="2rX-gI-t8l" secondAttribute="trailing" constant="53" id="pii-gd-wEp"/>
                             <constraint firstItem="omC-Mk-b7f" firstAttribute="leading" secondItem="iND-tN-U9J" secondAttribute="leading" constant="158" id="uCu-Kg-lpk"/>
                             <constraint firstItem="4fY-mX-7Y2" firstAttribute="top" secondItem="2rX-gI-t8l" secondAttribute="bottom" constant="32" id="uar-do-dwb"/>
                             <constraint firstItem="Vt3-oK-thm" firstAttribute="trailing" secondItem="4fY-mX-7Y2" secondAttribute="trailing" id="vZg-Xy-1gl"/>
