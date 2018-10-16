@@ -40,10 +40,10 @@
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
-		926D6D7E217575FC00242CE5 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6D72217575FC00242CE5 /* 2.jpg */; };
-		926D6D7F217575FC00242CE5 /* iMac1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6D73217575FC00242CE5 /* iMac1.jpg */; };
-		926D6D80217575FC00242CE5 /* iphone8-gallery4-2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6D74217575FC00242CE5 /* iphone8-gallery4-2017.jpg */; };
-		926D6D81217575FC00242CE5 /* Macbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6D75217575FC00242CE5 /* Macbook.jpg */; };
+		926D6DA4217578F500242CE5 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA0217578F500242CE5 /* 2.jpg */; };
+		926D6DA5217578F500242CE5 /* iMac1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA1217578F500242CE5 /* iMac1.jpg */; };
+		926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA2217578F500242CE5 /* iphone8-gallery4-2017.jpg */; };
+		926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA3217578F500242CE5 /* Macbook.jpg */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -174,10 +174,10 @@
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
-		926D6D72217575FC00242CE5 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		926D6D73217575FC00242CE5 /* iMac1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iMac1.jpg; sourceTree = "<group>"; };
-		926D6D74217575FC00242CE5 /* iphone8-gallery4-2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone8-gallery4-2017.jpg"; sourceTree = "<group>"; };
-		926D6D75217575FC00242CE5 /* Macbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Macbook.jpg; sourceTree = "<group>"; };
+		926D6DA0217578F500242CE5 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		926D6DA1217578F500242CE5 /* iMac1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iMac1.jpg; sourceTree = "<group>"; };
+		926D6DA2217578F500242CE5 /* iphone8-gallery4-2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone8-gallery4-2017.jpg"; sourceTree = "<group>"; };
+		926D6DA3217578F500242CE5 /* Macbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Macbook.jpg; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -338,7 +338,6 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
-				926D6D71217575FC00242CE5 /* images */,
 				748BE82121707972005ECDAD /* CoreData */,
 				924D48A62170892C00508199 /* 登录和注册 */,
 				924D489D21707D8200508199 /* 首页 */,
@@ -382,6 +381,7 @@
 		924D489D21707D8200508199 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				926D6D9F217578F500242CE5 /* images */,
 				5ACA9287216CA0840052EC26 /* Homepage.swift */,
 				9264BA252174935B00DE5A21 /* JHLoopView.swift */,
 			);
@@ -397,16 +397,15 @@
 			path = "登录和注册";
 			sourceTree = "<group>";
 		};
-		926D6D71217575FC00242CE5 /* images */ = {
+		926D6D9F217578F500242CE5 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				926D6D72217575FC00242CE5 /* 2.jpg */,
-				926D6D73217575FC00242CE5 /* iMac1.jpg */,
-				926D6D74217575FC00242CE5 /* iphone8-gallery4-2017.jpg */,
-				926D6D75217575FC00242CE5 /* Macbook.jpg */,
+				926D6DA0217578F500242CE5 /* 2.jpg */,
+				926D6DA1217578F500242CE5 /* iMac1.jpg */,
+				926D6DA2217578F500242CE5 /* iphone8-gallery4-2017.jpg */,
+				926D6DA3217578F500242CE5 /* Macbook.jpg */,
 			);
-			name = images;
-			path = ../../../images;
+			path = images;
 			sourceTree = "<group>";
 		};
 		9272AB1F216D91C10026C1C6 /* Products */ = {
@@ -594,11 +593,11 @@
 			files = (
 				5ACA9293216CA0850052EC26 /* LaunchScreen.storyboard in Resources */,
 				5ACA9290216CA0850052EC26 /* Assets.xcassets in Resources */,
-				926D6D7E217575FC00242CE5 /* 2.jpg in Resources */,
-				926D6D7F217575FC00242CE5 /* iMac1.jpg in Resources */,
+				926D6DA4217578F500242CE5 /* 2.jpg in Resources */,
+				926D6DA5217578F500242CE5 /* iMac1.jpg in Resources */,
 				5A2FDC8E216F3209004EE1F2 /* MJRefresh.bundle in Resources */,
-				926D6D80217575FC00242CE5 /* iphone8-gallery4-2017.jpg in Resources */,
-				926D6D81217575FC00242CE5 /* Macbook.jpg in Resources */,
+				926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */,
+				926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */,
 				5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
