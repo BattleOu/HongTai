@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTG-If-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784.057971014493" y="-609.78260869565224"/>
+            <point key="canvasLocation" x="38" y="302"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6q8-um-HBc">
@@ -105,7 +105,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZF-kW-6RC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="170"/>
+            <point key="canvasLocation" x="696" y="255"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dHF-JQ-86O">
@@ -155,9 +155,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-QA-2Mw">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjN-EN-ab7">
                                 <rect key="frame" x="126" y="447" width="162" height="54"/>
                                 <color key="backgroundColor" red="0.31553139250000001" green="0.55068437100000001" blue="0.61516497459999997" alpha="0.26677547089999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,12 +165,19 @@
                                 <state key="normal" title="登录">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="sAW-H8-XNT" eventType="touchUpInside" id="Mdc-eA-0Cx"/>
+                                    <segue destination="8Fm-pI-bXp" kind="modal" identifier="login" id="Tr6-zA-leH"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-70-ajk">
                                 <rect key="frame" x="158" y="92" width="98" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="hac-LF-xb0"/>
                                 </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="登录" translatesAutoresizingMaskIntoConstraints="NO" id="Pp0-QA-2Mw">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -212,6 +216,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="password" destination="8vV-f2-2fP" id="vbD-Rt-dhj"/>
+                        <outlet property="username" destination="y55-9i-64g" id="2bV-68-e4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgm-Ye-YiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,4 +366,7 @@
         <image name="购物车" width="20" height="20"/>
         <image name="首页" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tr6-zA-leH"/>
+    </inferredMetricsTieBreakers>
 </document>
