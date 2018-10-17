@@ -34,35 +34,67 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         getLocalData()
         if users.count > 0 {
-            if(username.text == "" || password.text == "")
+            for x in 0...users.count - 1
+            {
+                if(username.text == users[x].name && password.text == users[x].password)
+                {
+                    let alertController = UIAlertController(title: "提示!",
+                                                            message: "登录成功", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                        action in
+                           let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: Homepage()))) as! Homepage
+                        controller.nameuser = self.username.text
+                        self.present(controller, animated: true)
+                    })
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                continue
+                
+            }
+            
+            
+            for x in 0...users.count - 1
+            {
+            if(username.text != users[x].name && password.text == users[x].password)
             {
                 let alertController = UIAlertController(title: "提示!",
-                                                        message: "用户名或密码不能为空", preferredStyle: .alert)
+                                                        message: "用户名未注册", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
+            continue
+            }
+            
+            
             for x in 0...users.count - 1
             {
-                if(username.text != users[x].name)
+                if(username.text == users[x].name && password.text != users[x].password)
                 {
                     let alertController = UIAlertController(title: "提示!",
-                                                            message: "用户名未被注册", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-                    alertController.addAction(okAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                }
-                else if(password.text != users[x].password)
-                {
-                    let alertController = UIAlertController(title: "提示!",
-                                                            message: "密码不正确", preferredStyle: .alert)
+                                                            message: "密码错误", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 }
                 continue
             }
+            
+            for x in 0...users.count - 1
+            {
+                if(username.text != users[x].name && password.text != users[x].password)
+                {
+                    let alertController = UIAlertController(title: "提示!",
+                                                            message: "查无此用户", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                continue
+            }
+            }
+            
             if(username.text == "" || password.text == "")
             {
                 let alertController = UIAlertController(title: "提示!",
@@ -70,18 +102,6 @@ class LoginViewController: UIViewController {
                 let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-            }
-            else
-            {
-                let alertController = UIAlertController(title: "提示!",
-                                                        message: "登陆成功", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "确认", style: .default,handler: {
-                    action in
-                   self.performSegue(withIdentifier: "login", sender: self)
-                })
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-                
             }
         }
     }
@@ -95,8 +115,6 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
 extension LoginViewController {
     fileprivate func getLocalData() {
         //        步骤一：获取总代理和托管对象总管
