@@ -22,6 +22,14 @@ class RegisterViewController: UIViewController {
 //    var dataArray: [User] = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        usname.placeholder = "请输入用户名"
+        usname.clearButtonMode = .whileEditing
+        Realname.placeholder = "请输入真实姓名"
+        Realname.clearButtonMode = .whileEditing
+        password.placeholder = "请输入密码 "
+        password.clearButtonMode = .whileEditing
+        surepassword.placeholder = "请确认密码"
+        surepassword.clearButtonMode = .whileEditing
 //         CoreDataManager.shared.deleteAllPerson()
         // Do any additional setup after loading the view.
     }
