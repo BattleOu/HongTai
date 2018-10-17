@@ -11,8 +11,10 @@ import UIKit
 import Alamofire
 
 class Homepage: UIViewController,UISearchBarDelegate {
-var search:UISearchBar!
+    @IBOutlet weak var logining: UIButton!
+    var search:UISearchBar!
     var nameuser:String!
+    var label:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         search = UISearchBar(frame:CGRect(x: 60, y:30, width:220, height:40))
@@ -31,31 +33,63 @@ var search:UISearchBar!
         
         view.addSubview(loopView)
         
-        var button:UIButton = UIButton(type:.contactAdd)
-        button = UIButton(frame: CGRect(x: 300, y: 40, width: 50, height: 20))
-//        label.titleLabel?.textColor = UIColor.gray
-//        label.titleLabel?.text = "登录/"
-        button.setTitle("登录/", for: .normal)
-        button.setTitleColor(UIColor.gray, for: .normal)
-        button.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:15)
         
-         view.addSubview(button)
-//        lab = UIButton(frame: CGRect(x: 345, y: 40, width: 40, height: 20))
-//        lab.titleLabel?.textColor = UIColor.gray
-//        lab.titleLabel?.text = "注册"
-//        lab.titleLabel?.font = UIFont(name:"Zapfino", size:15)
-//         view.addSubview(lab)
-        
-        var zhucebutton:UIButton = UIButton(type:.contactAdd)
-        zhucebutton = UIButton(frame: CGRect(x: 340, y: 40, width: 40, height: 20))
-        //        label.titleLabel?.textColor = UIColor.gray
-        //        label.titleLabel?.text = "登录/"
-        zhucebutton.setTitle("注册", for: .normal)
-        zhucebutton.setTitleColor(UIColor.gray, for: .normal)
-        zhucebutton.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:15)
-        view.addSubview(zhucebutton)
+        if (nameuser == nil)
+        {
+            logining.isHidden = false
+//        var button:UIButton = UIButton(type:.contactAdd)
+//        button = UIButton(frame: CGRect(x: 300, y: 40, width: 50, height: 20))
+////        label.titleLabel?.textColor = UIColor.gray
+////        label.titleLabel?.text = "登录/"
+//        button.setTitle("登录/", for: .normal)
+//        button.setTitleColor(UIColor.gray, for: .normal)
+//        button.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:15)
+//        button.addTarget(self,action:#selector(methodName), for: .touchUpInside)
+//         view.addSubview(button)
+////        lab = UIButton(frame: CGRect(x: 345, y: 40, width: 40, height: 20))
+////        lab.titleLabel?.textColor = UIColor.gray
+////        lab.titleLabel?.text = "注册"
+////        lab.titleLabel?.font = UIFont(name:"Zapfino", size:15)
+////         view.addSubview(lab)
+//
+//        var zhucebutton:UIButton = UIButton(type:.contactAdd)
+//        zhucebutton = UIButton(frame: CGRect(x: 350, y: 40, width: 40, height: 20))
+//        //        label.titleLabel?.textColor = UIColor.gray
+//        //        label.titleLabel?.text = "登录/"
+//        zhucebutton.setTitle("注册", for: .normal)
+//        zhucebutton.setTitleColor(UIColor.gray, for: .normal)
+//        zhucebutton.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:15)
+//        button.addTarget(self,action:#selector(someMethod), for: .touchUpInside)
+//        view.addSubview(zhucebutton)
+        }
+        else
+        {
+            label = UILabel(frame: CGRect(x: 280, y: 40, width: 150, height: 20))
+            label.textColor = UIColor.gray
+            label.text = "欢迎" + nameuser + "登录!"
+            label.font = UIFont(name:"Arial-BoldItalicMT", size:12)
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+            
+            label.numberOfLines = 0
+            view.addSubview(label)
+            logining.setTitle("注销", for: .normal)
+            logining.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:12)
+        }
     }
-
+    
+//    @objc func methodName() {
+//         let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: LoginViewController()))) as! LoginViewController
+//        self.present(controller, animated: true)
+//    }
+//    @objc func someMethod() {
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: RegisterViewController()))) as! RegisterViewController
+//        self.present(controller, animated: true)
+//    }
+    
+    @IBAction func login(_ sender: Any) {
+        self.performSegue(withIdentifier: "login",sender:self);
+    }
+    
 
 }
 

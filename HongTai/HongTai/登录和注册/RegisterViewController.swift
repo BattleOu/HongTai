@@ -22,14 +22,25 @@ class RegisterViewController: UIViewController {
 //    var dataArray: [User] = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        usname.placeholder = "请输入用户名"
+        usname.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+        usname.minimumFontSize=14  //最小可缩小的字号
+        Realname.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+        Realname.minimumFontSize=14  //最小可缩小的字号
+        surepassword.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+        surepassword.minimumFontSize=14  //最小可缩小的字号
+        password.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
+        password.minimumFontSize=14  //最小可缩小的字号
+        
         usname.clearButtonMode = .whileEditing
-        Realname.placeholder = "请输入真实姓名"
+        
         Realname.clearButtonMode = .whileEditing
-        password.placeholder = "请输入密码 "
+        
         password.clearButtonMode = .whileEditing
-        surepassword.placeholder = "请确认密码"
+       
         surepassword.clearButtonMode = .whileEditing
+        
+        password.clearButtonMode = .always  //一直显示清除按钮
+        password.isSecureTextEntry = true //输入内容会显示成小黑点
 //         CoreDataManager.shared.deleteAllPerson()
         // Do any additional setup after loading the view.
     }

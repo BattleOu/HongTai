@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHJ-gH-gQd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Fm-pI-bXp">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -61,7 +61,7 @@
         <!--首页-->
         <scene sceneID="GOF-Np-9p9">
             <objects>
-                <viewController id="8Fm-pI-bXp" customClass="Homepage" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Homepage" id="8Fm-pI-bXp" customClass="Homepage" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fhk-5a-q4r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,15 +73,32 @@
                                     <constraint firstAttribute="height" constant="50" id="e8E-Pm-q4A"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmG-RE-JM2">
+                                <rect key="frame" x="368" y="30" width="46" height="30"/>
+                                <state key="normal" title="请登录">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="8Fm-pI-bXp" eventType="touchUpInside" id="l6C-KE-6hy"/>
+                                    <segue destination="THW-QW-doR" kind="modal" identifier="login" id="fwr-M9-mtk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kmG-RE-JM2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hhv-Pq-Y5V" secondAttribute="trailing" constant="8" symbolic="YES" id="Tog-5q-OjH"/>
+                            <constraint firstItem="I22-Ez-Ttt" firstAttribute="trailing" secondItem="kmG-RE-JM2" secondAttribute="trailing" id="UmE-3S-ujL"/>
+                            <constraint firstItem="kmG-RE-JM2" firstAttribute="centerY" secondItem="Hhv-Pq-Y5V" secondAttribute="centerY" id="Vti-kE-xpy"/>
                             <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="leading" secondItem="I22-Ez-Ttt" secondAttribute="leading" constant="10" id="khD-wQ-hSF"/>
                             <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="top" secondItem="I22-Ez-Ttt" secondAttribute="top" id="rrd-rd-QfY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I22-Ez-Ttt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="首页" id="xOM-7F-pOO"/>
+                    <navigationItem key="navigationItem" id="B60-jS-6mr"/>
+                    <connections>
+                        <outlet property="logining" destination="kmG-RE-JM2" id="3KZ-4T-N1A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTG-If-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +128,7 @@
         <scene sceneID="dHF-JQ-86O">
             <objects>
                 <navigationController id="THW-QW-doR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="s1f-wo-j9e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lN9-KP-SAx">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,7 +144,7 @@
         <!--登录-->
         <scene sceneID="BDb-Ke-AL5">
             <objects>
-                <viewController id="sAW-H8-XNT" customClass="LoginViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="sAW-H8-XNT" customClass="LoginViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB6-Oh-G2h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +185,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="sAW-H8-XNT" eventType="touchUpInside" id="Mdc-eA-0Cx"/>
-                                    <segue destination="8Fm-pI-bXp" kind="modal" identifier="login" id="Tr6-zA-leH"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-70-ajk">
@@ -228,7 +245,7 @@
         <!--注册-->
         <scene sceneID="71g-TR-NCT">
             <objects>
-                <viewController id="geC-Wc-kn9" customClass="RegisterViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="geC-Wc-kn9" customClass="RegisterViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b5q-Gx-9td">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -354,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bj-bP-366" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="-485"/>
+            <point key="canvasLocation" x="751" y="-470"/>
         </scene>
     </scenes>
     <resources>
@@ -366,7 +383,4 @@
         <image name="购物车" width="20" height="20"/>
         <image name="首页" width="20" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Tr6-zA-leH"/>
-    </inferredMetricsTieBreakers>
 </document>
