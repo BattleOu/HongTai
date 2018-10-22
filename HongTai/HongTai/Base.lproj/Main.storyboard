@@ -83,47 +83,6 @@
                                     <segue destination="THW-QW-doR" kind="modal" identifier="login" id="hXb-rJ-Glh"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kEU-f2-YaL">
-                                <rect key="frame" x="0.0" y="331" width="414" height="356"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="goods" rowHeight="50" id="pOx-KS-8Se" customClass="TableViewCell" customModule="HongTai" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOx-KS-8Se" id="PsF-w8-FeZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="49.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dde-cX-sr7">
-                                                    <rect key="frame" x="132" y="14.666666666666666" width="42" height="20.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRv-UJ-h7p">
-                                                    <rect key="frame" x="20" y="0.0" width="81" height="49.666666666666664"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="81" id="jFS-FN-XKP"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dde-cX-sr7" secondAttribute="trailing" constant="20" symbolic="YES" id="Ubf-fp-CZk"/>
-                                                <constraint firstItem="hRv-UJ-h7p" firstAttribute="leading" secondItem="PsF-w8-FeZ" secondAttribute="leadingMargin" id="ckn-g2-Osr"/>
-                                                <constraint firstItem="dde-cX-sr7" firstAttribute="leading" secondItem="hRv-UJ-h7p" secondAttribute="trailing" constant="31" id="g4M-UX-MVE"/>
-                                                <constraint firstAttribute="bottom" secondItem="hRv-UJ-h7p" secondAttribute="bottom" id="jtM-4Y-iTy"/>
-                                                <constraint firstItem="hRv-UJ-h7p" firstAttribute="centerY" secondItem="dde-cX-sr7" secondAttribute="centerY" id="p3i-kj-mtS"/>
-                                                <constraint firstItem="hRv-UJ-h7p" firstAttribute="top" secondItem="PsF-w8-FeZ" secondAttribute="top" id="uTP-Mx-zLi"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="lblgood" destination="dde-cX-sr7" id="Vz8-45-vSM"/>
-                                            <outlet property="picture" destination="hRv-UJ-h7p" id="4MX-4O-40F"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -138,7 +97,6 @@
                     <tabBarItem key="tabBarItem" title="首页" image="首页" id="xOM-7F-pOO"/>
                     <navigationItem key="navigationItem" id="B60-jS-6mr"/>
                     <connections>
-                        <outlet property="Tableview" destination="kEU-f2-YaL" id="pqg-V3-8Ju"/>
                         <outlet property="logingin" destination="kmG-RE-JM2" id="rZf-jE-i9Y"/>
                     </connections>
                 </viewController>
