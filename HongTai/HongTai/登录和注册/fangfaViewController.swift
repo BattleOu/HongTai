@@ -52,7 +52,7 @@ extension fangfaViewController {
         user.setValue(contactInfo.userbianhao, forKey: "userid")
         user.setValue(contactInfo.password, forKey: "userpassword")
         user.setValue(contactInfo.name, forKey: "username")
-        user.setValue(contactInfo.realname, forKey: "userrelaname")
+        user.setValue(contactInfo.realname, forKey: "userrealname")
         user.setValue(contactInfo.userupdate, forKey: "userupdate")
         
         
