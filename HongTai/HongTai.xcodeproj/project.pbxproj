@@ -29,13 +29,14 @@
 		5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */; };
 		5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */; };
 		5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9285216CA0840052EC26 /* AppDelegate.swift */; };
+		5ACA9288216CA0840052EC26 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9287216CA0840052EC26 /* Homepage.swift */; };
 		5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9289216CA0840052EC26 /* Main.storyboard */; };
 		5ACA9290216CA0850052EC26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA928F216CA0850052EC26 /* Assets.xcassets */; };
 		5ACA9293216CA0850052EC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9291216CA0850052EC26 /* LaunchScreen.storyboard */; };
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
-		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
+		922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */; };
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
@@ -160,7 +161,9 @@
 		5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		5ACA9282216CA0840052EC26 /* HongTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA9285216CA0840052EC26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5ACA9287216CA0840052EC26 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		5ACA928A216CA0840052EC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5ACA928D216CA0840052EC26 /* HongTai.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HongTai.xcdatamodel; sourceTree = "<group>"; };
 		5ACA928F216CA0850052EC26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ACA9292216CA0850052EC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5ACA9294216CA0850052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,7 +174,6 @@
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 		748BE82121707972005ECDAD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */,
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
 			);
 			path = CoreData;
@@ -386,8 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				926D6D9F217578F500242CE5 /* images */,
+				5ACA9287216CA0840052EC26 /* Homepage.swift */,
 				9264BA252174935B00DE5A21 /* JHLoopView.swift */,
-				921C5B6F217DC4DE00425E66 /* Homepage.swift */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -637,15 +640,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922328EF216EEF59009FED79 /* HongTai.xcdatamodeld in Sources */,
 				9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */,
 				5A2FDC90216F3209004EE1F2 /* NSBundle+MJRefresh.m in Sources */,
-				921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
 				926D6DB7217601F200242CE5 /* ShopCartTableViewController.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
+				5ACA9288216CA0840052EC26 /* Homepage.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
 				748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
@@ -996,6 +1000,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5ACA928C216CA0840052EC26 /* HongTai.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5ACA928D216CA0840052EC26 /* HongTai.xcdatamodel */,
+			);
+			currentVersion = 5ACA928D216CA0840052EC26 /* HongTai.xcdatamodel */;
+			path = HongTai.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5ACA927A216CA0840052EC26 /* Project object */;
 }

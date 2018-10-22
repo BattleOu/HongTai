@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHJ-gH-gQd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Fm-pI-bXp">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubz-bt-G6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="989"/>
+            <point key="canvasLocation" x="223" y="684"/>
         </scene>
         <!--分类-->
         <scene sceneID="nzl-Cz-Zye">
@@ -79,8 +79,8 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="lgoing:" destination="8Fm-pI-bXp" eventType="touchUpInside" id="HGZ-XS-8Y3"/>
-                                    <segue destination="THW-QW-doR" kind="modal" identifier="login" id="hXb-rJ-Glh"/>
+                                    <action selector="login:" destination="8Fm-pI-bXp" eventType="touchUpInside" id="l6C-KE-6hy"/>
+                                    <segue destination="THW-QW-doR" kind="modal" identifier="login" id="fwr-M9-mtk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,12 +97,12 @@
                     <tabBarItem key="tabBarItem" title="首页" image="首页" id="xOM-7F-pOO"/>
                     <navigationItem key="navigationItem" id="B60-jS-6mr"/>
                     <connections>
-                        <outlet property="logingin" destination="kmG-RE-JM2" id="rZf-jE-i9Y"/>
+                        <outlet property="logining" destination="kmG-RE-JM2" id="3KZ-4T-N1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTG-If-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="301"/>
+            <point key="canvasLocation" x="38" y="302"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6q8-um-HBc">
