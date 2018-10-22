@@ -33,6 +33,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         getLocalData()
+        if(username.text == "" || password.text == "")
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "用户名或密码不能为空", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         if users.count > 0 {
             for x in 0...users.count - 1
             {
@@ -94,15 +102,14 @@ class LoginViewController: UIViewController {
                 continue
             }
             }
-            
-            if(username.text == "" || password.text == "")
-            {
-                let alertController = UIAlertController(title: "提示!",
-                                                        message: "用户名或密码不能为空", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
-            }
+        else
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "用户未注册", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         }
     }
     
@@ -144,7 +151,7 @@ extension LoginViewController {
     
     fileprivate func translateData(from: NSManagedObject) -> (sss?) {
         
-        if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrelaname") as? String{
+        if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrealname") as? String{
             let user = sss(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
             
             return user

@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubz-bt-G6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="989"/>
+            <point key="canvasLocation" x="607" y="967"/>
         </scene>
         <!--分类-->
         <scene sceneID="nzl-Cz-Zye">
@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLk-RZ-Gxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="534"/>
+            <point key="canvasLocation" x="1552" y="954"/>
         </scene>
         <!--首页-->
         <scene sceneID="GOF-Np-9p9">
