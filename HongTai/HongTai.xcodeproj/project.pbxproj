@@ -36,6 +36,9 @@
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
 		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
+		921C5B86217DD81E00425E66 /* dianshang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B84217DD81E00425E66 /* dianshang.xcdatamodeld */; };
+		921C5B88217DD97900425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B87217DD97900425E66 /* goodgood.swift */; };
+		921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B89217DD99900425E66 /* TableViewCell.swift */; };
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
@@ -172,6 +175,9 @@
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		921C5B85217DD81E00425E66 /* dianshang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dianshang.xcdatamodel; sourceTree = "<group>"; };
+		921C5B87217DD97900425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
+		921C5B89217DD99900425E66 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
@@ -378,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
+				921C5B84217DD81E00425E66 /* dianshang.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -388,6 +395,8 @@
 				926D6D9F217578F500242CE5 /* images */,
 				9264BA252174935B00DE5A21 /* JHLoopView.swift */,
 				921C5B6F217DC4DE00425E66 /* Homepage.swift */,
+				921C5B87217DD97900425E66 /* goodgood.swift */,
+				921C5B89217DD99900425E66 /* TableViewCell.swift */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -642,16 +651,19 @@
 				921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
+				921C5B86217DD81E00425E66 /* dianshang.xcdatamodeld in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
 				926D6DB7217601F200242CE5 /* ShopCartTableViewController.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
+				921C5B88217DD97900425E66 /* goodgood.swift in Sources */,
 				748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
+				921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */,
 				924D48A82170894C00508199 /* LoginViewController.swift in Sources */,
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
@@ -996,6 +1008,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		921C5B84217DD81E00425E66 /* dianshang.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				921C5B85217DD81E00425E66 /* dianshang.xcdatamodel */,
+			);
+			currentVersion = 921C5B85217DD81E00425E66 /* dianshang.xcdatamodel */;
+			path = dianshang.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5ACA927A216CA0840052EC26 /* Project object */;
 }
