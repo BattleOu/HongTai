@@ -29,16 +29,16 @@
 		5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */; };
 		5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */; };
 		5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9285216CA0840052EC26 /* AppDelegate.swift */; };
-		5ACA9288216CA0840052EC26 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9287216CA0840052EC26 /* Homepage.swift */; };
 		5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9289216CA0840052EC26 /* Main.storyboard */; };
 		5ACA9290216CA0850052EC26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA928F216CA0850052EC26 /* Assets.xcassets */; };
 		5ACA9293216CA0850052EC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9291216CA0850052EC26 /* LaunchScreen.storyboard */; };
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
-		92136F67217D7A2C00ACCA89 /* dianshang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92136F65217D7A2C00ACCA89 /* dianshang.xcdatamodeld */; };
-		92136F71217D7C0300ACCA89 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92136F70217D7C0300ACCA89 /* TableViewCell.swift */; };
-		92136F73217D7C2500ACCA89 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92136F72217D7C2500ACCA89 /* goodgood.swift */; };
+		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
+		921C5B72217DC6C000425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B71217DC6C000425E66 /* goodgood.swift */; };
+		921C5B74217DC6E100425E66 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B73217DC6E100425E66 /* TableViewCell.swift */; };
+		921C5B77217DC86100425E66 /* dianshang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B75217DC86100425E66 /* dianshang.xcdatamodeld */; };
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
@@ -163,7 +163,6 @@
 		5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		5ACA9282216CA0840052EC26 /* HongTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA9285216CA0840052EC26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5ACA9287216CA0840052EC26 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		5ACA928A216CA0840052EC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5ACA928F216CA0850052EC26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5ACA9292216CA0850052EC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -175,9 +174,10 @@
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		92136F66217D7A2C00ACCA89 /* dianshang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dianshang.xcdatamodel; sourceTree = "<group>"; };
-		92136F70217D7C0300ACCA89 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		92136F72217D7C2500ACCA89 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
+		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		921C5B71217DC6C000425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
+		921C5B73217DC6E100425E66 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		921C5B76217DC86100425E66 /* dianshang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dianshang.xcdatamodel; sourceTree = "<group>"; };
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
-				92136F65217D7A2C00ACCA89 /* dianshang.xcdatamodeld */,
+				921C5B75217DC86100425E66 /* dianshang.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -393,10 +393,10 @@
 			isa = PBXGroup;
 			children = (
 				926D6D9F217578F500242CE5 /* images */,
-				5ACA9287216CA0840052EC26 /* Homepage.swift */,
 				9264BA252174935B00DE5A21 /* JHLoopView.swift */,
-				92136F70217D7C0300ACCA89 /* TableViewCell.swift */,
-				92136F72217D7C2500ACCA89 /* goodgood.swift */,
+				921C5B6F217DC4DE00425E66 /* Homepage.swift */,
+				921C5B71217DC6C000425E66 /* goodgood.swift */,
+				921C5B73217DC6E100425E66 /* TableViewCell.swift */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -646,34 +646,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92136F67217D7A2C00ACCA89 /* dianshang.xcdatamodeld in Sources */,
 				9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */,
 				5A2FDC90216F3209004EE1F2 /* NSBundle+MJRefresh.m in Sources */,
+				921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
 				926D6DB7217601F200242CE5 /* ShopCartTableViewController.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
-				5ACA9288216CA0840052EC26 /* Homepage.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
+				921C5B72217DC6C000425E66 /* goodgood.swift in Sources */,
 				748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
-				92136F71217D7C0300ACCA89 /* TableViewCell.swift in Sources */,
+				921C5B74217DC6E100425E66 /* TableViewCell.swift in Sources */,
 				924D48A82170894C00508199 /* LoginViewController.swift in Sources */,
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
-				92136F73217D7C2500ACCA89 /* goodgood.swift in Sources */,
 				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
 				5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */,
 				5A2FDC8F216F3209004EE1F2 /* MJRefreshConst.m in Sources */,
+				921C5B77217DC86100425E66 /* dianshang.xcdatamodeld in Sources */,
 				5A2FDC89216F3209004EE1F2 /* MJRefreshBackNormalFooter.m in Sources */,
 				924D48AA2170897300508199 /* RegisterViewController.swift in Sources */,
 				5A2FDC8D216F3209004EE1F2 /* MJRefreshStateHeader.m in Sources */,
@@ -1010,12 +1010,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		92136F65217D7A2C00ACCA89 /* dianshang.xcdatamodeld */ = {
+		921C5B75217DC86100425E66 /* dianshang.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				92136F66217D7A2C00ACCA89 /* dianshang.xcdatamodel */,
+				921C5B76217DC86100425E66 /* dianshang.xcdatamodel */,
 			);
-			currentVersion = 92136F66217D7A2C00ACCA89 /* dianshang.xcdatamodel */;
+			currentVersion = 921C5B76217DC86100425E66 /* dianshang.xcdatamodel */;
 			path = dianshang.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

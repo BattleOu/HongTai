@@ -10,8 +10,9 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lblgood: UILabel!
     @IBOutlet weak var picture: UIImageView!
+    
+    @IBOutlet weak var lblgood: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         picture.layer.cornerRadius = min(picture.bounds.size.width, picture.bounds.size.height) * 1
