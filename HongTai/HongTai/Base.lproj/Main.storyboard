@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Fm-pI-bXp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHJ-gH-gQd">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubz-bt-G6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="684"/>
+            <point key="canvasLocation" x="129" y="989"/>
         </scene>
         <!--分类-->
         <scene sceneID="nzl-Cz-Zye">
@@ -83,12 +83,56 @@
                                     <segue destination="THW-QW-doR" kind="modal" identifier="login" id="fwr-M9-mtk"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-Oe-VOu">
+                                <rect key="frame" x="0.0" y="331" width="414" height="356"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="goods" rowHeight="50" id="JD9-QS-4M5" customClass="TableViewCell" customModule="HongTai" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JD9-QS-4M5" id="cKN-X6-9YG">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="49.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmA-E1-uqb">
+                                                    <rect key="frame" x="132" y="14.666666666666666" width="42" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-bD-fpY">
+                                                    <rect key="frame" x="20" y="0.0" width="81" height="49.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="IrS-b2-zug"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MmA-E1-uqb" secondAttribute="trailing" constant="20" symbolic="YES" id="5J2-Xa-79Y"/>
+                                                <constraint firstItem="MmA-E1-uqb" firstAttribute="leading" secondItem="bmQ-bD-fpY" secondAttribute="trailing" constant="31" id="GlL-e2-wCh"/>
+                                                <constraint firstItem="bmQ-bD-fpY" firstAttribute="centerY" secondItem="MmA-E1-uqb" secondAttribute="centerY" id="HIZ-ac-cZY"/>
+                                                <constraint firstAttribute="bottom" secondItem="bmQ-bD-fpY" secondAttribute="bottom" id="Hbl-Ib-kr1"/>
+                                                <constraint firstItem="bmQ-bD-fpY" firstAttribute="top" secondItem="cKN-X6-9YG" secondAttribute="top" id="Swt-dn-7cf"/>
+                                                <constraint firstItem="bmQ-bD-fpY" firstAttribute="leading" secondItem="cKN-X6-9YG" secondAttribute="leadingMargin" id="ccR-wT-Kns"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblgood" destination="MmA-E1-uqb" id="GCQ-tR-rab"/>
+                                            <outlet property="picture" destination="bmQ-bD-fpY" id="eFj-uA-856"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yfG-Oe-VOu" firstAttribute="top" secondItem="Hhv-Pq-Y5V" secondAttribute="bottom" constant="261" id="Ml9-Dp-Kcs"/>
+                            <constraint firstItem="yfG-Oe-VOu" firstAttribute="trailing" secondItem="I22-Ez-Ttt" secondAttribute="trailing" id="Ni7-zA-JnL"/>
                             <constraint firstItem="kmG-RE-JM2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hhv-Pq-Y5V" secondAttribute="trailing" constant="8" symbolic="YES" id="Tog-5q-OjH"/>
                             <constraint firstItem="I22-Ez-Ttt" firstAttribute="trailing" secondItem="kmG-RE-JM2" secondAttribute="trailing" id="UmE-3S-ujL"/>
                             <constraint firstItem="kmG-RE-JM2" firstAttribute="centerY" secondItem="Hhv-Pq-Y5V" secondAttribute="centerY" id="Vti-kE-xpy"/>
+                            <constraint firstItem="I22-Ez-Ttt" firstAttribute="bottom" secondItem="yfG-Oe-VOu" secondAttribute="bottom" id="WXJ-cs-FrK"/>
+                            <constraint firstItem="yfG-Oe-VOu" firstAttribute="leading" secondItem="I22-Ez-Ttt" secondAttribute="leading" id="ZKy-oy-mK9"/>
                             <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="leading" secondItem="I22-Ez-Ttt" secondAttribute="leading" constant="10" id="khD-wQ-hSF"/>
                             <constraint firstItem="Hhv-Pq-Y5V" firstAttribute="top" secondItem="I22-Ez-Ttt" secondAttribute="top" id="rrd-rd-QfY"/>
                         </constraints>
@@ -97,12 +141,13 @@
                     <tabBarItem key="tabBarItem" title="首页" image="首页" id="xOM-7F-pOO"/>
                     <navigationItem key="navigationItem" id="B60-jS-6mr"/>
                     <connections>
+                        <outlet property="Tableview" destination="yfG-Oe-VOu" id="2BM-QR-qbG"/>
                         <outlet property="logining" destination="kmG-RE-JM2" id="3KZ-4T-N1A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTG-If-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="302"/>
+            <point key="canvasLocation" x="37.681159420289859" y="301.63043478260875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6q8-um-HBc">
