@@ -16,6 +16,9 @@ class Homepage: UIViewController,UISearchBarDelegate {
     var label:UILabel!
     var god = [goodgood]()
     var godd:goodgood?
+    
+    var sty = [Goodsstyle]()
+    var style:Goodsstyle?
     @IBOutlet weak var logingin: UIButton!
     @IBOutlet weak var Tableview: UITableView!
     override func viewDidLoad() {
@@ -39,9 +42,11 @@ class Homepage: UIViewController,UISearchBarDelegate {
         Tableview.delegate = self
         Tableview.dataSource = self
         getLocalData()
-        if god.count == 0 {
+        if sty.count == 0
+        {
             initData()
         }
+        
         
         if (nameuser == nil)
         {
@@ -112,12 +117,9 @@ extension Homepage {
     fileprivate func getLocalData() {
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         let managedObectContext = appDelegate.persistentContainer.viewContext
-        
         //        步骤二：建立一个获取的请求
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Goods")
-        
         //        步骤三：执行请求
         do {
             let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -127,27 +129,23 @@ extension Homepage {
                     guard let goooood = translateData(from: result) else { return }
                     god.append(goooood)
                 }
-                
                 Tableview.reloadData()
             }
-            
         } catch  {
             fatalError("获取失败")
         }
     }
     
+
+    
+    
     class func insertData(contactInfo: goodgood) {
-        
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         let managedObectContext = appDelegate.persistentContainer.viewContext
-        
         //        步骤二：建立一个entity
         let entity = NSEntityDescription.entity(forEntityName: "Goods", in: managedObectContext)
         let user = NSManagedObject(entity: entity!, insertInto: managedObectContext)
-        
-        
         user.setValue(contactInfo.goodsimg, forKey: "goodsimg")
         user.setValue(contactInfo.goodsbianhao, forKey: "goodsid")
         user.setValue(contactInfo.goodsname, forKey: "goodsname")
@@ -157,32 +155,35 @@ extension Homepage {
         user.setValue(contactInfo.salesnum, forKey: "salesnum")
         user.setValue(contactInfo.goodstime, forKey: "goodstime")
         user.setValue(contactInfo.goodsstate, forKey: "goodstate")
-        
         //        步骤四：保存entity到托管对象中。如果保存失败，进行处理
         do {
             try managedObectContext.save()
         } catch  {
             fatalError("无法保存")
         }
-        
     }
-    
-    
+
     fileprivate func initData() {
         let date = NSDate()
         let timeFormatter = DateFormatter()
         timeFormatter.timeZone = NSTimeZone.local
         timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         let strNowTime = timeFormatter.string(from: date as Date) as String
-        let data1 = #imageLiteral(resourceName: "avatar2").pngData()
-        let user1 = goodgood(goodsimg: data1!, goodsbianhao: strNowTime, goodsname: "液晶电视", goodsintroduction: "超级好看的液晶电视", goodsprice: "¥40", stock: "1000", salesnum: "60", goodstime: Date(), goodsstate: "已上架")
-        let data2 = #imageLiteral(resourceName: "avatar1").pngData()
-        let user2 = goodgood(goodsimg: data2!, goodsbianhao: "2222", goodsname: "海尔冰箱", goodsintroduction: "超级好看的冰箱", goodsprice: "¥100", stock: "1500", salesnum: "80", goodstime: Date(), goodsstate: "已上架")
+        let data1 = #imageLiteral(resourceName: "avatar4").pngData()
+        let user1 = goodgood(goodsimg: data1!, goodsbianhao: strNowTime, goodsname: "电吉他", goodsintroduction: "超级好玩的电吉他", goodsprice: "¥490", stock: "10000", salesnum: "5622", goodstime: Date(), goodsstate: "已上架")
+        let data2 = #imageLiteral(resourceName: "avatar3").pngData()
+        let user2 = goodgood(goodsimg: data2!, goodsbianhao: "2121125", goodsname: "钢琴", goodsintroduction: "超级好玩的钢琴", goodsprice: "¥15000", stock: "4515", salesnum:"526" , goodstime: Date(), goodsstate: "已上架")
+        
+        let data3 = #imageLiteral(resourceName: "avatar2").pngData()
+        let user3 = goodgood(goodsimg: data3!, goodsbianhao: "2115251", goodsname: "笔记本", goodsintroduction: "超级炫酷的笔记本", goodsprice: "¥6600", stock: "1622", salesnum: "438", goodstime: Date(), goodsstate: "已上架")
         Homepage.insertData(contactInfo: user1)
         Homepage.insertData(contactInfo: user2)
+        Homepage.insertData(contactInfo: user3)
         god.append(user1)
         god.append(user2)
+        god.append(user3)
     }
+    
     fileprivate func translateData(from: NSManagedObject) -> (goodgood?) {
         if let imgData = from.value(forKey: "goodsimg") as? Data,let goodsid = from.value(forKey: "goodsid") as? String,let goodsname = from.value(forKey: "goodsname") as? String,let introduction = from.value(forKey: "introduction") as? String, let godprice = from.value(forKey: "marketprice") as? String, let stock = from.value(forKey: "stock") as? String, let salesnum = from.value(forKey: "salesnum") as? String, let goodstime = from.value(forKey: "goodstime") as? Date, let goodsstate = from.value(forKey: "goodstate") as? String{
             let good = goodgood(goodsimg: imgData, goodsbianhao: goodsid, goodsname: goodsname, goodsintroduction: introduction, goodsprice: godprice, stock: stock, salesnum: salesnum, goodstime: goodstime, goodsstate: goodsstate)
@@ -190,10 +191,11 @@ extension Homepage {
         }
         return nil
     }
+    
 }
 
+
 extension Homepage:UITableViewDelegate,UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -207,8 +209,12 @@ extension Homepage:UITableViewDelegate,UITableViewDataSource {
         if let myCell = cell as? TableViewCell {
             myCell.lblgood.text = god[indexPath.row].goodsname
             myCell.picture.image = UIImage(data: god[indexPath.row].goodsimg)
+            
             return myCell
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
