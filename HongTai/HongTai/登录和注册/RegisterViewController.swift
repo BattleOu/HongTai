@@ -30,15 +30,10 @@ class RegisterViewController: UIViewController {
         surepassword.minimumFontSize=14  //最小可缩小的字号
         password.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
         password.minimumFontSize=14  //最小可缩小的字号
-        
         usname.clearButtonMode = .whileEditing
-        
         Realname.clearButtonMode = .whileEditing
-        
         password.clearButtonMode = .whileEditing
-       
         surepassword.clearButtonMode = .whileEditing
-        
         password.clearButtonMode = .always  //一直显示清除按钮
         password.isSecureTextEntry = true //输入内容会显示成小黑点
 //         CoreDataManager.shared.deleteAllPerson()
@@ -68,7 +63,6 @@ class RegisterViewController: UIViewController {
                     let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
-        
                 }
         continue
         }
