@@ -16,7 +16,6 @@ class Homepage: UIViewController,UISearchBarDelegate {
     var label:UILabel!
     var god = [goodgood]()
     var godd:goodgood?
-    var ssssss = [Goods]()
     @IBOutlet weak var logingin: UIButton!
     @IBOutlet weak var Tableview: UITableView!
     override func viewDidLoad() {
@@ -40,7 +39,6 @@ class Homepage: UIViewController,UISearchBarDelegate {
         Tableview.delegate   = self
         Tableview.dataSource = self
         
-        print(ssssss.count)
         if (nameuser == nil)
         {
             logingin.isHidden = false
