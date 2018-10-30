@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A18DCE52187F430006E0898 /* hongtai.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A18DCE32187F430006E0898 /* hongtai.xcdatamodeld */; };
+		5A18DD092187F6C5006E0898 /* ozf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */; };
 		5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */; };
 		5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC56216F3208004EE1F2 /* MJRefreshBackFooter.m */; };
 		5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC58216F3208004EE1F2 /* MJRefreshComponent.m */; };
@@ -132,7 +132,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A18DCE42187F430006E0898 /* HongTai.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HongTai.xcdatamodel; sourceTree = "<group>"; };
+		5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ozf.xcdatamodel; sourceTree = "<group>"; };
 		5A2FDC53216F3208004EE1F2 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5A2FDC55216F3208004EE1F2 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
-				5A18DCE32187F430006E0898 /* hongtai.xcdatamodeld */,
+				5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -701,7 +701,6 @@
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
-				5A18DCE52187F430006E0898 /* hongtai.xcdatamodeld in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
 				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
@@ -738,6 +737,7 @@
 				924D48AA2170897300508199 /* RegisterViewController.swift in Sources */,
 				5A2FDC8D216F3209004EE1F2 /* MJRefreshStateHeader.m in Sources */,
 				5A2FDC83216F3209004EE1F2 /* MJRefreshFooter.m in Sources */,
+				5A18DD092187F6C5006E0898 /* ozf.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,13 +1072,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5A18DCE32187F430006E0898 /* hongtai.xcdatamodeld */ = {
+		5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5A18DCE42187F430006E0898 /* HongTai.xcdatamodel */,
+				5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */,
 			);
-			currentVersion = 5A18DCE42187F430006E0898 /* HongTai.xcdatamodel */;
-			path = hongtai.xcdatamodeld;
+			currentVersion = 5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */;
+			path = ozf.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
