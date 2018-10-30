@@ -35,9 +35,17 @@
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
-		92133BED217EC33E00E18631 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BEC217EC33E00E18631 /* CartViewController.swift */; };
 		92133BEF217ECD6D00E18631 /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BEE217ECD6D00E18631 /* style.swift */; };
 		92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF0217EFDF700E18631 /* CartTableViewCell.swift */; };
+		92133BF52180483200E18631 /* StyleviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF42180483200E18631 /* StyleviewController.swift */; };
+		92133BFA21804DAA00E18631 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF921804DAA00E18631 /* Global.swift */; };
+		92133BFC21804DE500E18631 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BFB21804DE500E18631 /* UIColor-Extension.swift */; };
+		92133BFE21804E0900E18631 /* LJCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */; };
+		92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BFF21804F5E00E18631 /* RightTableViewCell.swift */; };
+		92133C3021807E9200E18631 /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133C2F21807E9200E18631 /* TableViewHeaderView.swift */; };
+		9213424821816F5400E18631 /* Homepagetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424721816F5400E18631 /* Homepagetable.swift */; };
+		9213424A21816FA200E18631 /* godgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424921816FA200E18631 /* godgood.swift */; };
+		9213424C2181730600E18631 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424B2181730600E18631 /* SearchTableViewCell.swift */; };
 		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
 		921C5B86217DD81E00425E66 /* dianshang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B84217DD81E00425E66 /* dianshang.xcdatamodeld */; };
 		921C5B88217DD97900425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B87217DD97900425E66 /* goodgood.swift */; };
@@ -52,6 +60,9 @@
 		926D6DA9217587BE00242CE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DA8217587BE00242CE5 /* Model.swift */; };
 		926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DAB217595E800242CE5 /* fangfaViewController.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
+		9274D8D22186A53100004432 /* goodshow List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9274D8D12186A53100004432 /* goodshow List.plist */; };
+		9274D8D52186B6B500004432 /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D8D42186B6B500004432 /* StyleModel.swift */; };
+		9274D8D72186B74600004432 /* Styleinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D8D62186B74600004432 /* Styleinfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,9 +187,17 @@
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		92133BEC217EC33E00E18631 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		92133BEE217ECD6D00E18631 /* style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		92133BF0217EFDF700E18631 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		92133BF42180483200E18631 /* StyleviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleviewController.swift; sourceTree = "<group>"; };
+		92133BF921804DAA00E18631 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		92133BFB21804DE500E18631 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		92133BFF21804F5E00E18631 /* RightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
+		92133C2F21807E9200E18631 /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
+		9213424721816F5400E18631 /* Homepagetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepagetable.swift; sourceTree = "<group>"; };
+		9213424921816FA200E18631 /* godgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = godgood.swift; path = ../godgood.swift; sourceTree = "<group>"; };
+		9213424B2181730600E18631 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		921C5B85217DD81E00425E66 /* dianshang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dianshang.xcdatamodel; sourceTree = "<group>"; };
 		921C5B87217DD97900425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
@@ -193,6 +212,9 @@
 		926D6DA8217587BE00242CE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		926D6DAB217595E800242CE5 /* fangfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fangfaViewController.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		9274D8D12186A53100004432 /* goodshow List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "goodshow List.plist"; sourceTree = "<group>"; };
+		9274D8D42186B6B500004432 /* StyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
+		9274D8D62186B74600004432 /* Styleinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleinfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,7 +374,8 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
-				926D6DB5217601CD00242CE5 /* 购物车 */,
+				92133BF821804D8D00E18631 /* Tools */,
+				926D6DB5217601CD00242CE5 /* 分类 */,
 				748BE82121707972005ECDAD /* CoreData */,
 				924D48A62170892C00508199 /* 登录和注册 */,
 				924D489D21707D8200508199 /* 首页 */,
@@ -393,6 +416,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		92133BF821804D8D00E18631 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				92133BF921804DAA00E18631 /* Global.swift */,
+				92133BFB21804DE500E18631 /* UIColor-Extension.swift */,
+				92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		924D489D21707D8200508199 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +434,9 @@
 				921C5B6F217DC4DE00425E66 /* Homepage.swift */,
 				921C5B87217DD97900425E66 /* goodgood.swift */,
 				921C5B89217DD99900425E66 /* TableViewCell.swift */,
+				9213424721816F5400E18631 /* Homepagetable.swift */,
+				9213424921816FA200E18631 /* godgood.swift */,
+				9213424B2181730600E18631 /* SearchTableViewCell.swift */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -427,14 +463,19 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		926D6DB5217601CD00242CE5 /* 购物车 */ = {
+		926D6DB5217601CD00242CE5 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
-				92133BEC217EC33E00E18631 /* CartViewController.swift */,
 				92133BEE217ECD6D00E18631 /* style.swift */,
 				92133BF0217EFDF700E18631 /* CartTableViewCell.swift */,
+				92133BF42180483200E18631 /* StyleviewController.swift */,
+				92133BFF21804F5E00E18631 /* RightTableViewCell.swift */,
+				92133C2F21807E9200E18631 /* TableViewHeaderView.swift */,
+				9274D8D12186A53100004432 /* goodshow List.plist */,
+				9274D8D42186B6B500004432 /* StyleModel.swift */,
+				9274D8D62186B74600004432 /* Styleinfo.swift */,
 			);
-			path = "购物车";
+			path = "分类";
 			sourceTree = "<group>";
 		};
 		9272AB1F216D91C10026C1C6 /* Products */ = {
@@ -625,6 +666,7 @@
 				926D6DA4217578F500242CE5 /* 2.jpg in Resources */,
 				926D6DA5217578F500242CE5 /* iMac1.jpg in Resources */,
 				5A2FDC8E216F3209004EE1F2 /* MJRefresh.bundle in Resources */,
+				9274D8D22186A53100004432 /* goodshow List.plist in Resources */,
 				926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */,
 				926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */,
 				5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */,
@@ -653,6 +695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */,
+				9274D8D52186B6B500004432 /* StyleModel.swift in Sources */,
 				5A2FDC90216F3209004EE1F2 /* NSBundle+MJRefresh.m in Sources */,
 				921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -660,29 +703,38 @@
 				921C5B86217DD81E00425E66 /* dianshang.xcdatamodeld in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
+				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
 				92133BEF217ECD6D00E18631 /* style.swift in Sources */,
 				921C5B88217DD97900425E66 /* goodgood.swift in Sources */,
 				748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */,
+				92133BFC21804DE500E18631 /* UIColor-Extension.swift in Sources */,
+				92133BFA21804DAA00E18631 /* Global.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
 				921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */,
 				924D48A82170894C00508199 /* LoginViewController.swift in Sources */,
+				9274D8D72186B74600004432 /* Styleinfo.swift in Sources */,
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
+				92133C3021807E9200E18631 /* TableViewHeaderView.swift in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
+				92133BFE21804E0900E18631 /* LJCollectionViewFlowLayout.swift in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
 				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
+				9213424821816F5400E18631 /* Homepagetable.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
+				9213424C2181730600E18631 /* SearchTableViewCell.swift in Sources */,
 				92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */,
+				9213424A21816FA200E18631 /* godgood.swift in Sources */,
+				92133BF52180483200E18631 /* StyleviewController.swift in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
 				5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */,
 				5A2FDC8F216F3209004EE1F2 /* MJRefreshConst.m in Sources */,
 				5A2FDC89216F3209004EE1F2 /* MJRefreshBackNormalFooter.m in Sources */,
-				92133BED217EC33E00E18631 /* CartViewController.swift in Sources */,
 				924D48AA2170897300508199 /* RegisterViewController.swift in Sources */,
 				5A2FDC8D216F3209004EE1F2 /* MJRefreshStateHeader.m in Sources */,
 				5A2FDC83216F3209004EE1F2 /* MJRefreshFooter.m in Sources */,
@@ -860,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H966LS87H7;
 				INFOPLIST_FILE = HongTai/Info.plist;
@@ -879,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H966LS87H7;
 				INFOPLIST_FILE = HongTai/Info.plist;

@@ -151,7 +151,7 @@ class RegisterViewController: UIViewController {
             else
                 {
         
-        let user = sss(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
+                    let user = sss(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
                     
             fangfaViewController.insertData(contactInfo: user)
                     
