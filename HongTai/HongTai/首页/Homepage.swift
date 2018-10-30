@@ -16,9 +16,7 @@ class Homepage: UIViewController,UISearchBarDelegate {
     var label:UILabel!
     var god = [goodgood]()
     var godd:goodgood?
-    
-    var sty = [Goodsstyle]()
-    var style:Goodsstyle?
+    var ssssss = [Goods]()
     @IBOutlet weak var logingin: UIButton!
     @IBOutlet weak var Tableview: UITableView!
     override func viewDidLoad() {
@@ -39,15 +37,10 @@ class Homepage: UIViewController,UISearchBarDelegate {
         
         view.addSubview(loopView)
         
-        Tableview.delegate = self
+        Tableview.delegate   = self
         Tableview.dataSource = self
-        getLocalData()
-        if sty.count == 0
-        {
-            initData()
-        }
         
-        
+        print(ssssss.count)
         if (nameuser == nil)
         {
             logingin.isHidden = false
@@ -90,6 +83,14 @@ class Homepage: UIViewController,UISearchBarDelegate {
             logingin.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:12)
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getLocalData()
+        if god.count == 0 {
+            initData()
+        }
     }
     
 
@@ -171,7 +172,7 @@ extension Homepage {
         let strNowTime = timeFormatter.string(from: date as Date) as String
         let data1 = #imageLiteral(resourceName: "avatar4").pngData()
         let user1 = goodgood(goodsimg: data1!, goodsbianhao: strNowTime, goodsname: "电吉他", goodsintroduction: "超级好玩的电吉他", goodsprice: "¥490", stock: "10000", salesnum: "5622", goodstime: Date(), goodsstate: "已上架")
-        let data2 = #imageLiteral(resourceName: "avatar3").pngData()
+        let data2 = #imageLiteral(resourceName: "假孙兴民").pngData()
         let user2 = goodgood(goodsimg: data2!, goodsbianhao: "2121125", goodsname: "钢琴", goodsintroduction: "超级好玩的钢琴", goodsprice: "¥15000", stock: "4515", salesnum:"526" , goodstime: Date(), goodsstate: "已上架")
         
         let data3 = #imageLiteral(resourceName: "avatar2").pngData()

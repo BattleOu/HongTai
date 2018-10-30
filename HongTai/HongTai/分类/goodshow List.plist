@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   goodshow List.plist
+   HongTai
+
+   Created by 周旭 on 2018/10/29.
+   Copyright (c) 2018年 欧张帆. All rights reserved.
+-->
+<plist version="1.0">
+    <array>
+        <array>
+            <string>电子设备</string>
+            <string>1</string>
+            <string>苹果ipad</string>
+            <string>3008.00</string>
+            <string>6013</string>
+            <string>2060</string>
+            <string>18新款Apple/苹果 iPad 2018款 9.7英寸32/128Gwifi 平板电脑 3/6/12期分期 正品国行 全国联保</string>
+            <string>https://img.alicdn.com/imgextra/i4/268451883/TB24PFChf5TBuNjSspmXXaDRVXa_!!268451883.png_60x60q90.jpg</string>
+        </array>
+        <array>
+            <string>电子设备</string>
+            <string>2</string>
+            <string>苹果笔记本电脑</string>
+            <string>13588.00</string>
+            <string>2</string>
+            <string>0</string>
+            <string>Apple/苹果笔记本电脑MacBook Pro13英寸256G轻薄便携商务办公学生笔记本带触控2018款</string>
+            <string>https://img.alicdn.com/imgextra/i2/4129257698/TB2o2UTvSMmBKNjSZTEXXasKpXa_!!4129257698.jpg_60x60q90.jpg</string>
+        </array>
+        <array>
+            <string>电子设备</string>
+            <string>3</string>
+            <string>苹果一体机</string>
+            <string>12120.00</string>
+            <string>614</string>
+            <string>71</string>
+            <string>Apple苹果一体机 iMAC 21.5 27寸ME087MK462超薄办公设计台式电脑</string>
+            <string>https://gd4.alicdn.com/imgextra/i4/2951536224/TB22Jn2gYYI8KJjy0FaXXbAiVXa_!!2951536224.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>电子设备</string>
+            <string>4</string>
+            <string>苹果手表</string>
+            <string>3199.00</string>
+            <string>4</string>
+            <string>0</string>
+            <string>2018款 Apple Watch Series 4 苹果手表运动智能心率电话手表s4手环</string>
+            <string>https://img.alicdn.com/imgextra/i4/268451883/O1CN011PmSGIxD39MObrY_!!268451883.jpg_60x60q90.jpg</string>
+        </array>
+        <array>
+            <string>女装</string>
+            <string>5</string>
+            <string>呢子大衣</string>
+            <string>911.99</string>
+            <string>6013</string>
+            <string>2060</string>
+            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
+            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>女装</string>
+            <string>6</string>
+            <string>呢子大衣</string>
+            <string>911.99</string>
+            <string>6013</string>
+            <string>2060</string>
+            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
+            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>家具</string>
+            <string>6</string>
+            <string>呢子大衣</string>
+            <string>911.99</string>
+            <string>6013</string>
+            <string>2060</string>
+            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
+            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>家具</string>
+            <string>6</string>
+            <string>呢子大衣</string>
+            <string>911.99</string>
+            <string>6013</string>
+            <string>2060</string>
+            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
+            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+        </array>
+    </array>
+</plist>
