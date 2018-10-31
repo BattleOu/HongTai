@@ -15,7 +15,7 @@ class TableViewHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor(240, 240, 240, 0.8)
+        backgroundColor = UIColor(253,212,49)
         nameLabel.frame = CGRect(x: 15, y: 0, width: 200, height: 20)
         nameLabel.font = UIFont.systemFont(ofSize: 13)
         addSubview(nameLabel)

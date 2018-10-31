@@ -11,9 +11,9 @@ import CoreData
 
 class fangfaViewController: UIViewController {
 
-    var datas = [sss]()
+    var datas = [pop]()
     
-    var selectedUser: sss?
+    var selectedUser: pop?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class fangfaViewController: UIViewController {
 
 extension fangfaViewController {
     
-    class func insertData(contactInfo: sss) {
+    class func insertData(contactInfo: pop) {
         
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

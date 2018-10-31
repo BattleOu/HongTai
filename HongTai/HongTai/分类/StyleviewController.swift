@@ -28,7 +28,7 @@ class StyleviewController: UIViewController, UITableViewDataSource, UITableViewD
         let rightTableView = UITableView()
         rightTableView.delegate = self
         rightTableView.dataSource = self
-        rightTableView.frame = CGRect(x: 80, y: 0, width: ScreenWidth - 80, height: ScreenHeight - 64 )
+        rightTableView.frame = CGRect(x: 80, y: 20, width: ScreenWidth - 80, height: ScreenHeight - 64 )
         rightTableView.rowHeight = 80
         rightTableView.showsVerticalScrollIndicator = false
         rightTableView.register(RightTableViewCell.self, forCellReuseIdentifier: kRightTableViewCell)
@@ -90,7 +90,7 @@ extension StyleviewController {
             case 1:
                 return 2
             case 2:
-                return 2
+                return 9
             default:
                 return 0
             }
@@ -150,6 +150,11 @@ extension StyleviewController {
         return headerView
     }
     
+    
+    private func selectRow(index : Int) {
+        leftTableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+    }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         // 当前的 tableView 是 RightTableView，RightTableView 滚动的方向向上，RightTableView 是用户拖拽而产生滚动的（（主要判断 RightTableView 用户拖拽而滚动的，还是点击 LeftTableView 而滚动的）
         if (rightTableView == tableView)
@@ -169,15 +174,32 @@ extension StyleviewController {
         }
     }
     // 当拖动右边 TableView 的时候，处理左边 TableView
-    private func selectRow(index : Int) {
-        leftTableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if leftTableView == tableView {
             selectIndex = indexPath.row
             rightTableView.scrollToRow(at: IndexPath(row: 0, section: selectIndex), at: .top, animated: true)
             leftTableView.scrollToRow(at: IndexPath(row: selectIndex, section: 0), at: .top, animated: true)
+        }
+        else
+        {
+            var list: [NSArray] = []
+            for list2 in (diaryList as! [NSArray] ) {
+                let a = list2[0] as! String
+                if a == adHeaders[indexPath.section] {
+                    list.append(list2)
+                }
+            }
+             if list != [] {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: goodsdetailController()))) as! goodsdetailController
+                controller.img = (list[indexPath.row][7] as! String)
+                controller.introduction = (list[indexPath.row][6] as! String)
+                controller.name = (list[indexPath.row][2] as! String)
+                controller.price = (list[indexPath.row][3] as! String)
+                controller.salesnum = (list[indexPath.row][5] as! String)
+                controller.stock = (list[indexPath.row][4] as! String)
+            self.present(controller, animated: true)
+            }
         }
     }
     
@@ -190,6 +212,7 @@ extension StyleviewController {
             lastOffsetY = scrollView.contentOffset.y
         }
     }
+    
     
 
     

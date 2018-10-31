@@ -10,9 +10,27 @@ import UIKit
 
 class PersonViewController: UIViewController {
 
+    @IBOutlet weak var imgview: UIImageView!
+    @IBOutlet weak var usernam: UILabel!
+    var dataModel = DataModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataModel.loadData()
+        if(dataModel.userliebiao.isEmpty)
+        {
+            self.performSegue(withIdentifier: "kong", sender: self)
+        }
+        else
+        {
+            let icount = dataModel.userliebiao.count - 1
+            for x in 0...icount
+            {
+                let kan = dataModel.userliebiao[x].image
+                let image = UIImage(data: kan)
+                imgview.image = image
+                usernam.text = dataModel.userliebiao[x].name
 
+            }
         // Do any additional setup after loading the view.
     }
     
@@ -26,5 +44,16 @@ class PersonViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+    
+    @IBAction func shanchu(_ sender: Any) {
+        dataModel.loadData()
+        dataModel.userliebiao.removeAll()
+        dataModel.saveData()
+        print("删除了")
+         let controller =
+        self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: navigationViewController()))) as! navigationViewController
+        self.present(controller, animated: true)
+    }
 
 }
