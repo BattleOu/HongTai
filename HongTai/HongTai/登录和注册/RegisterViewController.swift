@@ -11,8 +11,8 @@ import CoreData
 
 class RegisterViewController: UIViewController {
     
-   var users = [sss]()
-    var user: sss?
+   var users = [pop]()
+    var user: pop?
     
     @IBOutlet weak var surepassword: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -34,25 +34,24 @@ class RegisterViewController: UIViewController {
         Realname.clearButtonMode = .whileEditing
         password.clearButtonMode = .whileEditing
         surepassword.clearButtonMode = .whileEditing
-        password.clearButtonMode = .always  //一直显示清除按钮
         password.isSecureTextEntry = true //输入内容会显示成小黑点
-//         CoreDataManager.shared.deleteAllPerson()
+        surepassword.isSecureTextEntry = true //输入内容会显示成小黑点
+         password.placeholder="请输入密码"
+        usname.placeholder="请输入用户名"
+        Realname.placeholder="请输入姓名"
+        surepassword.placeholder="请确认密码"
         // Do any additional setup after loading the view.
     }
     
-//    lazy var context: NSManagedObjectContext = {
-//        let context = ((UIApplication.shared.delegate) as! AppDelegate).context
-//        return context
-//    }()
     
     @IBAction func save(_ sender: Any) {
+        
+      getLocalData()
         let date = NSDate()
-        let str = NSString()
-                let timeFormatter = DateFormatter()
-                timeFormatter.timeZone = NSTimeZone.local
-                timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-                let strNowTime = timeFormatter.string(from: date as Date) as String
-        getLocalData()
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeZone = NSTimeZone.local
+        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        let strNowTime = timeFormatter.string(from: date as Date) as String
       if users.count > 0 {
        for x in 0...users.count - 1
        {
@@ -101,9 +100,9 @@ class RegisterViewController: UIViewController {
         else
         {
             
-            let user = sss(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
+            let user = pop(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
             
-            fangfaViewController.insertData(contactInfo: user)
+            RegisterViewController.insertData(contactInfo: user)
             let alertController = UIAlertController(title: "提示!",
                                                     message: "注册成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "返回", style: .default,handler: {
@@ -151,9 +150,9 @@ class RegisterViewController: UIViewController {
             else
                 {
         
-                    let user = sss(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
+                    let user = pop(userimg: UIImage(named: "avatar\(arc4random_uniform(5) + 1)")!.pngData()!, name: usname.text ?? "", password: password.text ?? "", realname: Realname.text ?? "", userbianhao: strNowTime , userupdate: Date() )
                     
-            fangfaViewController.insertData(contactInfo: user)
+                    RegisterViewController.insertData(contactInfo: user)
                     
                     let alertController = UIAlertController(title: "提示!",
                                                             message: "注册成功", preferredStyle: .alert)
@@ -170,83 +169,11 @@ class RegisterViewController: UIViewController {
     }
 
 
-//extension RegisterViewController {
-//
-//
-//    @IBAction func zhuce(_ sender: Any) {
-//        resignKeyboard()
-//          let User = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
-//        guard let usernameString = username.text else { return }
-//        guard let realnameString = realname.text else { return }
-//        guard let passwordString = password.text else { return }
-//        guard surepassword.text != nil else { return }
-//        let date = NSDate()
-//
-//        let timeFormatter = DateFormatter()
-//        timeFormatter.timeZone = NSTimeZone.local
-//        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-//        let strNowTime = timeFormatter.string(from: date as Date) as String
-//
-//        let time = DateFormatter()
-//        time.timeZone = NSTimeZone.local
-//        time.dateFormat = "yyyy-MM-dd"
-//        let birthtime = time.string(from: date as Date) as String
-//
-//        let imagestring = UIImage(named: "蔡徐坤")!.pngData()
-//        // 保存数据
-//        if(username.text == )
-//        {
-//            let alertController = UIAlertController(title: "提示!",
-//                                                    message: "用户名已被注册", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//
-//        }
-//        else if(username.text == "" || password.text == "")
-//        {
-//            let alertController = UIAlertController(title: "提示!",
-//                                                    message: "用户名或密码不能为空", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//        else if(surepassword.text == "")
-//        {
-//            let alertController = UIAlertController(title: "提示!",
-//                                                    message: "请确认密码", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//        else if(password.text != surepassword.text)
-//        {
-//            let alertController = UIAlertController(title: "提示!",
-//                                                    message: "密码不一致", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//        else
-//        {
-//            CoreDataManager.shared.savePersonWith(userid: strNowTime, username: usernameString, userpassword: passwordString, userrelaname: realnameString, birthday: birthtime, userimage: imagestring!)
-//            let alertController = UIAlertController(title: "提示!",
-//                                                    message: "注册成功", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "确定", style: .default,handler: nil)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//    }
-//
-//
-//    private func resignKeyboard() {
-//        username.resignFirstResponder()
-//        realname.resignFirstResponder()
-//        password.resignFirstResponder()
-//        surepassword.resignFirstResponder()
-//    }
+
 
 extension RegisterViewController {
+    
+    
     fileprivate func getLocalData() {
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -273,10 +200,39 @@ extension RegisterViewController {
         
     }
     
-    fileprivate func translateData(from: NSManagedObject) -> (sss?) {
+    class func insertData(contactInfo: pop) {
         
-        if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrelaname") as? String{
-            let user = sss(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个entity
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: managedObectContext)
+        let user = NSManagedObject(entity: entity!, insertInto: managedObectContext)
+        
+        //        步骤三：保存数值
+        
+        user.setValue(contactInfo.userimg, forKey: "userimage")
+        user.setValue(contactInfo.userbianhao, forKey: "userid")
+        user.setValue(contactInfo.password, forKey: "userpassword")
+        user.setValue(contactInfo.name, forKey: "username")
+        user.setValue(contactInfo.realname, forKey: "userrealname")
+        user.setValue(contactInfo.userupdate, forKey: "userupdate")
+        
+        
+        //        步骤四：保存entity到托管对象中。如果保存失败，进行处理
+        do {
+            try managedObectContext.save()
+        } catch  {
+            fatalError("无法保存")
+        }
+        
+    }
+    fileprivate func translateData(from: NSManagedObject) -> (pop?) {
+        
+        if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrealname") as? String{
+            let user = pop(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
             
             return user
         }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A18DD092187F6C5006E0898 /* ozf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */; };
 		5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */; };
 		5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC56216F3208004EE1F2 /* MJRefreshBackFooter.m */; };
 		5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC58216F3208004EE1F2 /* MJRefreshComponent.m */; };
@@ -36,6 +35,7 @@
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		748BE81821706E46005ECDAD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748BE81721706E46005ECDAD /* CoreDataManager.swift */; };
+		920EDA892188354500627663 /* goodsdetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EDA882188354500627663 /* goodsdetailController.swift */; };
 		92133BEF217ECD6D00E18631 /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BEE217ECD6D00E18631 /* style.swift */; };
 		92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF0217EFDF700E18631 /* CartTableViewCell.swift */; };
 		92133BF52180483200E18631 /* StyleviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF42180483200E18631 /* StyleviewController.swift */; };
@@ -47,6 +47,12 @@
 		9213424821816F5400E18631 /* Homepagetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424721816F5400E18631 /* Homepagetable.swift */; };
 		9213424A21816FA200E18631 /* godgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424921816FA200E18631 /* godgood.swift */; };
 		9213424C2181730600E18631 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424B2181730600E18631 /* SearchTableViewCell.swift */; };
+		921BA19821894B9500126E59 /* shopcart.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921BA19721894B9500126E59 /* shopcart.plist */; };
+		921BA19B2189533400126E59 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA19A2189533400126E59 /* DataModel.swift */; };
+		921BA19D2189536B00126E59 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA19C2189536B00126E59 /* UserInfo.swift */; };
+		921BA1A421897BBC00126E59 /* denglv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1A321897BBC00126E59 /* denglv.swift */; };
+		921BA1B1218992B500126E59 /* navigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1B0218992B500126E59 /* navigationViewController.swift */; };
+		921BA1CB21899F8700126E59 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1C921899F8700126E59 /* Model.xcdatamodeld */; };
 		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
 		921C5B88217DD97900425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B87217DD97900425E66 /* goodgood.swift */; };
 		921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B89217DD99900425E66 /* TableViewCell.swift */; };
@@ -132,7 +138,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ozf.xcdatamodel; sourceTree = "<group>"; };
 		5A2FDC53216F3208004EE1F2 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5A2FDC55216F3208004EE1F2 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748BE81721706E46005ECDAD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		920EDA882188354500627663 /* goodsdetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodsdetailController.swift; sourceTree = "<group>"; };
 		92133BEE217ECD6D00E18631 /* style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		92133BF0217EFDF700E18631 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		92133BF42180483200E18631 /* StyleviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleviewController.swift; sourceTree = "<group>"; };
@@ -199,6 +205,12 @@
 		9213424721816F5400E18631 /* Homepagetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepagetable.swift; sourceTree = "<group>"; };
 		9213424921816FA200E18631 /* godgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = godgood.swift; path = ../godgood.swift; sourceTree = "<group>"; };
 		9213424B2181730600E18631 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		921BA19721894B9500126E59 /* shopcart.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = shopcart.plist; sourceTree = "<group>"; };
+		921BA19A2189533400126E59 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		921BA19C2189536B00126E59 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		921BA1A321897BBC00126E59 /* denglv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = denglv.swift; sourceTree = "<group>"; };
+		921BA1B0218992B500126E59 /* navigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationViewController.swift; sourceTree = "<group>"; };
+		921BA1CA21899F8700126E59 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		921C5B87217DD97900425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
 		921C5B89217DD99900425E66 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -374,6 +386,8 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
+				921BA1992189530B00126E59 /* 沙盒 */,
+				921BA18E218946B200126E59 /* 购物车 */,
 				92133BF821804D8D00E18631 /* Tools */,
 				926D6DB5217601CD00242CE5 /* 分类 */,
 				748BE82121707972005ECDAD /* CoreData */,
@@ -411,7 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				748BE81721706E46005ECDAD /* CoreDataManager.swift */,
-				5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */,
+				921BA1C921899F8700126E59 /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -424,6 +438,23 @@
 				92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		921BA18E218946B200126E59 /* 购物车 */ = {
+			isa = PBXGroup;
+			children = (
+				921BA19721894B9500126E59 /* shopcart.plist */,
+			);
+			path = "购物车";
+			sourceTree = "<group>";
+		};
+		921BA1992189530B00126E59 /* 沙盒 */ = {
+			isa = PBXGroup;
+			children = (
+				921BA19A2189533400126E59 /* DataModel.swift */,
+				921BA19C2189536B00126E59 /* UserInfo.swift */,
+			);
+			path = "沙盒";
 			sourceTree = "<group>";
 		};
 		924D489D21707D8200508199 /* 首页 */ = {
@@ -448,6 +479,8 @@
 				924D48A92170897300508199 /* RegisterViewController.swift */,
 				926D6DA8217587BE00242CE5 /* Model.swift */,
 				926D6DAB217595E800242CE5 /* fangfaViewController.swift */,
+				921BA1A321897BBC00126E59 /* denglv.swift */,
+				921BA1B0218992B500126E59 /* navigationViewController.swift */,
 			);
 			path = "登录和注册";
 			sourceTree = "<group>";
@@ -474,6 +507,7 @@
 				9274D8D12186A53100004432 /* goodshow List.plist */,
 				9274D8D42186B6B500004432 /* StyleModel.swift */,
 				9274D8D62186B74600004432 /* Styleinfo.swift */,
+				920EDA882188354500627663 /* goodsdetailController.swift */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -669,6 +703,7 @@
 				9274D8D22186A53100004432 /* goodshow List.plist in Resources */,
 				926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */,
 				926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */,
+				921BA19821894B9500126E59 /* shopcart.plist in Resources */,
 				5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +737,7 @@
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
+				920EDA892188354500627663 /* goodsdetailController.swift in Sources */,
 				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
@@ -714,6 +750,7 @@
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
+				921BA1B1218992B500126E59 /* navigationViewController.swift in Sources */,
 				921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */,
 				924D48A82170894C00508199 /* LoginViewController.swift in Sources */,
 				9274D8D72186B74600004432 /* Styleinfo.swift in Sources */,
@@ -731,13 +768,16 @@
 				9213424A21816FA200E18631 /* godgood.swift in Sources */,
 				92133BF52180483200E18631 /* StyleviewController.swift in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
+				921BA1A421897BBC00126E59 /* denglv.swift in Sources */,
 				5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */,
 				5A2FDC8F216F3209004EE1F2 /* MJRefreshConst.m in Sources */,
 				5A2FDC89216F3209004EE1F2 /* MJRefreshBackNormalFooter.m in Sources */,
 				924D48AA2170897300508199 /* RegisterViewController.swift in Sources */,
 				5A2FDC8D216F3209004EE1F2 /* MJRefreshStateHeader.m in Sources */,
 				5A2FDC83216F3209004EE1F2 /* MJRefreshFooter.m in Sources */,
-				5A18DD092187F6C5006E0898 /* ozf.xcdatamodeld in Sources */,
+				921BA1CB21899F8700126E59 /* Model.xcdatamodeld in Sources */,
+				921BA19D2189536B00126E59 /* UserInfo.swift in Sources */,
+				921BA19B2189533400126E59 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,13 +1112,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5A18DD072187F6C5006E0898 /* ozf.xcdatamodeld */ = {
+		921BA1C921899F8700126E59 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */,
+				921BA1CA21899F8700126E59 /* Model.xcdatamodel */,
 			);
-			currentVersion = 5A18DD082187F6C5006E0898 /* ozf.xcdatamodel */;
-			path = ozf.xcdatamodeld;
+			currentVersion = 921BA1CA21899F8700126E59 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

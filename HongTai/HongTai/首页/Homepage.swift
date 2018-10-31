@@ -16,7 +16,6 @@ class Homepage: UIViewController,UISearchBarDelegate {
     var label:UILabel!
     var god = [goodgood]()
     var godd:goodgood?
-    @IBOutlet weak var logingin: UIButton!
     @IBOutlet weak var Tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +40,6 @@ class Homepage: UIViewController,UISearchBarDelegate {
         
         if (nameuser == nil)
         {
-            logingin.isHidden = false
             //        var button:UIButton = UIButton(type:.contactAdd)
             //        button = UIButton(frame: CGRect(x: 300, y: 40, width: 50, height: 20))
             ////        label.titleLabel?.textColor = UIColor.gray
@@ -77,8 +75,6 @@ class Homepage: UIViewController,UISearchBarDelegate {
             
             label.numberOfLines = 0
             view.addSubview(label)
-            logingin.setTitle("注销", for: .normal)
-            logingin.titleLabel?.font = UIFont(name:"Arial-BoldItalicMT", size:12)
         }
         // Do any additional setup after loading the view.
     }

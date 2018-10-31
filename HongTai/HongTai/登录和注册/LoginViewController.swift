@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 
 class LoginViewController: UIViewController {
-    var users = [sss]()
-    var user: sss?
+    var users = [pop]()
+    var user: pop?
     
+     var dataModel = DataModel()
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
@@ -22,12 +23,10 @@ class LoginViewController: UIViewController {
         password.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
         password.minimumFontSize=14  //最小可缩小的字号
         username.clearButtonMode = .whileEditing  //编辑时出现清除按钮
-        username.clearButtonMode = .unlessEditing  //编辑时不出现，编辑后才出现清除按钮
-        username.clearButtonMode = .always  //一直显示清除按钮
         password.clearButtonMode = .whileEditing  //编辑时出现清除按钮
-        password.clearButtonMode = .unlessEditing  //编辑时不出现，编辑后才出现清除按钮
-        password.clearButtonMode = .always  //一直显示清除按钮
         password.isSecureTextEntry = true //输入内容会显示成小黑点
+        username.placeholder="请输入用户名"
+        password.placeholder="请输入密码"
         // Do any additional setup after loading the view.
     }
     
@@ -50,10 +49,13 @@ class LoginViewController: UIViewController {
                                                             message: "登录成功", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "确认", style: .default,handler: {
                         action in
-                           let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: Homepage()))) as! Homepage
-                        controller.nameuser = self.username.text
-                        self.present(controller, animated: true)
+                            self.performSegue(withIdentifier: "login", sender: self)
                     })
+                    
+                    dataModel.loadData()
+                    dataModel.userliebiao.append(UserInfo(name: username.text!, password: password.text!, id:users[x].userbianhao, image: users[x].userimg,realname: users[x].realname, update: users[x].userupdate))
+                    dataModel.saveData()
+                    print("进入了")
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 }
@@ -149,10 +151,10 @@ extension LoginViewController {
         
     }
     
-    fileprivate func translateData(from: NSManagedObject) -> (sss?) {
+    fileprivate func translateData(from: NSManagedObject) -> (pop?) {
         
         if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrealname") as? String{
-            let user = sss(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
+            let user = pop(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
             
             return user
         }
