@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
+        <attribute name="cartgoodnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cartid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cartupdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Goods" representedClassName="Goods" syncable="YES" codeGenerationType="class">
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodsimg" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="goodsname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodstime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="marketprice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salesnum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stock" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Goodstyle" representedClassName="Goodstyle" syncable="YES" codeGenerationType="class">
+        <attribute name="goodsid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodstyleid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goodstylename" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Orders" representedClassName="Orders" syncable="YES" codeGenerationType="class">
+        <attribute name="dellverytype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gerpeoplephone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="getadress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="getpeople" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordersid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordersmoney" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderstate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderstime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="paymenttype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userimage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userpassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userrealname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userupdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cart" positionX="-36" positionY="9" width="128" height="120"/>
+        <element name="Goodstyle" positionX="0" positionY="45" width="128" height="90"/>
+        <element name="User" positionX="27" positionY="72" width="128" height="135"/>
+        <element name="Orders" positionX="54" positionY="99" width="128" height="195"/>
+        <element name="Goods" positionX="9" positionY="54" width="128" height="180"/>
+    </elements>
+</model>
