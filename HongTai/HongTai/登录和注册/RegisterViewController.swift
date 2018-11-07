@@ -105,7 +105,7 @@ class RegisterViewController: UIViewController {
             RegisterViewController.insertData(contactInfo: user)
             let alertController = UIAlertController(title: "提示!",
                                                     message: "注册成功", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "返回", style: .default,handler: {
+            let okAction = UIAlertAction(title: "确认", style: .default,handler: {
                 action in
                 self.navigationController?.popViewController(animated: true)
             })

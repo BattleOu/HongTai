@@ -15,6 +15,8 @@ class PersonViewController: UIViewController {
     var dataModel = DataModel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgview.layer.cornerRadius = min(imgview.bounds.size.width, imgview.bounds.size.height) * 0.5
+        imgview.layer.masksToBounds = true
         dataModel.loadData()
         if(dataModel.userliebiao.isEmpty)
         {

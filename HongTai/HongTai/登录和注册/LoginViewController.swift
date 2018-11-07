@@ -12,7 +12,6 @@ import CoreData
 class LoginViewController: UIViewController {
     var users = [pop]()
     var user: pop?
-    
      var dataModel = DataModel()
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -30,6 +29,120 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func xiugaimima(_ sender: Any) {
+         getLocalData()
+        if(username.text != "")
+        {
+            for x in 0...users.count - 1
+            {
+                if(username.text == users[x].name)
+                {
+                    let alertController = UIAlertController(title: "修改密码",message: "请输入密码", preferredStyle: .alert)
+                    alertController.addTextField {
+                        (textField: UITextField!) -> Void in
+                        textField.placeholder = "新密码"
+                    }
+                    alertController.addTextField {
+                        (textField: UITextField!) -> Void in
+                        textField.placeholder = "确认密码"
+                        textField.isSecureTextEntry = true
+                    }
+                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+                    let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+                        action in
+                        //也可以用下标的形式获取textField let login = alertController.textFields![0]
+                        let newpw = alertController.textFields!.first!
+                        let rnewpw = alertController.textFields!.last!
+                        if(newpw.text != "" ){
+                            if(rnewpw.text == newpw.text)
+                            {
+                                let app = UIApplication.shared.delegate as! AppDelegate
+                                func getContext() -> NSManagedObjectContext{
+                                    
+                                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                                    
+                                    return appDelegate.persistentContainer.viewContext
+                                }
+                                //获取数据上下文对象
+                                let context = getContext()
+                                //声明数据的请求，声明一个实体结构
+                                
+                                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+                                //查询条件
+                                fetchRequest.predicate = NSPredicate(format: "username = '\(self.username.text!)' ")
+                                // 返回结果在finalResult中
+                                
+                                let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                                    //对返回的数据做处理。
+                                    let fetchObject  = result.finalResult! as! [User]
+                                    for c in fetchObject{
+                                        c.userpassword = newpw.text
+                                        app.saveContext()
+                                        print("啊")
+                                        let alertController = UIAlertController(title: "提示!", message: "修改成功", preferredStyle: .alert)
+                                        let okAction = UIAlertAction(title: "确认", style: .default,handler: nil)
+                                        alertController.addAction(okAction)
+                                        self.present(alertController, animated: true, completion: nil)
+                                    }//c结束
+                                }//内部第一步
+                                // 执行异步请求调用execute
+                                do {
+                                    try context.execute(asyncFecthRequest)
+                                    
+                                } catch  {
+                                    print("error")
+                                }//内部第二步
+                            }
+                            else//这是判断确认密码与新密码是否一致
+                            {
+                                let alertController = UIAlertController(title: "提示!",
+                                                                        message: "确认密码与新密码不一致！", preferredStyle: .alert)
+                                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                                alertController.addAction(okAction)
+                                self.present(alertController, animated: true, completion: nil)
+                            }
+                            
+                        }
+                        else//这是判断新密码是否填写的
+                        {
+                            let alertController = UIAlertController(title: "提示!",
+                                                                    message: "请填写新密码！", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    })//这是好的事件里的
+                    alertController.addAction(cancelAction)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                continue
+            }
+            for x in 0...users.count - 1
+            {
+                if(username.text != users[x].name)
+                {
+                    let alertController = UIAlertController(title: "提示!",
+                                                            message: "用户未注册", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                continue
+            }//第二个for
+        }
+        else
+            //第一个判断用户明是否填写
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "请填写用户名", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
     @IBAction func login(_ sender: Any) {
         getLocalData()
         if(username.text == "" || password.text == "")
@@ -114,7 +227,14 @@ class LoginViewController: UIViewController {
         }
         }
     }
-    
+//else//没有用户判断
+//{
+//    let alertController = UIAlertController(title: "提示!",
+//                                            message: "用户不存在！", preferredStyle: .alert)
+//    let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+//    alertController.addAction(okAction)
+//    self.present(alertController, animated: true, completion: nil)
+//}
     /*
     // MARK: - Navigation
 
