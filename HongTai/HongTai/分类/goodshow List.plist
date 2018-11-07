@@ -13,7 +13,7 @@
             <string>电子设备</string>
             <string>1</string>
             <string>苹果ipad</string>
-            <string>3008.00</string>
+            <string>3008</string>
             <string>6013</string>
             <string>2060</string>
             <string>18新款Apple/苹果 iPad 2018款 9.7英寸32/128Gwifi 平板电脑 3/6/12期分期 正品国行 全国联保</string>
@@ -23,9 +23,9 @@
             <string>电子设备</string>
             <string>2</string>
             <string>苹果笔记本电脑</string>
-            <string>13588.00</string>
-            <string>2</string>
-            <string>0</string>
+            <string>13588</string>
+            <string>2565</string>
+            <string>115</string>
             <string>Apple/苹果笔记本电脑MacBook Pro13英寸256G轻薄便携商务办公学生笔记本带触控2018款</string>
             <string>https://img.alicdn.com/imgextra/i2/4129257698/TB2o2UTvSMmBKNjSZTEXXasKpXa_!!4129257698.jpg_60x60q90.jpg</string>
         </array>
@@ -33,7 +33,7 @@
             <string>电子设备</string>
             <string>3</string>
             <string>苹果一体机</string>
-            <string>12120.00</string>
+            <string>12120</string>
             <string>614</string>
             <string>71</string>
             <string>Apple苹果一体机 iMAC 21.5 27寸ME087MK462超薄办公设计台式电脑</string>
@@ -43,121 +43,151 @@
             <string>电子设备</string>
             <string>4</string>
             <string>苹果手表</string>
-            <string>3199.00</string>
-            <string>4</string>
-            <string>0</string>
+            <string>3199</string>
+            <string>4514</string>
+            <string>630</string>
             <string>2018款 Apple Watch Series 4 苹果手表运动智能心率电话手表s4手环</string>
             <string>https://img.alicdn.com/imgextra/i4/268451883/O1CN011PmSGIxD39MObrY_!!268451883.jpg_60x60q90.jpg</string>
         </array>
         <array>
-            <string>女装</string>
+            <string>男装/女装</string>
             <string>5</string>
             <string>呢子大衣</string>
-            <string>911.99</string>
+            <string>911</string>
             <string>6013</string>
             <string>2060</string>
             <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
             <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
         </array>
         <array>
-            <string>女装</string>
+            <string>男装/女装</string>
             <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>牛仔夹克外套</string>
+            <string>498</string>
+            <string>652</string>
+            <string>23</string>
+            <string>Levis李维斯男士牛仔夹克外套纯棉纯色长袖72334-0130 余文乐同款</string>
+            <string>https://gd4.alicdn.com/imgextra/i2/0/TB1zqu.QpXXXXbKXFXXXXXXXXXX_!!0-item_pic.jpg_50x50.jpg</string>
         </array>
         <array>
-            <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>男装/女装</string>
+            <string>7</string>
+            <string>羽绒服</string>
+            <string>499</string>
+            <string>2625</string>
+            <string>236</string>
+            <string>天天特价军工羽绒服男户外中长款加厚防风拆卸内胆活里活面羽绒服</string>
+            <string>https://gd1.alicdn.com/imgextra/i1/425119012/T2r5F4XClXXXXXXXXX_!!425119012.jpg_50x50.jpg</string>
         </array>
         <array>
-            <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
-        </array>
-        <array>
-            <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>男装/女装</string>
+            <string>8</string>
+            <string>牛仔裤</string>
+            <string>298</string>
+            <string>3542</string>
+            <string>1236</string>
+            <string>年度裤霸级！错过等一年！日本进口发热加绒加厚松紧腰显瘦牛仔裤</string>
+            <string>https://gd4.alicdn.com/imgextra/i3/239627417/O1CN01l3zarY24f25mh4UL7_!!239627417.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>9</string>
+            <string>美式床</string>
+            <string>2563</string>
+            <string>5866</string>
+            <string>2361</string>
+            <string>美式床 实木床欧式床简欧双人床1.8米主卧现代简约高箱储物床家具</string>
+            <string>https://img.alicdn.com/imgextra/i2/656958112/O1CN0129nLLW3QEuTXFDr_!!656958112.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
+            <string>10</string>
+            <string>餐桌</string>
+            <string>667</string>
+            <string>5075</string>
             <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>白蜡实木系列餐台 餐桌 工作台设计师家具多功能原色北欧</string>
+            <string>https://gd4.alicdn.com/imgextra/i1/0/O1CN0124nHDWRVTWSkH5d_!!0-item_pic.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>11</string>
+            <string>书柜</string>
+            <string>160</string>
+            <string>2123</string>
+            <string>128</string>
+            <string>实木客厅格子墙方格子柜单个书柜自由组合书架置物架DIY收纳柜子</string>
+            <string>https://gd1.alicdn.com/imgextra/i3/2355912549/TB2zH5zjiOYBuNjSsD4XXbSkFXa_!!2355912549.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>12</string>
+            <string>沙发</string>
+            <string>5388</string>
+            <string>4660</string>
+            <string>1358</string>
+            <string>欧式真皮沙发头层牛皮组合客厅现代大小户型实木贵妃简欧奢华整装</string>
+            <string>https://gd3.alicdn.com/imgextra/i4/3005428291/TB2vbOwtyQnBKNjSZFmXXcApVXa_!!3005428291.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>12</string>
+            <string>沙发</string>
+            <string>5388</string>
+            <string>4660</string>
+            <string>1358</string>
+            <string>欧式真皮沙发头层牛皮组合客厅现代大小户型实木贵妃简欧奢华整装</string>
+            <string>https://gd3.alicdn.com/imgextra/i4/3005428291/TB2vbOwtyQnBKNjSZFmXXcApVXa_!!3005428291.jpg_50x50.jpg</string>
         </array>
         <array>
             <string>家具</string>
-            <string>6</string>
-            <string>呢子大衣</string>
-            <string>911.99</string>
-            <string>6013</string>
-            <string>2060</string>
-            <string>MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套</string>
-            <string>https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg</string>
+            <string>12</string>
+            <string>沙发</string>
+            <string>5388</string>
+            <string>4660</string>
+            <string>1358</string>
+            <string>欧式真皮沙发头层牛皮组合客厅现代大小户型实木贵妃简欧奢华整装</string>
+            <string>https://gd3.alicdn.com/imgextra/i4/3005428291/TB2vbOwtyQnBKNjSZFmXXcApVXa_!!3005428291.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>家具</string>
+            <string>12</string>
+            <string>沙发</string>
+            <string>5388</string>
+            <string>4660</string>
+            <string>1358</string>
+            <string>欧式真皮沙发头层牛皮组合客厅现代大小户型实木贵妃简欧奢华整装</string>
+            <string>https://gd3.alicdn.com/imgextra/i4/3005428291/TB2vbOwtyQnBKNjSZFmXXcApVXa_!!3005428291.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>家具</string>
+            <string>13</string>
+            <string>衣柜</string>
+            <string>2380</string>
+            <string>1990</string>
+            <string>234</string>
+            <string>北欧实木衣柜推拉门卧室整体移门衣橱烤漆简约现代2门柜子</string>
+            <string>https://gd4.alicdn.com/imgextra/i4/438794148/TB2NDHfdPuhSKJjSspdXXc11XXa_!!438794148.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>户外</string>
+            <string>14</string>
+            <string>学生帐篷</string>
+            <string>230</string>
+            <string>355</string>
+            <string>122</string>
+            <string>特价床用帐篷学生宿舍隐私床幔遮光透气单双人上下床铺保温帐篷</string>
+            <string>https://gd2.alicdn.com/imgextra/i4/59247184/TB2Y8WjaH4npuFjSZFmXXXl4FXa_!!59247184.jpg_50x50.jpg</string>
+        </array>
+        <array>
+            <string>户外</string>
+            <string>15</string>
+            <string>望远镜</string>
+            <string>850</string>
+            <string>3524</string>
+            <string>853</string>
+            <string>LOAVA/朗锋 新版 8x42 HG+（高配）双筒望远镜 旅游户外 清晰明亮</string>
+            <string>https://gd4.alicdn.com/imgextra/i1/0/TB1LM2OLpXXXXXKaXXXXXXXXXXX_!!0-item_pic.jpg_50x50.jpg</string>
         </array>
     </array>
 </plist>

@@ -9,8 +9,7 @@
 import UIKit
 import CoreData
 class StyleviewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var adHeaders:[String] = ["电子设备","女装","家具"]
-    
+    var adHeaders:[String] = ["电子设备","男装/女装","家具","户外"]
      var diaryList: NSArray!
     fileprivate lazy var leftTableView : UITableView = {
         let leftTableView = UITableView()
@@ -52,6 +51,8 @@ class StyleviewController: UIViewController, UITableViewDataSource, UITableViewD
         diaryList = NSArray(contentsOfFile:finalPath as String)!
         // Do any additional setup after loading the view.
     }
+    
+
 }
 
 
@@ -88,9 +89,11 @@ extension StyleviewController {
             case 0:
                 return 4
             case 1:
-                return 2
+                return 4
             case 2:
-                return 9
+                return 8
+            case 3:
+                return 2
             default:
                 return 0
             }
@@ -198,8 +201,11 @@ extension StyleviewController {
                 controller.price = (list[indexPath.row][3] as! String)
                 controller.salesnum = (list[indexPath.row][5] as! String)
                 controller.stock = (list[indexPath.row][4] as! String)
+                controller.godstyle = (list[indexPath.row][0] as! String)
             self.present(controller, animated: true)
             }
+            
+            
         }
     }
     

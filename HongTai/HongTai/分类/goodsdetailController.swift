@@ -20,13 +20,15 @@ class goodsdetailController: UITableViewController {
     @IBOutlet weak var shuliang: UITextField!
     @IBOutlet weak var buy: UIButton!
     @IBOutlet weak var cart: UIButton!
-    
+     var dataModel = DataModel()
+    var modeldata = CartModel()
     var img:String!
     var name:String!
     var price:String!
     var stock:String!
     var salesnum:String!
     var introduction:String!
+    var godstyle:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         var urlStr = NSURL(string: img)
@@ -38,7 +40,7 @@ class goodsdetailController: UITableViewController {
         goodnam.text = name
         goodprice.text = "￥" + price
         kucun.text = "库存" + stock + "件"
-        xiaoliang.text = "月销量:" + salesnum + "件"
+        xiaoliang.text = "销量:" + salesnum + "件"
         jieshao.text = introduction
         print(stock)
         shuliang.addTarget(self, action:#selector(clearPasswordTextFieldAndRememberPwd(_:)), for: .editingChanged)
@@ -56,46 +58,46 @@ class goodsdetailController: UITableViewController {
                 if temp == 0
                 {
                     shuliang.text = "1"
-                    buy.isEnabled = false
-                    cart.isEnabled = false
+                    buy.isEnabled = true
+                    cart.isEnabled = true
                     buy.backgroundColor = UIColor.orange
                     cart.backgroundColor = UIColor.orange
                     return
                 }
                 if temp == nil
                 {
-                    buy.isEnabled = true
-                    cart.isEnabled = true
+                    buy.isEnabled = false
+                    cart.isEnabled = false
                     buy.backgroundColor = UIColor.gray
                     cart.backgroundColor = UIColor.gray
                     return
                 }
                 if temp! > temp2!
                 {
-                    buy.isEnabled = true
-                    cart.isEnabled = true
+                    buy.isEnabled = false
+                    cart.isEnabled = false
                     buy.backgroundColor = UIColor.gray
                     cart.backgroundColor = UIColor.gray
                     return
                 }
                 else
                 {
-                    buy.isEnabled = false
-                    cart.isEnabled = false
+                    buy.isEnabled = true
+                    cart.isEnabled = true
                     buy.backgroundColor = UIColor.orange
                     cart.backgroundColor = UIColor.orange
                 }
                 if temp! < 1
                 {
-                    buy.isEnabled = true
-                    cart.isEnabled = true
+                    buy.isEnabled = false
+                    cart.isEnabled = false
                     buy.backgroundColor = UIColor.gray
                     cart.backgroundColor = UIColor.gray
                 }
                 else
                 {
-                    buy.isEnabled = false
-                    cart.isEnabled = false
+                    buy.isEnabled = true
+                    cart.isEnabled = true
                     buy.backgroundColor = UIColor.orange
                     cart.backgroundColor = UIColor.orange
                 }
@@ -141,8 +143,8 @@ class goodsdetailController: UITableViewController {
         if temp == nil
         {
             shuliang.text = "1"
-            buy.isEnabled = false
-            cart.isEnabled = false
+            buy.isEnabled = true
+            cart.isEnabled = true
             buy.backgroundColor = UIColor.orange
             cart.backgroundColor = UIColor.orange
         }
@@ -152,15 +154,15 @@ class goodsdetailController: UITableViewController {
         shuliang.text = temp1
         if temp! >= temp2!
         {
-            buy.isEnabled = true
-            cart.isEnabled = true
+            buy.isEnabled = false
+            cart.isEnabled = false
             buy.backgroundColor = UIColor.gray
             cart.backgroundColor = UIColor.gray
         }
         else
         {
-            buy.isEnabled = false
-            cart.isEnabled = false
+            buy.isEnabled = true
+            cart.isEnabled = true
             buy.backgroundColor = UIColor.orange
             cart.backgroundColor = UIColor.orange
         }
@@ -190,15 +192,15 @@ class goodsdetailController: UITableViewController {
                 shuliang.text = temp1
                 if temp1 > stock
                 {
-                    buy.isEnabled = true
-                    cart.isEnabled = true
+                    buy.isEnabled = false
+                    cart.isEnabled = false
                     buy.backgroundColor = UIColor.gray
                     cart.backgroundColor = UIColor.gray
                 }
                 else
                 {
-                    buy.isEnabled = false
-                    cart.isEnabled = false
+                    buy.isEnabled = true
+                    cart.isEnabled = true
                     buy.backgroundColor = UIColor.orange
                     cart.backgroundColor = UIColor.orange
                 }
@@ -208,13 +210,59 @@ class goodsdetailController: UITableViewController {
     
     
     @IBAction func back(_ sender: Any) {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: StyleviewController()))) as! StyleviewController
-        self.present(controller, animated: true)
+         self.performSegue(withIdentifier: "back", sender: self)
     }
     
     
     @IBAction func joincart(_ sender: Any) {
+        dataModel.loadData()
+        if(dataModel.userliebiao.isEmpty)
+        {
+            self.performSegue(withIdentifier: "kong", sender: self)
+        }
+        else
+        {
+            let money = Int(price)
+            let num = Int(shuliang.text!)
+            let ttotal =  String(money! * num!)
+                modeldata.loadData()
+            if(modeldata.cartlist.isEmpty == false)
+            {
+            for x in 0...modeldata.cartlist.count - 1
+            {
+                if modeldata.cartlist[x].goodsname == goodnam.text && modeldata.cartlist[x].userid == dataModel.userliebiao[0].id
+                {
+                    let num = modeldata.cartlist[x].number
+                    let number = Int(shuliang.text!)! + Int(num)!
+                    let tottal = String(money! * number)
+                    modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!))
+                    modeldata.saveData()
+                    return 
+                     continue
+                }
+            }
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!))
+                modeldata.saveData()
+            }
+            else
+            {
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!))
+                modeldata.saveData()
+            }
+            
+//            for x in 0...modeldata.userList.count - 1
+//            {
+//                if img == modeldata.userList[x].goodsimg
+//                {
+//                    modeldata.loadData()
+//                    modeldata.userList[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id, total: money! * num!, number:shuliang.text!)
+//                }
+//            }
+            self.performSegue(withIdentifier: "cart", sender: self)
+            
+        }
     }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
