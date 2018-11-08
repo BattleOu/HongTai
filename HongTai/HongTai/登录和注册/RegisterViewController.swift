@@ -62,6 +62,7 @@ class RegisterViewController: UIViewController {
                     let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
+                    print("duiduidi")
                 }
         continue
         }
