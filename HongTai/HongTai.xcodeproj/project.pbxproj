@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5A0FEBDA218AD7DF00849425 /* personDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0FEBD9218AD7DF00849425 /* personDetailsViewController.swift */; };
+		5A2535512193C5DB00BDBC18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2535502193C5DB00BDBC18 /* HomeViewController.swift */; };
+		5A2535532193C61E00BDBC18 /* GoodsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2535522193C61E00BDBC18 /* GoodsList.swift */; };
+		5A2535552193C63300BDBC18 /* GoodsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2535542193C63300BDBC18 /* GoodsList.xib */; };
+		5A2535572193CE1C00BDBC18 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2535562193CE1C00BDBC18 /* CartModel.swift */; };
+		5A2535592193CE3100BDBC18 /* CartList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2535582193CE3100BDBC18 /* CartList.swift */; };
+		5A25355B2193CE5800BDBC18 /* CartviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25355A2193CE5800BDBC18 /* CartviewController.swift */; };
+		5A25355D2193CEC300BDBC18 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25355C2193CEC300BDBC18 /* CartCell.swift */; };
 		5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */; };
 		5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC56216F3208004EE1F2 /* MJRefreshBackFooter.m */; };
 		5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC58216F3208004EE1F2 /* MJRefreshComponent.m */; };
@@ -44,18 +51,14 @@
 		92133BFE21804E0900E18631 /* LJCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */; };
 		92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BFF21804F5E00E18631 /* RightTableViewCell.swift */; };
 		92133C3021807E9200E18631 /* TableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133C2F21807E9200E18631 /* TableViewHeaderView.swift */; };
-		9213424821816F5400E18631 /* Homepagetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424721816F5400E18631 /* Homepagetable.swift */; };
 		9213424A21816FA200E18631 /* godgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424921816FA200E18631 /* godgood.swift */; };
-		9213424C2181730600E18631 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9213424B2181730600E18631 /* SearchTableViewCell.swift */; };
 		921BA19821894B9500126E59 /* shopcart.plist in Resources */ = {isa = PBXBuildFile; fileRef = 921BA19721894B9500126E59 /* shopcart.plist */; };
 		921BA19B2189533400126E59 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA19A2189533400126E59 /* DataModel.swift */; };
 		921BA19D2189536B00126E59 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA19C2189536B00126E59 /* UserInfo.swift */; };
 		921BA1A421897BBC00126E59 /* denglv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1A321897BBC00126E59 /* denglv.swift */; };
 		921BA1B1218992B500126E59 /* navigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1B0218992B500126E59 /* navigationViewController.swift */; };
 		921BA1E32189A20C00126E59 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 921BA1E12189A20C00126E59 /* Model.xcdatamodeld */; };
-		921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B6F217DC4DE00425E66 /* Homepage.swift */; };
 		921C5B88217DD97900425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B87217DD97900425E66 /* goodgood.swift */; };
-		921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B89217DD99900425E66 /* TableViewCell.swift */; };
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
@@ -139,6 +142,13 @@
 
 /* Begin PBXFileReference section */
 		5A0FEBD9218AD7DF00849425 /* personDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = personDetailsViewController.swift; path = HongTai/personDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		5A2535502193C5DB00BDBC18 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5A2535522193C61E00BDBC18 /* GoodsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsList.swift; sourceTree = "<group>"; };
+		5A2535542193C63300BDBC18 /* GoodsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsList.xib; sourceTree = "<group>"; };
+		5A2535562193CE1C00BDBC18 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		5A2535582193CE3100BDBC18 /* CartList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartList.swift; sourceTree = "<group>"; };
+		5A25355A2193CE5800BDBC18 /* CartviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartviewController.swift; sourceTree = "<group>"; };
+		5A25355C2193CEC300BDBC18 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		5A2FDC53216F3208004EE1F2 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		5A2FDC54216F3208004EE1F2 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		5A2FDC55216F3208004EE1F2 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -202,18 +212,14 @@
 		92133BFD21804E0900E18631 /* LJCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		92133BFF21804F5E00E18631 /* RightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTableViewCell.swift; sourceTree = "<group>"; };
 		92133C2F21807E9200E18631 /* TableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderView.swift; sourceTree = "<group>"; };
-		9213424721816F5400E18631 /* Homepagetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepagetable.swift; sourceTree = "<group>"; };
 		9213424921816FA200E18631 /* godgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = godgood.swift; path = ../godgood.swift; sourceTree = "<group>"; };
-		9213424B2181730600E18631 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		921BA19721894B9500126E59 /* shopcart.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = shopcart.plist; sourceTree = "<group>"; };
 		921BA19A2189533400126E59 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		921BA19C2189536B00126E59 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		921BA1A321897BBC00126E59 /* denglv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = denglv.swift; sourceTree = "<group>"; };
 		921BA1B0218992B500126E59 /* navigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationViewController.swift; sourceTree = "<group>"; };
 		921BA1E22189A20C00126E59 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		921C5B6F217DC4DE00425E66 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		921C5B87217DD97900425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
-		921C5B89217DD99900425E66 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
@@ -444,6 +450,10 @@
 			isa = PBXGroup;
 			children = (
 				921BA19721894B9500126E59 /* shopcart.plist */,
+				5A2535562193CE1C00BDBC18 /* CartModel.swift */,
+				5A2535582193CE3100BDBC18 /* CartList.swift */,
+				5A25355A2193CE5800BDBC18 /* CartviewController.swift */,
+				5A25355C2193CEC300BDBC18 /* CartCell.swift */,
 			);
 			path = "购物车";
 			sourceTree = "<group>";
@@ -462,12 +472,11 @@
 			children = (
 				926D6D9F217578F500242CE5 /* images */,
 				9264BA252174935B00DE5A21 /* JHLoopView.swift */,
-				921C5B6F217DC4DE00425E66 /* Homepage.swift */,
 				921C5B87217DD97900425E66 /* goodgood.swift */,
-				921C5B89217DD99900425E66 /* TableViewCell.swift */,
-				9213424721816F5400E18631 /* Homepagetable.swift */,
 				9213424921816FA200E18631 /* godgood.swift */,
-				9213424B2181730600E18631 /* SearchTableViewCell.swift */,
+				5A2535502193C5DB00BDBC18 /* HomeViewController.swift */,
+				5A2535522193C61E00BDBC18 /* GoodsList.swift */,
+				5A2535542193C63300BDBC18 /* GoodsList.xib */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -702,6 +711,7 @@
 				5A2FDC8E216F3209004EE1F2 /* MJRefresh.bundle in Resources */,
 				9274D8D22186A53100004432 /* goodshow List.plist in Resources */,
 				926D6DA6217578F500242CE5 /* iphone8-gallery4-2017.jpg in Resources */,
+				5A2535552193C63300BDBC18 /* GoodsList.xib in Resources */,
 				926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */,
 				921BA19821894B9500126E59 /* shopcart.plist in Resources */,
 				5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */,
@@ -732,7 +742,6 @@
 				9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */,
 				9274D8D52186B6B500004432 /* StyleModel.swift in Sources */,
 				5A2FDC90216F3209004EE1F2 /* NSBundle+MJRefresh.m in Sources */,
-				921C5B70217DC4DE00425E66 /* Homepage.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
@@ -741,8 +750,10 @@
 				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
+				5A2535532193C61E00BDBC18 /* GoodsList.swift in Sources */,
 				92133BEF217ECD6D00E18631 /* style.swift in Sources */,
 				921C5B88217DD97900425E66 /* goodgood.swift in Sources */,
+				5A2535592193CE3100BDBC18 /* CartList.swift in Sources */,
 				92133BFC21804DE500E18631 /* UIColor-Extension.swift in Sources */,
 				92133BFA21804DAA00E18631 /* Global.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
@@ -750,20 +761,21 @@
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
 				921BA1B1218992B500126E59 /* navigationViewController.swift in Sources */,
-				921C5B8A217DD99900425E66 /* TableViewCell.swift in Sources */,
+				5A25355B2193CE5800BDBC18 /* CartviewController.swift in Sources */,
+				5A2535572193CE1C00BDBC18 /* CartModel.swift in Sources */,
 				924D48A82170894C00508199 /* LoginViewController.swift in Sources */,
 				921BA1E32189A20C00126E59 /* Model.xcdatamodeld in Sources */,
 				9274D8D72186B74600004432 /* Styleinfo.swift in Sources */,
 				5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */,
+				5A25355D2193CEC300BDBC18 /* CartCell.swift in Sources */,
 				92133C3021807E9200E18631 /* TableViewHeaderView.swift in Sources */,
 				5A2FDC88216F3209004EE1F2 /* MJRefreshBackGifFooter.m in Sources */,
 				92133BFE21804E0900E18631 /* LJCollectionViewFlowLayout.swift in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
 				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
-				9213424821816F5400E18631 /* Homepagetable.swift in Sources */,
+				5A2535512193C5DB00BDBC18 /* HomeViewController.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
-				9213424C2181730600E18631 /* SearchTableViewCell.swift in Sources */,
 				92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */,
 				9213424A21816FA200E18631 /* godgood.swift in Sources */,
 				92133BF52180483200E18631 /* StyleviewController.swift in Sources */,
