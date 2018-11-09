@@ -505,12 +505,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXU-yB-Trk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="1475"/>
+            <point key="canvasLocation" x="2113" y="1427"/>
         </scene>
         <!--收货人信息-->
         <scene sceneID="jUH-3J-inP">
             <objects>
-                <viewController id="Nlu-2c-Nir" customClass="Consignee" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Consignee" id="Nlu-2c-Nir" customClass="Consignee" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="er7-rX-2i0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -596,6 +596,7 @@
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="Nlu-2c-Nir" eventType="touchUpInside" id="yjz-sj-Akd"/>
+                                    <segue destination="gHJ-gH-gQd" kind="modal" identifier="back" id="lfG-NX-rvF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xER-B3-Yv7">
@@ -625,7 +626,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPi-8d-8fI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="1475"/>
+            <point key="canvasLocation" x="393" y="671"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xaV-R0-p7q">
+            <objects>
+                <navigationController id="Mji-fE-qWd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dIB-kD-L0f">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jXm-ey-HhG" kind="relationship" relationship="rootViewController" id="bYI-cB-DGh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbu-0x-bP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3788" y="1633"/>
+        </scene>
+        <!--订单详情-->
+        <scene sceneID="jAn-t0-UZU">
+            <objects>
+                <viewController id="jXm-ey-HhG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Qd-Xe-RSg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Eia-tp-Aba"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="订单详情" id="OFO-9Y-1uJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4CB-9U-bMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4706" y="1633"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="N0p-bX-hcV">
@@ -1156,7 +1189,7 @@
         <image name="首页" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YvL-ve-7XQ"/>
-        <segue reference="I6e-7l-cq5"/>
+        <segue reference="V4t-KL-Rv4"/>
+        <segue reference="lfG-NX-rvF"/>
     </inferredMetricsTieBreakers>
 </document>

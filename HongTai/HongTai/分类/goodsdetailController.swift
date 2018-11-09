@@ -317,6 +317,11 @@ class goodsdetailController: UITableViewController {
         {
             self.performSegue(withIdentifier: "kong", sender: self)
         }
+        else
+        {
+              let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: Consignee()))) as! Consignee
+              self.present(controller, animated: true)
+        }
     }
     
     /*

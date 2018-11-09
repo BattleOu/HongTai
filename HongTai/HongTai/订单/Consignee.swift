@@ -25,6 +25,7 @@ class Consignee: UIViewController {
     @IBAction func orders(_ sender: Any) {
     }
     @IBAction func back(_ sender: Any) {
+          self.performSegue(withIdentifier: "back", sender: self)
     }
     /*
     // MARK: - Navigation
