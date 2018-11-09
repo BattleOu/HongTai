@@ -310,6 +310,15 @@ class goodsdetailController: UITableViewController {
             
         }
     }
+    
+    @IBAction func buys(_ sender: Any) {
+        dataModel.loadData()
+        if(dataModel.userliebiao.isEmpty)
+        {
+            self.performSegue(withIdentifier: "kong", sender: self)
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
