@@ -69,6 +69,7 @@
 		926D6DA9217587BE00242CE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DA8217587BE00242CE5 /* Model.swift */; };
 		926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DAB217595E800242CE5 /* fangfaViewController.swift */; };
 		927057462195069900039763 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927057452195069900039763 /* Cart.swift */; };
+		9270575D2195596200039763 /* Consignee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270575C2195596100039763 /* Consignee.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 		9274D8D22186A53100004432 /* goodshow List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9274D8D12186A53100004432 /* goodshow List.plist */; };
 		9274D8D52186B6B500004432 /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D8D42186B6B500004432 /* StyleModel.swift */; };
@@ -231,6 +232,7 @@
 		926D6DA8217587BE00242CE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		926D6DAB217595E800242CE5 /* fangfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fangfaViewController.swift; sourceTree = "<group>"; };
 		927057452195069900039763 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		9270575C2195596100039763 /* Consignee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consignee.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		9274D8D12186A53100004432 /* goodshow List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "goodshow List.plist"; sourceTree = "<group>"; };
 		9274D8D42186B6B500004432 /* StyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
+				9270575B219558EA00039763 /* 订单 */,
 				921BA1992189530B00126E59 /* 沙盒 */,
 				921BA18E218946B200126E59 /* 购物车 */,
 				92133BF821804D8D00E18631 /* Tools */,
@@ -522,6 +525,14 @@
 				920EDA882188354500627663 /* goodsdetailController.swift */,
 			);
 			path = "分类";
+			sourceTree = "<group>";
+		};
+		9270575B219558EA00039763 /* 订单 */ = {
+			isa = PBXGroup;
+			children = (
+				9270575C2195596100039763 /* Consignee.swift */,
+			);
+			path = "订单";
 			sourceTree = "<group>";
 		};
 		9272AB1F216D91C10026C1C6 /* Products */ = {
@@ -751,6 +762,7 @@
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,
 				5A2FDC8B216F3209004EE1F2 /* MJRefreshGifHeader.m in Sources */,
 				920EDA892188354500627663 /* goodsdetailController.swift in Sources */,
+				9270575D2195596200039763 /* Consignee.swift in Sources */,
 				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,

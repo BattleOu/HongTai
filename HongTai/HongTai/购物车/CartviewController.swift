@@ -236,6 +236,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func jia(_ sender: Any) {
+         self.performSegue(withIdentifier: "dindan", sender: self)
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -269,6 +270,8 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         modeldata.cartlist.removeAll()
         modeldata.saveData()
         Tabelview.reloadData()
+    }
+    @IBAction func buyes(_ sender: Any) {
     }
     /*
      // MARK: - Navigation
