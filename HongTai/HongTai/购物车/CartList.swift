@@ -20,13 +20,12 @@ class CartList: NSObject, NSCoding {
     var userid:String
     var total:String
     var number:String
+    var username:String
     
-    
-    required init(goodsimg:String = "",goodstyle:String = "", goodsname:String = "", introduction: String = "",marketprice:String = "",salesnum:String = "",stock:String = "",userid:String = "",total:String = "",number:String = ""){
+    required init(goodsimg:String = "",goodstyle:String = "", goodsname:String = "", introduction: String = "",marketprice:String = "",salesnum:String = "",stock:String = "",userid:String = "",total:String = "",number:String = "",username:String = ""){
         self.goodsimg = goodsimg
         self.goodstyle = goodstyle
         self.goodsname = goodsname
-        
         self.introduction = introduction
         self.marketprice = marketprice
         self.salesnum = salesnum
@@ -35,6 +34,7 @@ class CartList: NSObject, NSCoding {
         self.userid = userid
         self.total = total
         self.number = number
+        self.username = username
         // super.init()
     }
     
@@ -50,6 +50,7 @@ class CartList: NSObject, NSCoding {
         self.userid = decoder.decodeObject(forKey: "userid")as? String ?? ""
         self.total = decoder.decodeObject(forKey: "total")as? String ?? ""
         self.number = decoder.decodeObject(forKey: "number")as? String ?? ""
+        self.username = decoder.decodeObject(forKey: "username")as? String ?? ""
     }
     
     //编码成object
@@ -64,5 +65,6 @@ class CartList: NSObject, NSCoding {
         coder.encode(userid, forKey: "userid")
         coder.encode(total, forKey: "total")
         coder.encode(number, forKey: "number")
+        coder.encode(username, forKey: "username")
     }
 }

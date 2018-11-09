@@ -7,12 +7,43 @@
 //
 
 import UIKit
-
+import CoreData
 class HomeViewController: UITableViewController,UISearchBarDelegate {
     var dataModel = StyleModel()
     var search:UISearchBar!
+    var datdmodel = DataModel()
+    var carts = [caart]()
+    var ccart: caart?
     override func viewDidLoad() {
         super.viewDidLoad()
+//        getLocalData()
+//        datdmodel.loadData()
+//        let app = UIApplication.shared.delegate as! AppDelegate
+//        func getContext() -> NSManagedObjectContext{
+//            
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            
+//            return appDelegate.persistentContainer.viewContext
+//        }
+//        //获取数据上下文对象
+//        let context = getContext()
+//        //声明数据的请求，声明一个实体结构
+//        
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+//        //查询条件
+//        fetchRequest.predicate = NSPredicate(format: "userid = '\(datdmodel.userliebiao[0].id)'")
+//        // 返回结果在finalResult中
+//        
+//        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+//        //            //对返回的数据做处理。
+//        //            let fetchObject  = result.finalResult! as! [Cart]
+//        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+//        for c in fetchObject as! [Cart]
+//        {
+//            context.delete(c)
+//            app.saveContext()
+//        }
+        
         self.tableView.register(UINib.init(nibName: "GoodsList", bundle: nil), forCellReuseIdentifier: "GoodsList")
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 200
@@ -195,3 +226,44 @@ extension HomeViewController : JHLoopViewDelegate {
         print(index)
     }
 }
+
+extension HomeViewController {
+    
+    fileprivate func getLocalData() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                carts.removeAll()
+                for result in results {
+                    guard let cartss = translateData(from: result) else { return }
+                    carts.append(cartss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    
+    fileprivate func translateData(from: NSManagedObject) -> (caart?) {
+        
+        if let img = from.value(forKey: "goodsimg") as? String,let goodsname = from.value(forKey: "goodsname") as? String,let style = from.value(forKey: "goodstyle") as? String,let introduction = from.value(forKey: "introduction") as? String, let marketprice = from.value(forKey: "marketprice") as? String, let number = from.value(forKey: "number") as? String, let salesnum = from.value(forKey: "salesnum") as? String, let stock = from.value(forKey: "stock") as? String, let total = from.value(forKey: "total") as? String, let userid = from.value(forKey: "userid") as? String, let username = from.value(forKey: "username") as? String{
+            let user = caart(userid: userid, total: total, stock: stock, salesnum: salesnum, number: number, marketprice: marketprice, introduction: introduction, goodstyle: style, goodsname: goodsname, goodsimg: img,username:username)
+            
+            return user
+        }
+        return nil
+    }
+}
+
