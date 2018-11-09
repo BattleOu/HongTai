@@ -12,7 +12,10 @@ import CoreData
 class LoginViewController: UIViewController {
     var users = [pop]()
     var user: pop?
+    var carts = [caart]()
+    var ccart: caart?
      var dataModel = DataModel()
+    var modeldata = CartModel()
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
@@ -164,7 +167,20 @@ class LoginViewController: UIViewController {
                         action in
                             self.performSegue(withIdentifier: "login", sender: self)
                     })
-                    
+                     modeldata.loadData()
+                    getLocalData1()
+                    if carts.isEmpty == false
+                    {
+                    for x in 0...carts.count - 1
+                    {
+                        if carts[x].username == username.text
+                        {
+                            modeldata.cartlist.append(CartList(goodsimg:carts[x].goodsimg, goodstyle: carts[x].goodstyle, goodsname: carts[x].goodsname, introduction: carts[x].introduction,marketprice: carts[x].marketprice,salesnum: carts[x].salesnum,stock: carts[x].stock ,userid: carts[x].userid,total: carts[x].total, number:carts[x].number,username:carts[x].username))
+                            modeldata.saveData()
+                        }
+                        continue
+                    }
+                    }
                     dataModel.loadData()
                     dataModel.userliebiao.append(UserInfo(name: username.text!, password: password.text!, id:users[x].userbianhao, image: users[x].userimg,realname: users[x].realname, update: users[x].userupdate))
                     dataModel.saveData()
@@ -275,6 +291,47 @@ extension LoginViewController {
         
         if let img = from.value(forKey: "userimage") as? Data,let useid = from.value(forKey: "userid") as? String,let name = from.value(forKey: "username") as? String,let updateTime = from.value(forKey: "userupdate") as? Date, let password = from.value(forKey: "userpassword") as? String, let realname = from.value(forKey: "userrealname") as? String{
             let user = pop(userimg: img, name: name, password:password, realname: realname, userbianhao: useid , userupdate: updateTime )
+            
+            return user
+        }
+        return nil
+    }
+}
+
+
+extension LoginViewController {
+    
+    fileprivate func getLocalData1() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                carts.removeAll()
+                for result in results {
+                    guard let cartss = translateData1(from: result) else { return }
+                    carts.append(cartss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    
+    fileprivate func translateData1(from: NSManagedObject) -> (caart?) {
+        
+        if let img = from.value(forKey: "goodsimg") as? String,let goodsname = from.value(forKey: "goodsname") as? String,let style = from.value(forKey: "goodstyle") as? String,let introduction = from.value(forKey: "introduction") as? String, let marketprice = from.value(forKey: "marketprice") as? String, let number = from.value(forKey: "number") as? String, let salesnum = from.value(forKey: "salesnum") as? String, let stock = from.value(forKey: "stock") as? String, let total = from.value(forKey: "total") as? String, let userid = from.value(forKey: "userid") as? String, let username = from.value(forKey: "username") as? String{
+            let user = caart(userid: userid, total: total, stock: stock, salesnum: salesnum, number: number, marketprice: marketprice, introduction: introduction, goodstyle: style, goodsname: goodsname, goodsimg: img,username:username)
             
             return user
         }

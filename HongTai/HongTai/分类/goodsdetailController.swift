@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 class goodsdetailController: UITableViewController {
 
     @IBOutlet weak var goodimg: UIImageView!
@@ -29,6 +29,8 @@ class goodsdetailController: UITableViewController {
     var salesnum:String!
     var introduction:String!
     var godstyle:String!
+    var carts = [caart]()
+    var ccart: caart?
     override func viewDidLoad() {
         super.viewDidLoad()
         var urlStr = NSURL(string: img)
@@ -215,6 +217,7 @@ class goodsdetailController: UITableViewController {
     
     
     @IBAction func joincart(_ sender: Any) {
+        getLocalData()
         dataModel.loadData()
         if(dataModel.userliebiao.isEmpty)
         {
@@ -226,38 +229,83 @@ class goodsdetailController: UITableViewController {
             let num = Int(shuliang.text!)
             let ttotal =  String(money! * num!)
             modeldata.loadData()
-            if(modeldata.cartlist.isEmpty == false)
+            
+            getLocalData()
+            let app = UIApplication.shared.delegate as! AppDelegate
+            func getContext() -> NSManagedObjectContext{
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+                return appDelegate.persistentContainer.viewContext
+            }
+            //获取数据上下文对象
+            let context = getContext()
+            //声明数据的请求，声明一个实体结构
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+            //查询条件
+            fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
+            // 返回结果在finalResult中
+            
+            let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+            if(fetchObject!.isEmpty == false)
             {
                 for x in 0...modeldata.cartlist.count - 1
                 {
                     if modeldata.cartlist[x].goodsname == goodnam.text && modeldata.cartlist[x].userid == dataModel.userliebiao[0].id
                     {
+                        
                         let num = modeldata.cartlist[x].number
                         let number = Int(shuliang.text!)! + Int(num)!
                         let tottal = String(money! * number)
-                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!))
+                        let app = UIApplication.shared.delegate as! AppDelegate
+                        func getContexts() -> NSManagedObjectContext{
+                            
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            
+                            return appDelegate.persistentContainer.viewContext
+                        }
+                        //获取数据上下文对象
+                        let context = getContexts()
+                        //声明数据的请求，声明一个实体结构
+                        
+                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+                        //查询条件
+                        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(carts[x].goodsname)'")
+                        // 返回结果在finalResult中
+                        
+                        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                        //            //对返回的数据做处理。
+                        //            let fetchObject  = result.finalResult! as! [Cart]
+                        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                        for c in fetchObject as! [Cart]
+                        {
+                            c.total = tottal
+                            c.number = String(Int(shuliang.text!)! + Int(num)!)
+                            app.saveContext()
+                        }
+                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
                         modeldata.saveData()
                         return
                         continue
                     }
                 }
-                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!))
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
                 modeldata.saveData()
+                let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name  )
+                
+                goodsdetailController.insertData(contactInfo: user)
             }
             else
             {
-                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!))
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
                 modeldata.saveData()
+                let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name )
+                
+                goodsdetailController.insertData(contactInfo: user)
+                
             }
             
-            //            for x in 0...modeldata.userList.count - 1
-            //            {
-            //                if img == modeldata.userList[x].goodsimg
-            //                {
-            //                    modeldata.loadData()
-            //                    modeldata.userList[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id, total: money! * num!, number:shuliang.text!)
-            //                }
-            //            }
             self.performSegue(withIdentifier: "cart", sender: self)
             
         }
@@ -317,4 +365,76 @@ class goodsdetailController: UITableViewController {
     }
     */
 
+}
+
+
+extension goodsdetailController {
+    
+    fileprivate func getLocalData() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                carts.removeAll()
+                for result in results {
+                    guard let cartss = translateData(from: result) else { return }
+                    carts.append(cartss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    class func insertData(contactInfo: caart) {
+        
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个entity
+        let entity = NSEntityDescription.entity(forEntityName: "Cart", in: managedObectContext)
+        let user = NSManagedObject(entity: entity!, insertInto: managedObectContext)
+        
+        //        步骤三：保存数值
+        
+        user.setValue(contactInfo.goodsimg, forKey: "goodsimg")
+        user.setValue(contactInfo.goodsname, forKey: "goodsname")
+        user.setValue(contactInfo.goodstyle, forKey: "goodstyle")
+        user.setValue(contactInfo.introduction, forKey: "introduction")
+        user.setValue(contactInfo.marketprice, forKey: "marketprice")
+        user.setValue(contactInfo.number, forKey: "number")
+        user.setValue(contactInfo.salesnum, forKey: "salesnum")
+        user.setValue(contactInfo.stock, forKey: "stock")
+        user.setValue(contactInfo.total, forKey: "total")
+        user.setValue(contactInfo.userid, forKey: "userid")
+        user.setValue(contactInfo.username, forKey: "username")
+        //        步骤四：保存entity到托管对象中。如果保存失败，进行处理
+        do {
+            try managedObectContext.save()
+        } catch  {
+            fatalError("无法保存")
+        }
+        
+    }
+    fileprivate func translateData(from: NSManagedObject) -> (caart?) {
+        
+        if let img = from.value(forKey: "goodsimg") as? String,let goodsname = from.value(forKey: "goodsname") as? String,let style = from.value(forKey: "goodstyle") as? String,let introduction = from.value(forKey: "introduction") as? String, let marketprice = from.value(forKey: "marketprice") as? String, let number = from.value(forKey: "number") as? String, let salesnum = from.value(forKey: "salesnum") as? String, let stock = from.value(forKey: "stock") as? String, let total = from.value(forKey: "total") as? String, let userid = from.value(forKey: "userid") as? String, let username = from.value(forKey: "username") as? String{
+            let user = caart(userid: userid, total: total, stock: stock, salesnum: salesnum, number: number, marketprice: marketprice, introduction: introduction, goodstyle: style, goodsname: goodsname, goodsimg: img,username:username)
+            
+            return user
+        }
+        return nil
+    }
 }

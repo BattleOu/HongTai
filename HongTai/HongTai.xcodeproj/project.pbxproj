@@ -68,6 +68,7 @@
 		926D6DA7217578F500242CE5 /* Macbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA3217578F500242CE5 /* Macbook.jpg */; };
 		926D6DA9217587BE00242CE5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DA8217587BE00242CE5 /* Model.swift */; };
 		926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926D6DAB217595E800242CE5 /* fangfaViewController.swift */; };
+		927057462195069900039763 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927057452195069900039763 /* Cart.swift */; };
 		9272AB38216D91C70026C1C6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9272AB2A216D91C10026C1C6 /* Alamofire.framework */; };
 		9274D8D22186A53100004432 /* goodshow List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9274D8D12186A53100004432 /* goodshow List.plist */; };
 		9274D8D52186B6B500004432 /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D8D42186B6B500004432 /* StyleModel.swift */; };
@@ -229,6 +230,7 @@
 		926D6DA3217578F500242CE5 /* Macbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Macbook.jpg; sourceTree = "<group>"; };
 		926D6DA8217587BE00242CE5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		926D6DAB217595E800242CE5 /* fangfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fangfaViewController.swift; sourceTree = "<group>"; };
+		927057452195069900039763 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		9272AB1E216D91C10026C1C6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		9274D8D12186A53100004432 /* goodshow List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "goodshow List.plist"; sourceTree = "<group>"; };
 		9274D8D42186B6B500004432 /* StyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				5A2535582193CE3100BDBC18 /* CartList.swift */,
 				5A25355A2193CE5800BDBC18 /* CartviewController.swift */,
 				5A25355C2193CEC300BDBC18 /* CartCell.swift */,
+				927057452195069900039763 /* Cart.swift */,
 			);
 			path = "购物车";
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */,
 				9274D8D52186B6B500004432 /* StyleModel.swift in Sources */,
 				5A2FDC90216F3209004EE1F2 /* NSBundle+MJRefresh.m in Sources */,
+				927057462195069900039763 /* Cart.swift in Sources */,
 				5A2FDC86216F3209004EE1F2 /* MJRefreshAutoNormalFooter.m in Sources */,
 				5A2FDC85216F3209004EE1F2 /* MJRefreshAutoGifFooter.m in Sources */,
 				5A2FDC91216F3209004EE1F2 /* UIScrollView+MJExtension.m in Sources */,

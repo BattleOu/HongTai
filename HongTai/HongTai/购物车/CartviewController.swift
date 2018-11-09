@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import CoreData
 class CartviewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var modeldata = CartModel()
     var dataModel = DataModel()
+    var carts = [caart]()
+    var ccart: caart?
     @IBOutlet weak var goubuy: UIButton!
     @IBOutlet weak var Tabelview: UITableView!
     @IBOutlet weak var clear: UIButton!
@@ -36,9 +38,31 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         modeldata.loadData()
-        if modeldata.cartlist.count > 0
+        getLocalData()
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContext() -> NSManagedObjectContext{
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            return appDelegate.persistentContainer.viewContext
+        }
+        //获取数据上下文对象
+        let context = getContext()
+        //声明数据的请求，声明一个实体结构
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
+        // 返回结果在finalResult中
+        
+        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+        //            //对返回的数据做处理。
+        //            let fetchObject  = result.finalResult! as! [Cart]
+        let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        print(fetchObject!.count)
+        if fetchObject!.count > 0
         {
-            return modeldata.cartlist.count
+            return fetchObject!.count
         }
         else
         {
@@ -50,7 +74,28 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         modeldata.loadData()
-        if(modeldata.cartlist.isEmpty == false)
+        getLocalData()
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContext() -> NSManagedObjectContext{
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            return appDelegate.persistentContainer.viewContext
+        }
+        //获取数据上下文对象
+        let context = getContext()
+        //声明数据的请求，声明一个实体结构
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
+        // 返回结果在finalResult中
+        
+        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+        //            //对返回的数据做处理。
+        //            let fetchObject  = result.finalResult! as! [Cart]
+        let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        if(fetchObject!.isEmpty == false)
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cartt", for: indexPath)
             if let myCell = cell as? CartCell
@@ -104,6 +149,33 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.modeldata.loadData()
             self.modeldata.cartlist.remove(at: indexPath.row)
             self.modeldata.saveData()
+            
+            self.getLocalData()
+            let app = UIApplication.shared.delegate as! AppDelegate
+            func getContext() -> NSManagedObjectContext{
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+                return appDelegate.persistentContainer.viewContext
+            }
+            //获取数据上下文对象
+            let context = getContext()
+            //声明数据的请求，声明一个实体结构
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+            //查询条件
+            fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.carts[indexPath.row].goodsname)'")
+            // 返回结果在finalResult中
+            
+            //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+            //            //对返回的数据做处理。
+            //            let fetchObject  = result.finalResult! as! [Cart]
+            var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+            for c in fetchObject as! [Cart]
+            {
+                context.delete(c)
+                app.saveContext()
+            }
             self.Tabelview.reloadData()
         }
         delete.backgroundColor = UIColor.red
@@ -167,18 +239,36 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func clear(_ sender: Any) {
-        modeldata.loadData()
-        dataModel.loadData()
-        for x in (0...modeldata.cartlist.count - 1).reversed()
-        {
-            if modeldata.cartlist[x].userid == dataModel.userliebiao[0].id
-            {
-                modeldata.cartlist.remove(at: x)
-                modeldata.saveData()
-            }
-            Tabelview.reloadData()
-            continue
+        getLocalData()
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContext() -> NSManagedObjectContext{
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            return appDelegate.persistentContainer.viewContext
         }
+        //获取数据上下文对象
+        let context = getContext()
+        //声明数据的请求，声明一个实体结构
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
+        // 返回结果在finalResult中
+        
+        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+        //            //对返回的数据做处理。
+        //            let fetchObject  = result.finalResult! as! [Cart]
+        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        for c in fetchObject as! [Cart]
+        {
+            context.delete(c)
+            app.saveContext()
+        }
+        modeldata.loadData()
+        modeldata.cartlist.removeAll()
+        modeldata.saveData()
+        Tabelview.reloadData()
     }
     /*
      // MARK: - Navigation
@@ -190,4 +280,42 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
      }
      */
 
+}
+
+extension CartviewController {
+    fileprivate func getLocalData() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                carts.removeAll()
+                for result in results {
+                    guard let cartss = translateData(from: result) else { return }
+                    carts.append(cartss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    fileprivate func translateData(from: NSManagedObject) -> (caart?) {
+        
+        if let img = from.value(forKey: "goodsimg") as? String,let goodsname = from.value(forKey: "goodsname") as? String,let style = from.value(forKey: "goodstyle") as? String,let introduction = from.value(forKey: "introduction") as? String, let marketprice = from.value(forKey: "marketprice") as? String, let number = from.value(forKey: "number") as? String, let salesnum = from.value(forKey: "salesnum") as? String, let stock = from.value(forKey: "stock") as? String, let total = from.value(forKey: "total") as? String, let userid = from.value(forKey: "userid") as? String, let username = from.value(forKey: "username") as? String{
+            let user = caart(userid: userid, total: total, stock: stock, salesnum: salesnum, number: number, marketprice: marketprice, introduction: introduction, goodstyle: style, goodsname: goodsname, goodsimg: img,username:username)
+            
+            return user
+        }
+        return nil
+    }
 }
