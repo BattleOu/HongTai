@@ -73,7 +73,6 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        modeldata.loadData()
         getLocalData()
         let app = UIApplication.shared.delegate as! AppDelegate
         func getContext() -> NSManagedObjectContext{
@@ -100,21 +99,18 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "cartt", for: indexPath)
             if let myCell = cell as? CartCell
             {
-                dataModel.loadData()
-                print(modeldata.cartlist[indexPath.row].userid)
-                print(dataModel.userliebiao[0].id)
-                if modeldata.cartlist[indexPath.row].userid == dataModel.userliebiao[0].id
+                if carts[indexPath.row].userid == dataModel.userliebiao[0].id
                 {
-                    myCell.godsname.text = modeldata.cartlist[indexPath.row].goodsname
-                    myCell.godsprice.text = "￥" + modeldata.cartlist[indexPath.row].marketprice
-                    var urlStr = NSURL(string: modeldata.cartlist[indexPath.row].goodsimg)
+                    myCell.godsname.text = carts[indexPath.row].goodsname
+                    myCell.godsprice.text = "￥" + carts[indexPath.row].marketprice
+                    var urlStr = NSURL(string: carts[indexPath.row].goodsimg)
                     var request = NSURLRequest(url: urlStr as! URL)
                     var imgData = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
                     var images: UIImage? = nil
                     images = UIImage(data: imgData!)!
                     myCell.imagesgood.image = images
-                    myCell.godsnum.text = modeldata.cartlist[indexPath.row].number
-                    myCell.godstotal.text = "￥" + modeldata.cartlist[indexPath.row].total
+                    myCell.godsnum.text = carts[indexPath.row].number
+                    myCell.godstotal.text = "￥" + carts[indexPath.row].total
                     return myCell
                 }
             }
@@ -146,9 +142,9 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
             //将对应条目的数据删除
-            self.modeldata.loadData()
-            self.modeldata.cartlist.remove(at: indexPath.row)
-            self.modeldata.saveData()
+//            self.modeldata.loadData()
+//            self.modeldata.cartlist.remove(at: indexPath.row)
+//            self.modeldata.saveData()
             
             self.getLocalData()
             let app = UIApplication.shared.delegate as! AppDelegate
@@ -182,15 +178,15 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         return [delete]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        modeldata.loadData()
+//        modeldata.loadData()
         let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: goodsdetailController()))) as! goodsdetailController
-        controller.img = modeldata.cartlist[indexPath.row].goodsimg
-        controller.introduction = modeldata.cartlist[indexPath.row].introduction
-        controller.name = modeldata.cartlist[indexPath.row].goodsname
-        controller.price =  modeldata.cartlist[indexPath.row].marketprice
-        controller.salesnum =  modeldata.cartlist[indexPath.row].salesnum
-        controller.stock =  modeldata.cartlist[indexPath.row].stock
-        controller.godstyle =  modeldata.cartlist[indexPath.row].goodstyle
+        controller.img = carts[indexPath.row].goodsimg
+        controller.introduction = carts[indexPath.row].introduction
+        controller.name = carts[indexPath.row].goodsname
+        controller.price =  carts[indexPath.row].marketprice
+        controller.salesnum =  carts[indexPath.row].salesnum
+        controller.stock =  carts[indexPath.row].stock
+        controller.godstyle =  carts[indexPath.row].goodstyle
         self.present(controller, animated: true)
     }
     @IBAction func jian(_ sender: Any) {

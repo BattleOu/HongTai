@@ -243,7 +243,6 @@
         <!--Goodsdetail Controller-->
         <scene sceneID="oQl-hx-GlJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bqQ-wl-FPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="goodsdetailController" id="jFd-SJ-Fki" customClass="goodsdetailController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="axd-Th-hsJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -487,6 +486,7 @@
                         <outlet property="xiaoliang" destination="oAU-Vd-mDK" id="N5n-jU-5Jf"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqQ-wl-FPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4104" y="867"/>
         </scene>
@@ -626,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPi-8d-8fI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="671"/>
+            <point key="canvasLocation" x="922" y="1561"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xaV-R0-p7q">

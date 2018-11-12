@@ -167,20 +167,20 @@ class LoginViewController: UIViewController {
                         action in
                             self.performSegue(withIdentifier: "login", sender: self)
                     })
-                     modeldata.loadData()
-                    getLocalData1()
-                    if carts.isEmpty == false
-                    {
-                    for x in 0...carts.count - 1
-                    {
-                        if carts[x].username == username.text
-                        {
-                            modeldata.cartlist.append(CartList(goodsimg:carts[x].goodsimg, goodstyle: carts[x].goodstyle, goodsname: carts[x].goodsname, introduction: carts[x].introduction,marketprice: carts[x].marketprice,salesnum: carts[x].salesnum,stock: carts[x].stock ,userid: carts[x].userid,total: carts[x].total, number:carts[x].number,username:carts[x].username))
-                            modeldata.saveData()
-                        }
-                        continue
-                    }
-                    }
+//                     modeldata.loadData()
+//                    getLocalData1()
+//                    if carts.isEmpty == false
+//                    {
+//                    for x in 0...carts.count - 1
+//                    {
+//                        if carts[x].username == username.text
+//                        {
+//                            modeldata.cartlist.append(CartList(goodsimg:carts[x].goodsimg, goodstyle: carts[x].goodstyle, goodsname: carts[x].goodsname, introduction: carts[x].introduction,marketprice: carts[x].marketprice,salesnum: carts[x].salesnum,stock: carts[x].stock ,userid: carts[x].userid,total: carts[x].total, number:carts[x].number,username:carts[x].username))
+//                            modeldata.saveData()
+//                        }
+//                        continue
+//                    }
+//                    }
                     dataModel.loadData()
                     dataModel.userliebiao.append(UserInfo(name: username.text!, password: password.text!, id:users[x].userbianhao, image: users[x].userimg,realname: users[x].realname, update: users[x].userupdate))
                     dataModel.saveData()

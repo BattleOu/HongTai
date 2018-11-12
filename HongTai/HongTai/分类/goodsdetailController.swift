@@ -252,10 +252,10 @@ class goodsdetailController: UITableViewController {
             {
                 for x in 0...modeldata.cartlist.count - 1
                 {
-                    if modeldata.cartlist[x].goodsname == goodnam.text && modeldata.cartlist[x].userid == dataModel.userliebiao[0].id
+                    if carts[x].goodsname == goodnam.text && carts[x].userid == dataModel.userliebiao[0].id
                     {
                         
-                        let num = modeldata.cartlist[x].number
+                        let num = carts[x].number
                         let number = Int(shuliang.text!)! + Int(num)!
                         let tottal = String(money! * number)
                         let app = UIApplication.shared.delegate as! AppDelegate
@@ -284,22 +284,22 @@ class goodsdetailController: UITableViewController {
                             c.number = String(Int(shuliang.text!)! + Int(num)!)
                             app.saveContext()
                         }
-                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
-                        modeldata.saveData()
+//                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
+//                        modeldata.saveData()
                         return
                         continue
                     }
                 }
-                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
-                modeldata.saveData()
+//                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
+//                modeldata.saveData()
                 let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name  )
                 
                 goodsdetailController.insertData(contactInfo: user)
             }
             else
             {
-                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
-                modeldata.saveData()
+//                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
+//                modeldata.saveData()
                 let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name )
                 
                 goodsdetailController.insertData(contactInfo: user)
@@ -319,7 +319,7 @@ class goodsdetailController: UITableViewController {
         }
         else
         {
-              let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: Consignee()))) as! Consignee
+              let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation()))) as! OrderNavigation
               self.present(controller, animated: true)
         }
     }

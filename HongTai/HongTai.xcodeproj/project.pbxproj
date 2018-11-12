@@ -42,6 +42,8 @@
 		5ACA9293216CA0850052EC26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9291216CA0850052EC26 /* LaunchScreen.storyboard */; };
 		5ACA929E216CA0860052EC26 /* HongTaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA929D216CA0860052EC26 /* HongTaiTests.swift */; };
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
+		5AFFF4762199857500A3DD14 /* OrderNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF4752199857500A3DD14 /* OrderNavigation.swift */; };
+		5AFFF481219985CC00A3DD14 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF480219985CC00A3DD14 /* Orders.swift */; };
 		920EDA892188354500627663 /* goodsdetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EDA882188354500627663 /* goodsdetailController.swift */; };
 		92133BEF217ECD6D00E18631 /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BEE217ECD6D00E18631 /* style.swift */; };
 		92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF0217EFDF700E18631 /* CartTableViewCell.swift */; };
@@ -205,6 +207,8 @@
 		5ACA92A4216CA0860052EC26 /* HongTaiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HongTaiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongTaiUITests.swift; sourceTree = "<group>"; };
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFFF4752199857500A3DD14 /* OrderNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNavigation.swift; sourceTree = "<group>"; };
+		5AFFF480219985CC00A3DD14 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		920EDA882188354500627663 /* goodsdetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodsdetailController.swift; sourceTree = "<group>"; };
 		92133BEE217ECD6D00E18631 /* style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		92133BF0217EFDF700E18631 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
@@ -531,6 +535,8 @@
 			isa = PBXGroup;
 			children = (
 				9270575C2195596100039763 /* Consignee.swift */,
+				5AFFF4752199857500A3DD14 /* OrderNavigation.swift */,
+				5AFFF480219985CC00A3DD14 /* Orders.swift */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -773,9 +779,11 @@
 				92133BFC21804DE500E18631 /* UIColor-Extension.swift in Sources */,
 				92133BFA21804DAA00E18631 /* Global.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
+				5AFFF4762199857500A3DD14 /* OrderNavigation.swift in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
+				5AFFF481219985CC00A3DD14 /* Orders.swift in Sources */,
 				921BA1B1218992B500126E59 /* navigationViewController.swift in Sources */,
 				5A25355B2193CE5800BDBC18 /* CartviewController.swift in Sources */,
 				5A2535572193CE1C00BDBC18 /* CartModel.swift in Sources */,
