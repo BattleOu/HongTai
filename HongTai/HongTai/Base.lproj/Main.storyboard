@@ -490,10 +490,10 @@
             </objects>
             <point key="canvasLocation" x="4104" y="867"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Order Navigation-->
         <scene sceneID="nga-B9-Ta8">
             <objects>
-                <navigationController id="FVX-IG-FxN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OrderNavigation" id="FVX-IG-FxN" customClass="OrderNavigation" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tn6-1r-yYx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7lx-vC-IzC">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -626,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPi-8d-8fI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922" y="1561"/>
+            <point key="canvasLocation" x="1912" y="2180"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xaV-R0-p7q">
