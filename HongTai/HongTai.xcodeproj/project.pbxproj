@@ -65,6 +65,9 @@
 		921C5B88217DD97900425E66 /* goodgood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921C5B87217DD97900425E66 /* goodgood.swift */; };
 		924D48A82170894C00508199 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A72170894C00508199 /* LoginViewController.swift */; };
 		924D48AA2170897300508199 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D48A92170897300508199 /* RegisterViewController.swift */; };
+		924D75D0219AD097000103D1 /* orderdetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D75CF219AD097000103D1 /* orderdetail.swift */; };
+		924D75DC219AD43D000103D1 /* ordercell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D75DB219AD43D000103D1 /* ordercell.swift */; };
+		924D75DE219AD6BD000103D1 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924D75DD219AD6BD000103D1 /* OrderViewController.swift */; };
 		9264BA262174935B00DE5A21 /* JHLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264BA252174935B00DE5A21 /* JHLoopView.swift */; };
 		926D6DA4217578F500242CE5 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA0217578F500242CE5 /* 2.jpg */; };
 		926D6DA5217578F500242CE5 /* iMac1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 926D6DA1217578F500242CE5 /* iMac1.jpg */; };
@@ -232,6 +235,9 @@
 		921C5B87217DD97900425E66 /* goodgood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodgood.swift; sourceTree = "<group>"; };
 		924D48A72170894C00508199 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		924D48A92170897300508199 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		924D75CF219AD097000103D1 /* orderdetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderdetail.swift; sourceTree = "<group>"; };
+		924D75DB219AD43D000103D1 /* ordercell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ordercell.swift; sourceTree = "<group>"; };
+		924D75DD219AD6BD000103D1 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		9264BA252174935B00DE5A21 /* JHLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHLoopView.swift; sourceTree = "<group>"; };
 		926D6DA0217578F500242CE5 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		926D6DA1217578F500242CE5 /* iMac1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iMac1.jpg; sourceTree = "<group>"; };
@@ -543,6 +549,9 @@
 				5AFFF4752199857500A3DD14 /* OrderNavigation.swift */,
 				5AFFF480219985CC00A3DD14 /* Orders.swift */,
 				5AFFF483219A609E00A3DD14 /* OrdersList.swift */,
+				924D75CF219AD097000103D1 /* orderdetail.swift */,
+				924D75DB219AD43D000103D1 /* ordercell.swift */,
+				924D75DD219AD6BD000103D1 /* OrderViewController.swift */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -776,16 +785,19 @@
 				920EDA892188354500627663 /* goodsdetailController.swift in Sources */,
 				9270575D2195596200039763 /* Consignee.swift in Sources */,
 				92133C0021804F5E00E18631 /* RightTableViewCell.swift in Sources */,
+				924D75DE219AD6BD000103D1 /* OrderViewController.swift in Sources */,
 				926D6DA9217587BE00242CE5 /* Model.swift in Sources */,
 				5A2FDC82216F3209004EE1F2 /* MJRefreshComponent.m in Sources */,
 				5A2535532193C61E00BDBC18 /* GoodsList.swift in Sources */,
 				92133BEF217ECD6D00E18631 /* style.swift in Sources */,
 				921C5B88217DD97900425E66 /* goodgood.swift in Sources */,
 				5A2535592193CE3100BDBC18 /* CartList.swift in Sources */,
+				924D75D0219AD097000103D1 /* orderdetail.swift in Sources */,
 				92133BFC21804DE500E18631 /* UIColor-Extension.swift in Sources */,
 				92133BFA21804DAA00E18631 /* Global.swift in Sources */,
 				5A2FDC84216F3209004EE1F2 /* MJRefreshHeader.m in Sources */,
 				5AFFF4762199857500A3DD14 /* OrderNavigation.swift in Sources */,
+				924D75DC219AD43D000103D1 /* ordercell.swift in Sources */,
 				5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */,
 				5A2FDC8A216F3209004EE1F2 /* MJRefreshBackStateFooter.m in Sources */,
 				5A2FDC80216F3209004EE1F2 /* MJRefreshAutoFooter.m in Sources */,
