@@ -12,6 +12,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     var modeldata = CartModel()
     var dataModel = DataModel()
+    var orderModel = OrdersModel()
     var carts = [caart]()
     var ccart: caart?
     var orders = [orderss]()
@@ -180,6 +181,20 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let buy = UITableViewRowAction(style: .normal, title: "购买") {
              action , index in
+//            let money = Int(price)
+//            let num = Int(shuliang.text!)
+//            let ttotal =  String(money! * num!)
+            self.getLocalData()
+            self.orderModel.loadData()
+            self.orderModel.orderslist.append(OrdersList(
+                shangpinimage: self.carts[indexPath.row].goodsimg,
+                shangpinname: self.carts[indexPath.row].goodsname,
+                shangpinprice: self.carts[indexPath.row].marketprice,
+                shangpinnumber: self.carts[indexPath.row].number,
+                shangpintotal: self.carts[indexPath.row].total
+            ))
+            self.orderModel.saveData()
+            print("购买加进")
              let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation()))) as! OrderNavigation
             self.present(controller, animated: true)
         }
@@ -199,7 +214,6 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.present(controller, animated: true)
     }
     @IBAction func jian(_ sender: Any) {
-        
         //        modeldata.loadData()
         //        for x in 0...modeldata.cartlist.count - 1
         //        {
