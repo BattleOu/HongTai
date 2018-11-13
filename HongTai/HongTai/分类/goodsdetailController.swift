@@ -250,7 +250,7 @@ class goodsdetailController: UITableViewController {
             let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
             if(fetchObject!.isEmpty == false)
             {
-                for x in 0...modeldata.cartlist.count - 1
+                for x in 0...carts.count - 1
                 {
                     if carts[x].goodsname == goodnam.text && carts[x].userid == dataModel.userliebiao[0].id
                     {
@@ -278,11 +278,28 @@ class goodsdetailController: UITableViewController {
                         //            //对返回的数据做处理。
                         //            let fetchObject  = result.finalResult! as! [Cart]
                         var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                        if number > Int(carts[x].stock)!
+                        {
+                            let alertController = UIAlertController(title: "提示!", message: "所加商品大于库存，无法加入购物车", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "确认", style: .default,handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        else
+                        {
                         for c in fetchObject as! [Cart]
                         {
+                            let alertController = UIAlertController(title: "提示!", message: "添加成功", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                                action in
+                                 self.performSegue(withIdentifier: "cart", sender: self)
+                            })
                             c.total = tottal
                             c.number = String(Int(shuliang.text!)! + Int(num)!)
                             app.saveContext()
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
                         }
 //                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
 //                        modeldata.saveData()
@@ -292,21 +309,34 @@ class goodsdetailController: UITableViewController {
                 }
 //                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
 //                modeldata.saveData()
+                let alertController = UIAlertController(title: "提示!", message: "添加成功", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                    action in
+                    self.performSegue(withIdentifier: "cart", sender: self)
+                })
                 let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name  )
                 
                 goodsdetailController.insertData(contactInfo: user)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
             }
             else
             {
 //                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
 //                modeldata.saveData()
+                let alertController = UIAlertController(title: "提示!", message: "添加成功", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                    action in
+                    self.performSegue(withIdentifier: "cart", sender: self)
+                })
                 let user = caart(userid: dataModel.userliebiao[0].id, total: ttotal, stock: stock, salesnum: salesnum, number: shuliang.text!, marketprice: price, introduction: introduction, goodstyle: godstyle, goodsname: name, goodsimg: img,username:dataModel.userliebiao[0].name )
                 
                 goodsdetailController.insertData(contactInfo: user)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
                 
             }
             
-            self.performSegue(withIdentifier: "cart", sender: self)
             
         }
     }

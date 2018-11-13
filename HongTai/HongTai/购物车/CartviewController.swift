@@ -175,7 +175,14 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.Tabelview.reloadData()
         }
         delete.backgroundColor = UIColor.red
-        return [delete]
+        
+        let buy = UITableViewRowAction(style: .normal, title: "购买") {
+             action , index in
+             let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation()))) as! OrderNavigation
+            self.present(controller, animated: true)
+        }
+        buy.backgroundColor = UIColor.orange
+        return [delete,buy]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        modeldata.loadData()
