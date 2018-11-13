@@ -14,6 +14,7 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
     var datdmodel = DataModel()
     var carts = [caart]()
     var ccart: caart?
+    var diaryList: NSArray!
     override func viewDidLoad() {
         super.viewDidLoad()
 //        getLocalData()
@@ -81,9 +82,20 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
             dataModel.userList.append(Styleinfo(goodsid:"5",goodsimg: "https://gd1.alicdn.com/imgextra/i1/78123130/O1CN011Yza9eScmgZZhVK_!!78123130.jpg_50x50.jpg",goodstyle: "男装/女装", goodsname: "呢子大衣", introduction:  "MALI/2018新款双面呢子大衣女秋冬中长款羊毛气质毛呢外套",marketprice: "911",salesnum: "2060",stock: "6013" ))
             dataModel.userList.append(Styleinfo(goodsid:"6",goodsimg: "https://gd4.alicdn.com/imgextra/i2/0/TB1zqu.QpXXXXbKXFXXXXXXXXXX_!!0-item_pic.jpg_50x50.jpg",goodstyle: "男装/女装", goodsname: "牛仔夹克外套", introduction:  "Levis李维斯男士牛仔夹克外套纯棉纯色长袖72334-0130 余文乐同款",marketprice: "498",salesnum: "23",stock: "652" ))
             dataModel.userList.append(Styleinfo(goodsid:"7",goodsimg: "https://gd1.alicdn.com/imgextra/i1/425119012/T2r5F4XClXXXXXXXXX_!!425119012.jpg_50x50.jpg",goodstyle: "男装/女装", goodsname: "羽绒服", introduction:  "天天特价军工羽绒服男户外中长款加厚防风拆卸内胆活里活面羽绒服",marketprice: "499",salesnum: "236",stock: "2625" ))
+            dataModel.userList.append(Styleinfo(goodsid:"8",goodsimg: "https://gd4.alicdn.com/imgextra/i3/239627417/O1CN01l3zarY24f25mh4UL7_!!239627417.jpg_50x50.jpg",goodstyle: "男装/女装", goodsname: "牛仔裤", introduction:  "年度裤霸级！错过等一年！日本进口发热加绒加厚松紧腰显瘦牛仔裤",marketprice: "298",salesnum: "1236",stock: "3542" ))
+            dataModel.userList.append(Styleinfo(goodsid:"9",goodsimg: "https://img.alicdn.com/imgextra/i2/656958112/O1CN0129nLLW3QEuTXFDr_!!656958112.jpg_50x50.jpg",goodstyle: "家具", goodsname: "美式床", introduction:  "美式床 实木床欧式床简欧双人床1.8米主卧现代简约高箱储物床家具",marketprice: "2563",salesnum: "2361",stock: "5866" ))
+            dataModel.userList.append(Styleinfo(goodsid:"10",goodsimg: "https://gd4.alicdn.com/imgextra/i1/0/O1CN0124nHDWRVTWSkH5d_!!0-item_pic.jpg_50x50.jpg",goodstyle: "家具", goodsname: "餐桌", introduction:  "白蜡实木系列餐台 餐桌 工作台设计师家具多功能原色北欧",marketprice: "667",salesnum: "2060",stock: "5075" ))
+            dataModel.userList.append(Styleinfo(goodsid:"11",goodsimg: "https://gd1.alicdn.com/imgextra/i3/2355912549/TB2zH5zjiOYBuNjSsD4XXbSkFXa_!!2355912549.jpg_50x50.jpg",goodstyle: "家具", goodsname: "书柜", introduction:  "实木客厅格子墙方格子柜单个书柜自由组合书架置物架DIY收纳柜子",marketprice: "160",salesnum: "128",stock: "2123" ))
+             dataModel.userList.append(Styleinfo(goodsid:"12",goodsimg: "https://gd3.alicdn.com/imgextra/i4/3005428291/TB2vbOwtyQnBKNjSZFmXXcApVXa_!!3005428291.jpg_50x50.jpg",goodstyle: "家具", goodsname: "沙发", introduction:  "欧式真皮沙发头层牛皮组合客厅现代大小户型实木贵妃简欧奢华整装",marketprice: "5388",salesnum: "1358",stock: "4660" ))
+             dataModel.userList.append(Styleinfo(goodsid:"13",goodsimg: "https://gd4.alicdn.com/imgextra/i4/438794148/TB2NDHfdPuhSKJjSspdXXc11XXa_!!438794148.jpg_50x50.jpg",goodstyle: "家具", goodsname: "衣柜", introduction:  "北欧实木衣柜推拉门卧室整体移门衣橱烤漆简约现代2门柜子",marketprice: "2380",salesnum: "234",stock: "1990" ))
+             dataModel.userList.append(Styleinfo(goodsid:"14",goodsimg: "https://gd2.alicdn.com/imgextra/i4/59247184/TB2Y8WjaH4npuFjSZFmXXXl4FXa_!!59247184.jpg_50x50.jpg",goodstyle: "户外", goodsname: "学生帐篷", introduction:  "特价床用帐篷学生宿舍隐私床幔遮光透气单双人上下床铺保温帐篷",marketprice: "230",salesnum: "122",stock: "355" ))
             dataModel.saveData()
         }
         self.tableView.reloadData()
+        let path = Bundle.main.bundlePath
+        let plistName:NSString = "goodshow List.plist"
+        let finalPath:NSString = (path as NSString).appendingPathComponent(plistName as String) as NSString
+        diaryList = NSArray(contentsOfFile:finalPath as String)!
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -265,5 +277,34 @@ extension HomeViewController {
         }
         return nil
     }
+}
+
+extension HomeViewController {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dataModel.loadData()
+        for x in 0...dataModel.userList.count - 1
+        {
+            if dataModel.userList[x].goodsname == String(searchBar.text!)
+            {
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: goodsdetailController()))) as! goodsdetailController
+                controller.img = dataModel.userList[x].goodsimg
+                controller.introduction = dataModel.userList[x].introduction
+                controller.name = dataModel.userList[x].goodsname
+                controller.price =  dataModel.userList[x].marketprice
+                controller.salesnum =  dataModel.userList[x].salesnum
+                controller.stock = dataModel.userList[x].stock
+                controller.godstyle = dataModel.userList[x].goodstyle
+                self.present(controller, animated: true)
+            }
+//             return
+            continue
+        }
+        let alertController = UIAlertController(title: "提示!",
+                                                message: "查无此商品", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
