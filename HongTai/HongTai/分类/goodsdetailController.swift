@@ -22,6 +22,7 @@ class goodsdetailController: UITableViewController {
     @IBOutlet weak var cart: UIButton!
     var dataModel = DataModel()
     var modeldata = CartModel()
+    var orderModel = OrdersModel()
     var img:String!
     var name:String!
     var price:String!
@@ -31,6 +32,8 @@ class goodsdetailController: UITableViewController {
     var godstyle:String!
     var carts = [caart]()
     var ccart: caart?
+    var orders = [orderss]()
+    var oorder: orderss?
     override func viewDidLoad() {
         super.viewDidLoad()
         var urlStr = NSURL(string: img)
@@ -334,7 +337,6 @@ class goodsdetailController: UITableViewController {
                 goodsdetailController.insertData(contactInfo: user)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
-                
             }
             
             
@@ -349,6 +351,20 @@ class goodsdetailController: UITableViewController {
         }
         else
         {
+            let money = Int(price)
+            let num = Int(shuliang.text!)
+            let ttotal =  String(money! * num!)
+         
+            orderModel.loadData()
+            orderModel.orderslist.append(OrdersList(
+                shangpinimage: img,
+            shangpinname: goodnam.text!,
+            shangpinprice: goodprice.text!,
+            shangpinnumber: String(num!) ,
+            shangpintotal: ttotal
+            ))
+            orderModel.saveData()
+            print("购买加进")
               let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation()))) as! OrderNavigation
               self.present(controller, animated: true)
         }
@@ -410,7 +426,90 @@ class goodsdetailController: UITableViewController {
     */
 
 }
-
+extension goodsdetailController {
+    
+    fileprivate func getLocalData1() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                orders.removeAll()
+                for result in results {
+                    guard let ordersss = translateData1(from: result) else { return }
+                    orders.append(ordersss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    class func insertData1(contactInfo: orderss) {
+        
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个entity
+        let entity = NSEntityDescription.entity(forEntityName: "Orders", in: managedObectContext)
+        let user = NSManagedObject(entity: entity!, insertInto: managedObectContext)
+        
+        //        步骤三：保存数值
+        
+        user.setValue(contactInfo.username, forKey: "username")
+        user.setValue(contactInfo.ordersid, forKey: "ordersid")
+        user.setValue(contactInfo.goodimage, forKey: "goodimage")
+        user.setValue(contactInfo.goodsname, forKey: "goodsname")
+        user.setValue(contactInfo.goodprice, forKey: "goodprice")
+        user.setValue(contactInfo.goodnumber, forKey: "goodnumber")
+        user.setValue(contactInfo.goodtotal, forKey: "goodtotal")
+        user.setValue(contactInfo.getpeople, forKey: "getpeople")
+        user.setValue(contactInfo.getadress, forKey: "getadress")
+        user.setValue(contactInfo.getphone, forKey: "getphone")
+        user.setValue(contactInfo.ordersmoney, forKey: "ordersmoney")
+        user.setValue(contactInfo.orderstate, forKey: "orderstate")
+        user.setValue(contactInfo.ordertime, forKey: "ordertime")
+        //        步骤四：保存entity到托管对象中。如果保存失败，进行处理
+        do {
+            try managedObectContext.save()
+        } catch  {
+            fatalError("无法保存")
+        }
+        
+    }
+    fileprivate func translateData1(from: NSManagedObject) -> (orderss?) {
+        
+        if let name = from.value(forKey: "username") as? String,
+            let id = from.value(forKey: "ordersid") as? String,
+            let image = from.value(forKey: "goodimage") as? String,
+            let goodname = from.value(forKey: "goodsname") as? String,
+            let price = from.value(forKey: "goodprice") as? String,
+            let number = from.value(forKey: "goodnumber") as? String,
+            let total = from.value(forKey: "goodtotal") as? String,
+            let people = from.value(forKey: "getpeople") as? String,
+            let adress = from.value(forKey: "getadress") as? String,
+            let phone = from.value(forKey: "getphone") as? String,
+            let money = from.value(forKey: "ordersmoney") as? String,
+            let state = from.value(forKey: "orderstate") as? String,
+            let time = from.value(forKey: "ordertime") as? String{
+            let user = orderss(getadress: adress, getpeople: people, getphone: phone, goodimage: image, goodnumber: number, goodprice: price, goodsname: goodname, goodtotal: total, ordersid: id, ordersmoney:money, orderstate: state, ordertime:time, username: name)
+            
+            return user
+        }
+        return nil
+    }
+}
 
 extension goodsdetailController {
     

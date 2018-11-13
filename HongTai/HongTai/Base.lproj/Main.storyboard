@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpl-EU-Z5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3133" y="704"/>
+            <point key="canvasLocation" x="3054" y="1292"/>
         </scene>
         <!--Goodsdetail Controller-->
         <scene sceneID="oQl-hx-GlJ">
@@ -609,6 +609,7 @@
                                 </state>
                                 <connections>
                                     <action selector="orders:" destination="Nlu-2c-Nir" eventType="touchUpInside" id="oLy-oE-Gbu"/>
+                                    <segue destination="gHJ-gH-gQd" kind="modal" identifier="xiadanle" id="U6V-rE-W7J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -907,7 +908,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZF-kW-6RC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371" y="470"/>
+            <point key="canvasLocation" x="-414" y="444"/>
         </scene>
         <!--分类-->
         <scene sceneID="MPP-Qn-tI1">
@@ -1190,6 +1191,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V4t-KL-Rv4"/>
-        <segue reference="lfG-NX-rvF"/>
+        <segue reference="N8t-8D-Ikv"/>
     </inferredMetricsTieBreakers>
 </document>

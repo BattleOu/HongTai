@@ -44,6 +44,8 @@
 		5ACA92A9216CA0860052EC26 /* HongTaiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA92A8216CA0860052EC26 /* HongTaiUITests.swift */; };
 		5AFFF4762199857500A3DD14 /* OrderNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF4752199857500A3DD14 /* OrderNavigation.swift */; };
 		5AFFF481219985CC00A3DD14 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF480219985CC00A3DD14 /* Orders.swift */; };
+		5AFFF484219A609E00A3DD14 /* OrdersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF483219A609E00A3DD14 /* OrdersList.swift */; };
+		5AFFF486219A60B600A3DD14 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFF485219A60B600A3DD14 /* OrdersModel.swift */; };
 		920EDA892188354500627663 /* goodsdetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920EDA882188354500627663 /* goodsdetailController.swift */; };
 		92133BEF217ECD6D00E18631 /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BEE217ECD6D00E18631 /* style.swift */; };
 		92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92133BF0217EFDF700E18631 /* CartTableViewCell.swift */; };
@@ -209,6 +211,8 @@
 		5ACA92AA216CA0860052EC26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AFFF4752199857500A3DD14 /* OrderNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNavigation.swift; sourceTree = "<group>"; };
 		5AFFF480219985CC00A3DD14 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		5AFFF483219A609E00A3DD14 /* OrdersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersList.swift; sourceTree = "<group>"; };
+		5AFFF485219A60B600A3DD14 /* OrdersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
 		920EDA882188354500627663 /* goodsdetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodsdetailController.swift; sourceTree = "<group>"; };
 		92133BEE217ECD6D00E18631 /* style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		92133BF0217EFDF700E18631 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
@@ -401,13 +405,13 @@
 		5ACA9284216CA0840052EC26 /* HongTai */ = {
 			isa = PBXGroup;
 			children = (
-				9270575B219558EA00039763 /* 订单 */,
 				921BA1992189530B00126E59 /* 沙盒 */,
 				921BA18E218946B200126E59 /* 购物车 */,
 				92133BF821804D8D00E18631 /* Tools */,
 				926D6DB5217601CD00242CE5 /* 分类 */,
 				748BE82121707972005ECDAD /* CoreData */,
 				924D48A62170892C00508199 /* 登录和注册 */,
+				9270575B219558EA00039763 /* 订单 */,
 				924D489D21707D8200508199 /* 首页 */,
 				5A3786BC21707C4500DBD9B7 /* 个人中心 */,
 				5ACA9285216CA0840052EC26 /* AppDelegate.swift */,
@@ -534,9 +538,11 @@
 		9270575B219558EA00039763 /* 订单 */ = {
 			isa = PBXGroup;
 			children = (
+				5AFFF485219A60B600A3DD14 /* OrdersModel.swift */,
 				9270575C2195596100039763 /* Consignee.swift */,
 				5AFFF4752199857500A3DD14 /* OrderNavigation.swift */,
 				5AFFF480219985CC00A3DD14 /* Orders.swift */,
+				5AFFF483219A609E00A3DD14 /* OrdersList.swift */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -797,11 +803,13 @@
 				92133BFE21804E0900E18631 /* LJCollectionViewFlowLayout.swift in Sources */,
 				5A2FDC8C216F3209004EE1F2 /* MJRefreshNormalHeader.m in Sources */,
 				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
+				5AFFF484219A609E00A3DD14 /* OrdersList.swift in Sources */,
 				5A2535512193C5DB00BDBC18 /* HomeViewController.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
 				92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */,
 				9213424A21816FA200E18631 /* godgood.swift in Sources */,
+				5AFFF486219A60B600A3DD14 /* OrdersModel.swift in Sources */,
 				92133BF52180483200E18631 /* StyleviewController.swift in Sources */,
 				5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */,
 				921BA1A421897BBC00126E59 /* denglv.swift in Sources */,

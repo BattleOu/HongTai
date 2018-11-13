@@ -17,8 +17,9 @@ class Consignee: UIViewController {
     @IBOutlet weak var ordersmoney: UILabel!
     var dataModel = DataModel()
     var modeldata = CartModel()
+      var orderModel = OrdersModel()
     var orders = [orderss]()
-    var orrder: orderss?
+    var oorder: orderss?
     var carts = [caart]()
     var ccart: caart?
     var sum:String! = "0"
@@ -32,10 +33,10 @@ class Consignee: UIViewController {
         dataModel.loadData()
         getLocalData()
         username.text = dataModel.userliebiao[0].name
-        
-        if goodsname != nil
+        orderModel.loadData()
+        if orderModel.orderslist.isEmpty == false
         {
-            ordersmoney.text = total
+            ordersmoney.text = orderModel.orderslist[0].shangpintotal
         }
         else
         {
@@ -57,8 +58,49 @@ class Consignee: UIViewController {
     
 
     @IBAction func orders(_ sender: Any) {
+        getLocalData1()
+     if(consigneename.text != "" && phone.text != "" && consigneeadress.text != "")
+     {
+        let date = NSDate()
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeZone = NSTimeZone.local
+        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        let strNowTime = timeFormatter.string(from: date as Date) as String
+        let date1 = NSDate()
+        let timeFormatter1 = DateFormatter()
+        timeFormatter1.timeZone = NSTimeZone.local
+        timeFormatter1.dateFormat = "yyyy-MM-dd"
+        let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
+        let user1 = orderss(getadress: consigneeadress.text!, getpeople: consigneename.text!, getphone: phone.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
+        Consignee.insertData1(contactInfo: user1)
+        let alertController = UIAlertController(title: "提示!",
+                                                message: "下单成功", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+            action in
+        self.performSegue(withIdentifier: "xiadanle", sender: self)
+            
+        })
+        self.orderModel.loadData()
+        self.orderModel.orderslist.removeAll()
+        self.orderModel.saveData()
+        print("maile meile")
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+        else
+     {
+        let alertController = UIAlertController(title: "提示!",
+                                                message: "请完整填写信息！", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     }
     @IBAction func back(_ sender: Any) {
+        orderModel.loadData()
+        orderModel.orderslist.removeAll()
+        orderModel.saveData()
+        print("没来没了")
           self.performSegue(withIdentifier: "back", sender: self)
     }
     /*
@@ -115,7 +157,6 @@ extension Consignee {
 }
 
 extension Consignee {
-    
     fileprivate func getLocalData1() {
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -131,8 +172,8 @@ extension Consignee {
             if let results = fetchedResults {
                 orders.removeAll()
                 for result in results {
-                    guard let ordder = translateData1(from: result) else { return }
-                    orders.append(ordder)
+                    guard let ordersss = translateData1(from: result) else { return }
+                    orders.append(ordersss)
                 }
             }
             
@@ -142,14 +183,60 @@ extension Consignee {
         
     }
     
-    
+    class func insertData1(contactInfo: orderss) {
+        
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个entity
+        let entity = NSEntityDescription.entity(forEntityName: "Orders", in: managedObectContext)
+        let user = NSManagedObject(entity: entity!, insertInto: managedObectContext)
+        
+        //        步骤三：保存数值
+        
+        user.setValue(contactInfo.getadress, forKey: "getadress")
+        user.setValue(contactInfo.getpeople, forKey: "getpeople")
+        user.setValue(contactInfo.getphone, forKey: "getphone")
+        user.setValue(contactInfo.goodimage, forKey: "goodimage")
+        user.setValue(contactInfo.goodnumber, forKey: "goodnumber")
+        user.setValue(contactInfo.goodprice, forKey: "goodprice")
+        user.setValue(contactInfo.goodsname, forKey: "goodsname")
+        user.setValue(contactInfo.goodtotal, forKey: "goodtotal")
+        user.setValue(contactInfo.ordersid, forKey: "ordersid")
+        user.setValue(contactInfo.ordersmoney, forKey: "ordersmoney")
+        user.setValue(contactInfo.orderstate, forKey: "orderstate")
+        user.setValue(contactInfo.ordertime, forKey: "ordertime")
+        user.setValue(contactInfo.username, forKey: "username")
+        //        步骤四：保存entity到托管对象中。如果保存失败，进行处理
+        do {
+            try managedObectContext.save()
+        } catch  {
+            fatalError("无法保存")
+        }
+        
+    }
     fileprivate func translateData1(from: NSManagedObject) -> (orderss?) {
         
-        if let getadress = from.value(forKey: "getadress") as? String,let getpeople = from.value(forKey: "getpeople") as? String,let getphone = from.value(forKey: "getphone") as? String,let goodimage = from.value(forKey: "goodimage") as? String, let goodnumber = from.value(forKey: "goodnumber") as? String, let goodprice = from.value(forKey: "goodprice") as? String, let goodsname = from.value(forKey: "goodsname") as? String, let goodtotal = from.value(forKey: "goodtotal") as? String, let ordersid = from.value(forKey: "ordersid") as? String, let ordersmoney = from.value(forKey: "ordersmoney") as? String, let orderstate = from.value(forKey: "orderstate") as? String, let ordertime = from.value(forKey: "ordertime") as? String, let username = from.value(forKey: "username") as? String{
-            let orrdder = orderss(getadress:getadress ,getpeople:getpeople,getphone:getphone,goodimage:goodimage,goodnumber:goodnumber,goodprice:goodprice,goodsname:goodsname,goodtotal:goodtotal,ordersid:ordersid,ordersmoney:ordersmoney,orderstate:orderstate,ordertime:ordertime,username:username )
+        if let name = from.value(forKey: "username") as? String,
+            let id = from.value(forKey: "ordersid") as? String,
+            let image = from.value(forKey: "goodimage") as? String,
+            let goodname = from.value(forKey: "goodsname") as? String,
+            let price = from.value(forKey: "goodprice") as? String,
+            let number = from.value(forKey: "goodnumber") as? String,
+            let total = from.value(forKey: "goodtotal") as? String,
+            let people = from.value(forKey: "getpeople") as? String,
+            let adress = from.value(forKey: "getadress") as? String,
+            let phone = from.value(forKey: "getphone") as? String,
+            let money = from.value(forKey: "ordersmoney") as? String,
+            let state = from.value(forKey: "orderstate") as? String,
+            let time = from.value(forKey: "ordertime") as? String{
+            let user = orderss(getadress: adress, getpeople: people, getphone: phone, goodimage: image, goodnumber: number, goodprice: price, goodsname: goodname, goodtotal: total, ordersid: id, ordersmoney:money, orderstate: state, ordertime:time, username: name)
             
-            return orrdder
+            return user
         }
         return nil
     }
+   
 }
