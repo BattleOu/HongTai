@@ -77,9 +77,37 @@ class Consignee: UIViewController {
                                                 message: "下单成功", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确认", style: .default,handler: {
             action in
-        self.performSegue(withIdentifier: "xiadanle", sender: self)
+            self.performSegue(withIdentifier: "xiadanle", sender: self)
             
         })
+        
+        self.getLocalData1()
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContexts() -> NSManagedObjectContext{
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            return appDelegate.persistentContainer.viewContext
+        }
+        //获取数据上下文对象
+        let context = getContexts()
+        //声明数据的请求，声明一个实体结构
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.orderModel.orderslist[0].shangpinname)'")
+        // 返回结果在finalResult中
+        
+        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+        //            //对返回的数据做处理。
+        //            let fetchObject  = result.finalResult! as! [Cart]
+        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        for c in fetchObject as! [Cart]
+        {
+            context.delete(c)
+            app.saveContext()
+        }
+        
         self.orderModel.loadData()
         self.orderModel.orderslist.removeAll()
         self.orderModel.saveData()
