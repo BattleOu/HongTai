@@ -24,17 +24,36 @@ class orderdetail: UITableViewController {
     @IBOutlet weak var goodsmoney: UILabel!
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var totalgood: UILabel!
+    @IBOutlet weak var pay: UIButton!
+    @IBOutlet weak var get: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocalData()
+//        pay.layer.cornerRadius=12
+//        pay.layer.masksToBounds=true
+//        pay.layer.borderColor = UIColor(red: 192/255, green:192/255, blue:192/255, alpha:1).cgColor
+//        pay.layer.borderWidth=2
+//
+//        get.layer.cornerRadius=12
+//        get.layer.masksToBounds=true
+//        get.layer.borderColor = UIColor(red: 192/255, green:192/255, blue:192/255, alpha:1).cgColor
+//        get.layer.borderWidth=2
     orderstates.text = orders[i].orderstate
         if orders[i].orderstate == "待付款"
         {
             zhuangtaiimg.image = UIImage.init(named: "daifukuan01")
+             get.isHidden = true
         }
-        if orders[i].orderstate == "已付款,待收货"
+        if orders[i].orderstate == "待收货"
         {
             zhuangtaiimg.image = UIImage.init(named: "yifukuan")
+            pay.isHidden = true
+        }
+        if orders[i].orderstate == "已完成"
+        {
+            zhuangtaiimg.image = UIImage.init(named: "已完成")
+            pay.isHidden = true
+            get.isHidden = true
         }
         shouhuoren.text = orders[i].getpeople
         address.text = orders[i].getadress
@@ -58,6 +77,65 @@ class orderdetail: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @IBAction func pay(_ sender: Any) {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContext() -> NSManagedObjectContext{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.persistentContainer.viewContext
+        }
+        //获取数据上下文对象
+        let context = getContext()
+        //声明数据的请求，声明一个实体结构
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[i].ordersid)'")
+        // 返回结果在finalResult中
+        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        for c in fetchObject as! [Orders]
+        {
+          
+            c.orderstate = "待收货"
+            app.saveContext()
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "付款成功", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                action in
+                self.performSegue(withIdentifier: "jin", sender: self)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    @IBAction func get(_ sender: Any) {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        func getContext() -> NSManagedObjectContext{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.persistentContainer.viewContext
+        }
+        //获取数据上下文对象
+        let context = getContext()
+        //声明数据的请求，声明一个实体结构
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+        //查询条件
+        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[i].ordersid)'")
+        // 返回结果在finalResult中
+        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+        for c in fetchObject as! [Orders]
+        {
+            
+            c.orderstate = "已完成"
+            app.saveContext()
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "收货成功", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                action in
+                self.performSegue(withIdentifier: "jin1", sender: self)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {

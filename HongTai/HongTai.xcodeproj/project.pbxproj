@@ -36,6 +36,8 @@
 		5A2FDC92216F3209004EE1F2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7D216F3208004EE1F2 /* UIScrollView+MJRefresh.m */; };
 		5A2FDC93216F3209004EE1F2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */; };
 		5A3786BE21707C6200DBD9B7 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */; };
+		5A632949219BF5C700E696F5 /* Consignee2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A632948219BF5C700E696F5 /* Consignee2.swift */; };
+		5A632953219BF6D500E696F5 /* OrderNavigation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A632952219BF6D500E696F5 /* OrderNavigation2.swift */; };
 		5ACA9286216CA0840052EC26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACA9285216CA0840052EC26 /* AppDelegate.swift */; };
 		5ACA928B216CA0840052EC26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA9289216CA0840052EC26 /* Main.storyboard */; };
 		5ACA9290216CA0850052EC26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5ACA928F216CA0850052EC26 /* Assets.xcassets */; };
@@ -200,6 +202,8 @@
 		5A2FDC7F216F3208004EE1F2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		5A2FDC94216F3248004EE1F2 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
 		5A3786BD21707C6200DBD9B7 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		5A632948219BF5C700E696F5 /* Consignee2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consignee2.swift; sourceTree = "<group>"; };
+		5A632952219BF6D500E696F5 /* OrderNavigation2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNavigation2.swift; sourceTree = "<group>"; };
 		5ACA9282216CA0840052EC26 /* HongTai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HongTai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACA9285216CA0840052EC26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5ACA928A216CA0840052EC26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 				924D75CF219AD097000103D1 /* orderdetail.swift */,
 				924D75DB219AD43D000103D1 /* ordercell.swift */,
 				924D75DD219AD6BD000103D1 /* OrderViewController.swift */,
+				5A632948219BF5C700E696F5 /* Consignee2.swift */,
+				5A632952219BF6D500E696F5 /* OrderNavigation2.swift */,
 			);
 			path = "订单";
 			sourceTree = "<group>";
@@ -817,8 +823,10 @@
 				926D6DAC217595E800242CE5 /* fangfaViewController.swift in Sources */,
 				5AFFF484219A609E00A3DD14 /* OrdersList.swift in Sources */,
 				5A2535512193C5DB00BDBC18 /* HomeViewController.swift in Sources */,
+				5A632953219BF6D500E696F5 /* OrderNavigation2.swift in Sources */,
 				5A2FDC87216F3209004EE1F2 /* MJRefreshAutoStateFooter.m in Sources */,
 				5A2FDC81216F3209004EE1F2 /* MJRefreshBackFooter.m in Sources */,
+				5A632949219BF5C700E696F5 /* Consignee2.swift in Sources */,
 				92133BF1217EFDF700E18631 /* CartTableViewCell.swift in Sources */,
 				9213424A21816FA200E18631 /* godgood.swift in Sources */,
 				5AFFF486219A60B600A3DD14 /* OrdersModel.swift in Sources */,

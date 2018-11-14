@@ -111,6 +111,58 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
             return cell
         }
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .normal, title: "删除") {
+            action , index in
+            if(self.orders[indexPath.row].orderstate == "已完成" || self.orders[indexPath.row].orderstate == "待付款")
+                {
+                    
+                        let app = UIApplication.shared.delegate as! AppDelegate
+                        func getContext() -> NSManagedObjectContext{
+                            
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            
+                            return appDelegate.persistentContainer.viewContext
+                        }
+                        //获取数据上下文对象
+                        let context = getContext()
+                        //声明数据的请求，声明一个实体结构
+                        
+                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+                        //查询条件
+                        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[indexPath.row].ordersid)'")
+                        // 返回结果在finalResult中
+                        
+                        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                        //            //对返回的数据做处理。
+                        //            let fetchObject  = result.finalResult! as! [Cart]
+                        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                        for c in fetchObject as! [Orders]
+                        {
+                            context.delete(c)
+                            app.saveContext()
+                        }
+                    
+
+                        self.ordertableview.reloadData()
+
+                }
+            else
+                {
+                    let alertController = UIAlertController(title: "提示!",
+                                                            message: "订单未完成,无法删除！", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+            }
+            }
+                delete.backgroundColor = UIColor.red
+        
+        
+       
+     
+                return [delete]
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ordersssss"{
             if let indexPath = self.ordertableview.indexPathForSelectedRow{
@@ -131,6 +183,9 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
+
+
+
 
 }
 

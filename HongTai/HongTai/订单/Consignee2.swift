@@ -1,23 +1,23 @@
 //
-//  onsignee.swift
+//  Consignee2.swift
 //  HongTai
 //
-//  Created by 周旭 on 2018/11/9.
-//  Copyright © 2018年 欧张帆. All rights reserved.
+//  Created by 欧张帆 on 2018/11/14.
+//  Copyright © 2018 欧张帆. All rights reserved.
 //
 
 import UIKit
 import CoreData
-class Consignee: UIViewController {
+class Consignee2: UIViewController {
 
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var consigneename: UITextField!
-    @IBOutlet weak var phone: UITextField!
-    @IBOutlet weak var consigneeadress: UITextField!
-    @IBOutlet weak var ordersmoney: UILabel!
+    @IBOutlet weak var username1: UILabel!
+    @IBOutlet weak var getname1: UITextField!
+    @IBOutlet weak var phone1: UITextField!
+    @IBOutlet weak var adress1: UITextField!
+    @IBOutlet weak var total1: UILabel!
     var dataModel = DataModel()
     var modeldata = CartModel()
-      var orderModel = OrdersModel()
+    var orderModel = OrdersModel()
     var orders = [orderss]()
     var oorder: orderss?
     var carts = [caart]()
@@ -32,11 +32,11 @@ class Consignee: UIViewController {
         super.viewDidLoad()
         dataModel.loadData()
         getLocalData()
-        username.text = dataModel.userliebiao[0].name
+        username1.text = dataModel.userliebiao[0].name
         orderModel.loadData()
         if orderModel.orderslist.isEmpty == false
         {
-            ordersmoney.text = orderModel.orderslist[0].shangpintotal
+            total1.text = orderModel.orderslist[0].shangpintotal
         }
         else
         {
@@ -44,10 +44,10 @@ class Consignee: UIViewController {
             {
                 for x in 0...carts.count - 1
                 {
-                    if carts[x].username == username.text
+                    if carts[x].username == username1.text
                     {
                         sum = String(Int(sum)! + Int(carts[x].total)!)
-                        ordersmoney.text = "￥" + sum
+                        total1.text = "￥" + sum
                     }
                     continue
                 }
@@ -56,80 +56,80 @@ class Consignee: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func orders(_ sender: Any) {
+    @IBAction func xiadingdan(_ sender: Any) {
         getLocalData1()
-     if(consigneename.text != "" && phone.text != "" && consigneeadress.text != "")
-     {
-        let date = NSDate()
-        let timeFormatter = DateFormatter()
-        timeFormatter.timeZone = NSTimeZone.local
-        timeFormatter.dateFormat = "yyyyMMddHHmmss"
-        let strNowTime = timeFormatter.string(from: date as Date) as String
-        let date1 = NSDate()
-        let timeFormatter1 = DateFormatter()
-        timeFormatter1.timeZone = NSTimeZone.local
-        timeFormatter1.dateFormat = "yyyy年MM月dd日 HH:mm"
-        let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
-        let user1 = orderss(getadress: consigneeadress.text!, getpeople: consigneename.text!, getphone: phone.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
-        Consignee.insertData1(contactInfo: user1)
-        let alertController = UIAlertController(title: "提示!",
-                                                message: "下单成功", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "确认", style: .default,handler: {
-            action in
-            self.performSegue(withIdentifier: "xiadanle", sender: self)
+        if(getname1.text != "" && phone1.text != "" && adress1.text != "")
+        {
+            let date = NSDate()
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeZone = NSTimeZone.local
+            timeFormatter.dateFormat = "yyyyMMddHHmmss"
+            let strNowTime = timeFormatter.string(from: date as Date) as String
+            let date1 = NSDate()
+            let timeFormatter1 = DateFormatter()
+            timeFormatter1.timeZone = NSTimeZone.local
+            timeFormatter1.dateFormat = "yyyy年MM月dd日 HH:mm"
+            let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
+            let user1 = orderss(getadress: adress1.text!, getpeople: getname1.text!, getphone: phone1.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
+            Consignee.insertData1(contactInfo: user1)
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "下单成功", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "确认", style: .default,handler: {
+                action in
+                self.performSegue(withIdentifier: "xiadanle1", sender: self)
+                
+            })
             
-        })
-        
-//        self.getLocalData1()
-//        let app = UIApplication.shared.delegate as! AppDelegate
-//        func getContexts() -> NSManagedObjectContext{
-//
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//
-//            return appDelegate.persistentContainer.viewContext
-//        }
-//        //获取数据上下文对象
-//        let context = getContexts()
-//        //声明数据的请求，声明一个实体结构
-//
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
-//        //查询条件
-//        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.orderModel.orderslist[0].shangpinname)'")
-//        // 返回结果在finalResult中
-//
-//        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
-//        //            //对返回的数据做处理。
-//        //            let fetchObject  = result.finalResult! as! [Cart]
-//        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
-//        for c in fetchObject as! [Cart]
-//        {
-//            context.delete(c)
-//            app.saveContext()
-//        }
-        
-        self.orderModel.loadData()
-        self.orderModel.orderslist.removeAll()
-        self.orderModel.saveData()
-        print("maile meile")
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
+                    self.getLocalData1()
+                    let app = UIApplication.shared.delegate as! AppDelegate
+                    func getContexts() -> NSManagedObjectContext{
+            
+                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+                        return appDelegate.persistentContainer.viewContext
+                    }
+                    //获取数据上下文对象
+                    let context = getContexts()
+                    //声明数据的请求，声明一个实体结构
+            
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+                    //查询条件
+                    fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.orderModel.orderslist[0].shangpinname)'")
+                    // 返回结果在finalResult中
+            
+                    //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                    //            //对返回的数据做处理。
+                    //            let fetchObject  = result.finalResult! as! [Cart]
+                    var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                    for c in fetchObject as! [Cart]
+                    {
+                        context.delete(c)
+                        app.saveContext()
+                    }
+            
+            self.orderModel.loadData()
+            self.orderModel.orderslist.removeAll()
+            self.orderModel.saveData()
+            print("maile meile")
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         else
-     {
-        let alertController = UIAlertController(title: "提示!",
-                                                message: "请完整填写信息！", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "请完整填写信息！", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
-    }
-    @IBAction func back(_ sender: Any) {
+    
+    @IBAction func huiqu(_ sender: Any) {
         orderModel.loadData()
         orderModel.orderslist.removeAll()
         orderModel.saveData()
         print("没来没了")
-          self.performSegue(withIdentifier: "back", sender: self)
+        self.performSegue(withIdentifier: "back1", sender: self)
     }
     /*
     // MARK: - Navigation
@@ -142,9 +142,7 @@ class Consignee: UIViewController {
     */
 
 }
-
-
-extension Consignee {
+extension Consignee2 {
     
     fileprivate func getLocalData() {
         //        步骤一：获取总代理和托管对象总管
@@ -184,7 +182,7 @@ extension Consignee {
     }
 }
 
-extension Consignee {
+extension Consignee2 {
     fileprivate func getLocalData1() {
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -266,5 +264,5 @@ extension Consignee {
         }
         return nil
     }
-   
+    
 }

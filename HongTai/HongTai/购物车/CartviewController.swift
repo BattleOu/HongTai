@@ -29,6 +29,31 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else
         {
+            let app = UIApplication.shared.delegate as! AppDelegate
+            func getContext() -> NSManagedObjectContext{
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+                return appDelegate.persistentContainer.viewContext
+            }
+            //获取数据上下文对象
+            let context = getContext()
+            //声明数据的请求，声明一个实体结构
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+            //查询条件
+            fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
+            // 返回结果在finalResult中
+            
+            //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+            //            //对返回的数据做处理。
+            //            let fetchObject  = result.finalResult! as! [Cart]
+            let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+            if(fetchObject!.isEmpty)
+            {
+                goubuy.isHidden = true
+                clear.isHidden = true
+            }
             Tabelview.delegate = self
             Tabelview.dataSource = self
         }
@@ -69,7 +94,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         else
         {
-            return 1
+            return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,22 +147,6 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cartt", for: indexPath)
-            if let myCell = cell as? CartCell
-            {
-                myCell.godsname.text = "购物车是空的"
-                myCell.godsname.textColor = UIColor.red
-                myCell.godsname.font = UIFont.systemFont(ofSize: 20)
-                myCell.godsnum.isHidden = true
-                myCell.godsname.adjustsFontSizeToFitWidth = true  //当文字超出文本框宽度时，自动调整文字大小
-                myCell.godsname.minimumScaleFactor = 14  //最小可缩小的字号
-                myCell.godsprice.isHidden = true
-                myCell.godstotal.isHidden = true
-                myCell.imagesgood.isHidden = true
-                goubuy.isHidden = true
-                clear.isHidden = true
-                Tabelview.separatorStyle = UITableViewCell.SeparatorStyle.none
-                return myCell
-            }
             return cell
         }
     }
@@ -195,7 +204,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             ))
             self.orderModel.saveData()
             print("购买加进")
-             let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation()))) as! OrderNavigation
+             let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation2()))) as! OrderNavigation2
             self.present(controller, animated: true)
         }
         buy.backgroundColor = UIColor.orange
