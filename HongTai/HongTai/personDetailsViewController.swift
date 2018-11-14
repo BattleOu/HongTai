@@ -16,6 +16,8 @@ class personDetailsViewController: UIViewController,UIImagePickerControllerDeleg
     @IBOutlet weak var gairealname: UITextField!
     var users = [pop]()
     var user: pop?
+    var orders = [orderss]()
+    var oorder: orderss?
      var dataModel = DataModel()
     var i : Int!
     override func viewDidLoad() {
@@ -132,6 +134,31 @@ class personDetailsViewController: UIViewController,UIImagePickerControllerDeleg
                                             action in
                                             self.performSegue(withIdentifier: "xiugai", sender: self)
                                         })
+                        let app = UIApplication.shared.delegate as! AppDelegate
+                        func getContext() -> NSManagedObjectContext{
+                            
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            
+                            return appDelegate.persistentContainer.viewContext
+                        }
+                        //获取数据上下文对象
+                        let context = getContext()
+                        //声明数据的请求，声明一个实体结构
+                        
+                        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+                        //查询条件
+                        fetchRequest.predicate = NSPredicate(format: "username = '\(self.dataModel.userliebiao[0].name)'")
+                        // 返回结果在finalResult中
+                        
+                        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                        //            //对返回的数据做处理。
+                        //            let fetchObject  = result.finalResult! as! [Cart]
+                        let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                        for c in fetchObject as! [Orders]
+                        {
+                            c.username = self.gainame.text
+                             app.saveContext()
+                        }
                                         self.dataModel.loadData()
                                         self.dataModel.userliebiao = [UserInfo(name: self.gainame.text!, password: c.userpassword!, id: c.userid!, image: see!, realname: self.gairealname.text!, update: c.userupdate!)]
                                         self.dataModel.saveData()
@@ -201,4 +228,56 @@ extension personDetailsViewController {
         }
         return nil
     }
+}
+
+
+extension personDetailsViewController {
+    fileprivate func getLocalData1() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                orders.removeAll()
+                for result in results {
+                    guard let ordersss = translateData1(from: result) else { return }
+                    orders.append(ordersss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    fileprivate func translateData1(from: NSManagedObject) -> (orderss?) {
+        
+        if let name = from.value(forKey: "username") as? String,
+            let id = from.value(forKey: "ordersid") as? String,
+            let image = from.value(forKey: "goodimage") as? String,
+            let goodname = from.value(forKey: "goodsname") as? String,
+            let price = from.value(forKey: "goodprice") as? String,
+            let number = from.value(forKey: "goodnumber") as? String,
+            let total = from.value(forKey: "goodtotal") as? String,
+            let people = from.value(forKey: "getpeople") as? String,
+            let adress = from.value(forKey: "getadress") as? String,
+            let phone = from.value(forKey: "getphone") as? String,
+            let money = from.value(forKey: "ordersmoney") as? String,
+            let state = from.value(forKey: "orderstate") as? String,
+            let time = from.value(forKey: "ordertime") as? String{
+            let user = orderss(getadress: adress, getpeople: people, getphone: phone, goodimage: image, goodnumber: number, goodprice: price, goodsname: goodname, goodtotal: total, ordersid: id, ordersmoney:money, orderstate: state, ordertime:time, username: name)
+            
+            return user
+        }
+        return nil
+    }
+    
 }

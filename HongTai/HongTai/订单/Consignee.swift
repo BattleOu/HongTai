@@ -64,12 +64,12 @@ class Consignee: UIViewController {
         let date = NSDate()
         let timeFormatter = DateFormatter()
         timeFormatter.timeZone = NSTimeZone.local
-        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        timeFormatter.dateFormat = "yyyyMMddHHmmss"
         let strNowTime = timeFormatter.string(from: date as Date) as String
         let date1 = NSDate()
         let timeFormatter1 = DateFormatter()
         timeFormatter1.timeZone = NSTimeZone.local
-        timeFormatter1.dateFormat = "yyyy-MM-dd"
+        timeFormatter1.dateFormat = "yyyy年MM月dd日 HH:mm"
         let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
         let user1 = orderss(getadress: consigneeadress.text!, getpeople: consigneename.text!, getphone: phone.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
         Consignee.insertData1(contactInfo: user1)

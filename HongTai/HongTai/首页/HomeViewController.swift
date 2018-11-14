@@ -30,7 +30,7 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
 //        let context = getContext()
 //        //声明数据的请求，声明一个实体结构
 //
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
 //        //查询条件
 ////        fetchRequest.predicate = NSPredicate(format: "userid = '\(datdmodel.userliebiao[0].id)'")
 //        // 返回结果在finalResult中
@@ -39,12 +39,12 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
 //        //            //对返回的数据做处理。
 //        //            let fetchObject  = result.finalResult! as! [Cart]
 //        var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
-//        for c in fetchObject as! [Cart]
+//        for c in fetchObject as! [User]
 //        {
 //            context.delete(c)
 //            app.saveContext()
 //        }
-//
+
         self.tableView.register(UINib.init(nibName: "GoodsList", bundle: nil), forCellReuseIdentifier: "GoodsList")
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 200

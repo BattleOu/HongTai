@@ -39,8 +39,8 @@ class orderdetail: UITableViewController {
         shouhuoren.text = orders[i].getpeople
         address.text = orders[i].getadress
         phone.text = orders[i].getphone
-        dingdanid.text = orders[i].ordersid
-        xiadantime.text = orders[i].ordertime
+        dingdanid.text = "订单编号："+orders[i].ordersid
+        xiadantime.text = "下单时间："+orders[i].ordertime
         var urlStr = NSURL(string: orders[i].goodimage)
         var request = NSURLRequest(url: urlStr as! URL)
         var imgData = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
@@ -48,9 +48,9 @@ class orderdetail: UITableViewController {
         images = UIImage(data: imgData!)!
         goodsimg.image = images
         goodsname.text = orders[i].goodsname
-        goodsmoney.text = orders[i].goodprice
-        number.text = orders[i].goodnumber
-        totalgood.text = orders[i].goodtotal
+        goodsmoney.text = "￥" + orders[i].goodprice
+        number.text = "数量："+orders[i].goodnumber
+        totalgood.text = "¥" + orders[i].goodtotal
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

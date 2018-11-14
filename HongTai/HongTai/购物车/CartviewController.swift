@@ -259,23 +259,71 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func clear(_ sender: Any) {
+//        func getContext() -> NSManagedObjectContext{
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            return appDelegate.persistentContainer.viewContext
+//        }
+//        //获取委托
+//        let app = UIApplication.shared.delegate as! AppDelegate
+//        //获取数据上下文对象
+//
+//        let context = getContext()
+//
+//        //声明数据的请求，声明一个实体结构
+//
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+//
+//        // 异步请求由两部分组成：普通的request和completion handler
+//
+////         返回结果在finalResult中
+//
+//        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result:NSAsynchronousFetchResult) in
+//            //对返回的数据做处理。
+//
+//            let fetchObject = result.finalResult! as! [Orders]
+//
+//            for c in fetchObject{
+//                //所有删除信息
+//
+//                context.delete(c)
+//                print("完美删除！")
+//
+//            }
+//
+//            app.saveContext()
+//
+//        }
+//
+//
+//
+//        // 执行异步请求调用execute
+//
+//        do {
+//
+//            try context.execute(asyncFetchRequest)
+//
+//        } catch  {
+//
+//            print("error")
+//
+//        }
         getLocalData()
         let app = UIApplication.shared.delegate as! AppDelegate
         func getContext() -> NSManagedObjectContext{
-            
+
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
+
             return appDelegate.persistentContainer.viewContext
         }
         //获取数据上下文对象
         let context = getContext()
         //声明数据的请求，声明一个实体结构
-        
+
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
         //查询条件
         fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
         // 返回结果在finalResult中
-        
+
         //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
         //            //对返回的数据做处理。
         //            let fetchObject  = result.finalResult! as! [Cart]

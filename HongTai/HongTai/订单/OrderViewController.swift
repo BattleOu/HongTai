@@ -54,7 +54,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else
         {
-            return 1
+            return 0
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -99,7 +99,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
                     myCell.goodnum.text = orders[indexPath.row].goodnumber
                     myCell.ordermoney.text = "￥" + orders[indexPath.row].goodtotal
                     myCell.shouhuoren.text = orders[indexPath.row].getpeople
-                    myCell.goodprice.text = orders[indexPath.row].goodprice
+//                    myCell.goodprice.text = orders[indexPath.row].goodprice
                     return myCell
                 }
             }
@@ -107,16 +107,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cartt", for: indexPath)
-            if let myCell = cell as? CartCell
-            {
-                myCell.godsname.text = "购物车是空的"
-                myCell.godsname.textColor = UIColor.red
-                myCell.godsname.font = UIFont.systemFont(ofSize: 20)
-                myCell.godsname.adjustsFontSizeToFitWidth = true  //当文字超出文本框宽度时，自动调整文字大小
-                myCell.godsname.minimumScaleFactor = 14  //最小可缩小的字号
-                return myCell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "orderscell", for: indexPath)
             return cell
         }
     }

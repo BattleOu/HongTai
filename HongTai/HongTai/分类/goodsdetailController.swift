@@ -145,6 +145,7 @@ class goodsdetailController: UITableViewController {
     @IBAction func zengjia(_ sender: Any) {
         let temp = Int(shuliang.text!)
         let temp2 = Int(stock)
+        
         if temp == nil
         {
             shuliang.text = "1"
@@ -155,6 +156,15 @@ class goodsdetailController: UITableViewController {
         }
         else
         {
+            if temp! < 0
+            {
+                shuliang.text = "1"
+                buy.isEnabled = true
+                cart.isEnabled = true
+                buy.backgroundColor = UIColor.orange
+                cart.backgroundColor = UIColor.orange
+                return
+            }
             let temp1 = String(temp! + 1)
             shuliang.text = temp1
             if temp! >= temp2!
@@ -187,6 +197,16 @@ class goodsdetailController: UITableViewController {
         }
         else
         {
+            if temp! < 0
+            {
+                shuliang.text = "1"
+                buy.isEnabled = true
+                cart.isEnabled = true
+                buy.backgroundColor = UIColor.orange
+                cart.backgroundColor = UIColor.orange
+                return
+            }
+            
             if temp == 1
             {
                 return
@@ -359,7 +379,7 @@ class goodsdetailController: UITableViewController {
             orderModel.orderslist.append(OrdersList(
                 shangpinimage: img,
             shangpinname: goodnam.text!,
-            shangpinprice: goodprice.text!,
+            shangpinprice: price,
             shangpinnumber: String(num!) ,
             shangpintotal: ttotal
             ))
