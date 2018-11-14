@@ -62,6 +62,18 @@ class LoginViewController: UIViewController {
                         if(newpw.text != "" ){
                             if(rnewpw.text == newpw.text)
                             {
+                                let expression2 = "^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,18}"
+                                let regex2 = try! NSRegularExpression(pattern: expression2, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+                                
+                                let numberOfMatches2 = regex2.numberOfMatches(in: newpw.text!, options:.reportProgress, range: NSMakeRange(0, (newpw.text! as NSString).length))//获取匹配的个数
+                                if numberOfMatches2 == 0
+                                {
+                                    let alertController = UIAlertController(title: "提示!", message: "密码格式有误", preferredStyle: .alert)
+                                    let okAction = UIAlertAction(title: "确认", style: .default,handler: nil)
+                                    alertController.addAction(okAction)
+                                    self.present(alertController, animated: true, completion: nil)
+                                    return
+                                }
                                 let app = UIApplication.shared.delegate as! AppDelegate
                                 func getContext() -> NSManagedObjectContext{
                                     

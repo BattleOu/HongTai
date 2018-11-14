@@ -63,6 +63,45 @@ class Consignee2: UIViewController {
         getLocalData1()
         if(getname1.text != "" && phone1.text != "" && adress1.text != "")
         {
+            let expression = "^((1\\d)|(14[5|7])|(15([0-3]|[5-9]))|(18[^14]))\\d{8}$"//"|"表示什么就不用说了吧，[5|7]表示满足其中任意一个即匹配，数量唯一，"[0-3]"则表示满足0到之间的数字即匹配，数量唯一，[^14]表示匹配除1和4以外的任意字符，这里包括了字母，所以建议弹出键盘类型为数字键盘
+            
+            let regex = try! NSRegularExpression(pattern: expression, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+            
+            let numberOfMatches = regex.numberOfMatches(in: phone1.text!, options:.reportProgress, range: NSMakeRange(0, (phone1.text! as NSString).length))//获取匹配的个数
+            let expression1 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
+            let regex1 = try! NSRegularExpression(pattern: expression1, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+            
+            let numberOfMatches1 = regex1.numberOfMatches(in: adress1.text!, options:.reportProgress, range: NSMakeRange(0, (adress1.text! as NSString).length))//获取匹配的个数
+            let expression2 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
+            let regex2 = try! NSRegularExpression(pattern: expression2, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+            
+            let numberOfMatches2 = regex2.numberOfMatches(in: getname1.text!, options:.reportProgress, range: NSMakeRange(0, (getname1.text! as NSString).length))//获取匹配的个数
+            if numberOfMatches == 0{
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "请输入正确的电话号码！", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+            }//如果匹配，则登录按钮生效，否则反之
+            else if(numberOfMatches1 == 0)
+            {
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "请输入正确的送货地址！", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+                else if(numberOfMatches2 == 0)
+            {
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "收货人名称有误！", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else
+            {
             let date = NSDate()
             let timeFormatter = DateFormatter()
             timeFormatter.timeZone = NSTimeZone.local
@@ -130,6 +169,7 @@ class Consignee2: UIViewController {
             print("maile meile")
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
+            }
         }
         else
         {

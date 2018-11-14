@@ -102,7 +102,35 @@ class personDetailsViewController: UIViewController,UIImagePickerControllerDeleg
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
+            let expression = "^[a-zA-Z0-9_-]{3,16}$"
+            let regex = try! NSRegularExpression(pattern: expression, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+            
+            let numberOfMatches = regex.numberOfMatches(in: self.gainame.text!, options:.reportProgress, range: NSMakeRange(0, (self.gainame.text! as NSString).length))//获取匹配的个数
+            
+            let expression1 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
+            let regex1 = try! NSRegularExpression(pattern: expression1, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+            
+            let numberOfMatches1 = regex1.numberOfMatches(in: self.gairealname.text!, options:.reportProgress, range: NSMakeRange(0, (self.gairealname.text! as NSString).length))//获取匹配的个数
 //            else{
+           if(numberOfMatches == 0)
+            {
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "用户名格式错误", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            if(numberOfMatches1 == 0)
+            {
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "请输入有效真实姓名", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
                 for x in 0...self.users.count - 1
                 {
                     for c in fetchObject{

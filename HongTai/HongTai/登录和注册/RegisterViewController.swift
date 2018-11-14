@@ -52,6 +52,22 @@ class RegisterViewController: UIViewController {
         timeFormatter.timeZone = NSTimeZone.local
         timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         let strNowTime = timeFormatter.string(from: date as Date) as String
+        
+        let expression = "^[a-zA-Z0-9_-]{3,16}$"
+        let regex = try! NSRegularExpression(pattern: expression, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+        
+        let numberOfMatches = regex.numberOfMatches(in: usname.text!, options:.reportProgress, range: NSMakeRange(0, (usname.text! as NSString).length))//获取匹配的个数
+        
+        let expression1 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
+        let regex1 = try! NSRegularExpression(pattern: expression1, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+        
+        let numberOfMatches1 = regex1.numberOfMatches(in: Realname.text!, options:.reportProgress, range: NSMakeRange(0, (Realname.text! as NSString).length))//获取匹配的个数
+        
+        
+        let expression2 = "^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,18}"
+        let regex2 = try! NSRegularExpression(pattern: expression2, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
+        
+        let numberOfMatches2 = regex2.numberOfMatches(in: password.text!, options:.reportProgress, range: NSMakeRange(0, (password.text! as NSString).length))//获取匹配的个数
       if users.count > 0 {
        for x in 0...users.count - 1
        {
@@ -74,10 +90,34 @@ class RegisterViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
+        else if(numberOfMatches == 0)
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "用户名格式错误", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if(numberOfMatches2 == 0)
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "请输入有效密码", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
         else if(Realname.text == "")
         {
             let alertController = UIAlertController(title: "提示!",
                                                     message: "请填写真实姓名", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if(numberOfMatches1 == 0)
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "用户姓名输入有误", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
