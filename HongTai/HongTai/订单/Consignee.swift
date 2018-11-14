@@ -17,6 +17,7 @@ class Consignee: UIViewController {
     @IBOutlet weak var ordersmoney: UILabel!
     var dataModel = DataModel()
     var modeldata = CartModel()
+     var datemodel = Modelorder()
       var orderModel = OrdersModel()
     var orders = [orderss]()
     var oorder: orderss?
@@ -73,6 +74,9 @@ class Consignee: UIViewController {
         let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
         let user1 = orderss(getadress: consigneeadress.text!, getpeople: consigneename.text!, getphone: phone.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
         Consignee.insertData1(contactInfo: user1)
+        datemodel.loadData()
+        datemodel.listorder.append(Listorder(getadress: consigneeadress.text!, getpeople: consigneename.text!, getphone: phone.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name))
+        datemodel.saveData()
         let alertController = UIAlertController(title: "提示!",
                                                 message: "下单成功", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确认", style: .default,handler: {

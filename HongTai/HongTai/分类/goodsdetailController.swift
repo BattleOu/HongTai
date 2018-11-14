@@ -324,14 +324,14 @@ class goodsdetailController: UITableViewController {
                             self.present(alertController, animated: true, completion: nil)
                         }
                         }
-//                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
-//                        modeldata.saveData()
+                        modeldata.cartlist[x] = CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: tottal, number:String(Int(shuliang.text!)! + Int(num)!),username:dataModel.userliebiao[0].name)
+                        modeldata.saveData()
                         return
                         continue
                     }
                 }
-//                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
-//                modeldata.saveData()
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
+                modeldata.saveData()
                 let alertController = UIAlertController(title: "提示!", message: "添加成功", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "确认", style: .default,handler: {
                     action in
@@ -345,8 +345,8 @@ class goodsdetailController: UITableViewController {
             }
             else
             {
-//                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
-//                modeldata.saveData()
+                modeldata.cartlist.append(CartList(goodsimg:img, goodstyle: godstyle, goodsname: name, introduction: introduction,marketprice: price,salesnum: salesnum,stock: stock ,userid: dataModel.userliebiao[0].id,total: ttotal, number:shuliang.text!,username:dataModel.userliebiao[0].name))
+                modeldata.saveData()
                 let alertController = UIAlertController(title: "提示!", message: "添加成功", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "确认", style: .default,handler: {
                     action in

@@ -12,6 +12,7 @@ class orderdetail: UITableViewController {
    var i : Int!
     var orders = [orderss]()
     var oorder: orderss?
+     var datemodel = Modelorder()
     @IBOutlet weak var orderstates: UILabel!
     @IBOutlet weak var zhuangtaiimg: UIImageView!
     @IBOutlet weak var shouhuoren: UILabel!
@@ -29,6 +30,7 @@ class orderdetail: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getLocalData()
+        datemodel.loadData()
 //        pay.layer.cornerRadius=12
 //        pay.layer.masksToBounds=true
 //        pay.layer.borderColor = UIColor(red: 192/255, green:192/255, blue:192/255, alpha:1).cgColor
@@ -38,38 +40,38 @@ class orderdetail: UITableViewController {
 //        get.layer.masksToBounds=true
 //        get.layer.borderColor = UIColor(red: 192/255, green:192/255, blue:192/255, alpha:1).cgColor
 //        get.layer.borderWidth=2
-    orderstates.text = orders[i].orderstate
-        if orders[i].orderstate == "待付款"
+    orderstates.text = datemodel.listorder[i].orderstate
+        if datemodel.listorder[i].orderstate == "待付款"
         {
             zhuangtaiimg.image = UIImage.init(named: "daifukuan01")
              get.isHidden = true
         }
-        if orders[i].orderstate == "待收货"
+        if datemodel.listorder[i].orderstate == "待收货"
         {
             zhuangtaiimg.image = UIImage.init(named: "yifukuan")
             pay.isHidden = true
         }
-        if orders[i].orderstate == "已完成"
+        if datemodel.listorder[i].orderstate == "已完成"
         {
             zhuangtaiimg.image = UIImage.init(named: "已完成")
             pay.isHidden = true
             get.isHidden = true
         }
-        shouhuoren.text = orders[i].getpeople
-        address.text = orders[i].getadress
-        phone.text = orders[i].getphone
-        dingdanid.text = "订单编号："+orders[i].ordersid
-        xiadantime.text = "下单时间："+orders[i].ordertime
-        var urlStr = NSURL(string: orders[i].goodimage)
+        shouhuoren.text = datemodel.listorder[i].getpeople
+        address.text = datemodel.listorder[i].getadress
+        phone.text = datemodel.listorder[i].getphone
+        dingdanid.text = "订单编号："+datemodel.listorder[i].ordersid
+        xiadantime.text = "下单时间："+datemodel.listorder[i].ordertime
+        var urlStr = NSURL(string: datemodel.listorder[i].goodimage)
         var request = NSURLRequest(url: urlStr as! URL)
         var imgData = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
         var images: UIImage? = nil
         images = UIImage(data: imgData!)!
         goodsimg.image = images
-        goodsname.text = orders[i].goodsname
-        goodsmoney.text = "￥" + orders[i].goodprice
-        number.text = "数量："+orders[i].goodnumber
-        totalgood.text = "¥" + orders[i].goodtotal
+        goodsname.text = datemodel.listorder[i].goodsname
+        goodsmoney.text = "￥" + datemodel.listorder[i].goodprice
+        number.text = "数量："+datemodel.listorder[i].goodnumber
+        totalgood.text = "¥" + datemodel.listorder[i].goodtotal
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -88,7 +90,7 @@ class orderdetail: UITableViewController {
         //声明数据的请求，声明一个实体结构
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
         //查询条件
-        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[i].ordersid)'")
+        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.datemodel.listorder[i].ordersid)'")
         // 返回结果在finalResult中
         var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
         for c in fetchObject as! [Orders]
@@ -96,6 +98,9 @@ class orderdetail: UITableViewController {
           
             c.orderstate = "待收货"
             app.saveContext()
+            datemodel.loadData()
+            datemodel.listorder[self.i] = Listorder(getadress: c.getadress!, getpeople: c.getpeople!, getphone:c.getphone!, goodimage:  c.goodimage!, goodnumber:  c.goodnumber!, goodprice:  c.goodprice!,goodsname: c.goodsname!,goodtotal: c.goodtotal!,ordersid: c.ordersid!,ordersmoney: c.ordersmoney!,orderstate:"待收货",ordertime: c.ordertime!,username: c.username!)
+            datemodel.saveData()
             let alertController = UIAlertController(title: "提示!",
                                                     message: "付款成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "确认", style: .default,handler: {
@@ -118,7 +123,7 @@ class orderdetail: UITableViewController {
         //声明数据的请求，声明一个实体结构
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
         //查询条件
-        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[i].ordersid)'")
+        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.datemodel.listorder[i].ordersid)'")
         // 返回结果在finalResult中
         var fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
         for c in fetchObject as! [Orders]
@@ -126,6 +131,9 @@ class orderdetail: UITableViewController {
             
             c.orderstate = "已完成"
             app.saveContext()
+            datemodel.loadData()
+            datemodel.listorder[self.i] = Listorder(getadress: c.getadress!, getpeople: c.getpeople!, getphone:c.getphone!, goodimage:  c.goodimage!, goodnumber:  c.goodnumber!, goodprice:  c.goodprice!,goodsname: c.goodsname!,goodtotal: c.goodtotal!,ordersid: c.ordersid!,ordersmoney: c.ordersmoney!,orderstate:"已完成",ordertime: c.ordertime!,username: c.username!)
+            datemodel.saveData()
             let alertController = UIAlertController(title: "提示!",
                                                     message: "收货成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "确认", style: .default,handler: {

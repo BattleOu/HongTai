@@ -14,6 +14,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     var orders = [orderss]()
     var oorder: orderss?
     var dataModel = DataModel()
+    var datemodel = Modelorder()
     override func viewDidLoad() {
         super.viewDidLoad()
        ordertableview.dataSource = self
@@ -62,6 +63,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         getLocalData()
+        datemodel.loadData()
         let app = UIApplication.shared.delegate as! AppDelegate
         func getContext() -> NSManagedObjectContext{
             
@@ -87,18 +89,18 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
             let cell = tableView.dequeueReusableCell(withIdentifier: "orderscell", for: indexPath)
             if let myCell = cell as? ordercell
             {
-                if orders[indexPath.row].username == dataModel.userliebiao[0].name
+                if datemodel.listorder[indexPath.row].username == dataModel.userliebiao[0].name
                 {
-                    myCell.goodsname.text = orders[indexPath.row].goodsname
-                    var urlStr = NSURL(string: orders[indexPath.row].goodimage)
+                    myCell.goodsname.text = datemodel.listorder[indexPath.row].goodsname
+                    var urlStr = NSURL(string: datemodel.listorder[indexPath.row].goodimage)
                     var request = NSURLRequest(url: urlStr as! URL)
                     var imgData = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
                     var images: UIImage? = nil
                     images = UIImage(data: imgData!)!
                     myCell.goodimg.image = images
-                    myCell.goodnum.text = orders[indexPath.row].goodnumber
-                    myCell.ordermoney.text = "￥" + orders[indexPath.row].goodtotal
-                    myCell.shouhuoren.text = orders[indexPath.row].getpeople
+                    myCell.goodnum.text = datemodel.listorder[indexPath.row].goodnumber
+                    myCell.ordermoney.text = "￥" + datemodel.listorder[indexPath.row].goodtotal
+                    myCell.shouhuoren.text = datemodel.listorder[indexPath.row].getpeople
 //                    myCell.goodprice.text = orders[indexPath.row].goodprice
                     return myCell
                 }
@@ -114,9 +116,11 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
-            if(self.orders[indexPath.row].orderstate == "已完成" || self.orders[indexPath.row].orderstate == "待付款")
+            self.datemodel.loadData()
+            if(self.datemodel.listorder[indexPath.row].orderstate == "已完成" || self.datemodel.listorder[indexPath.row].orderstate == "待付款")
                 {
-                    
+                    self.datemodel.listorder.remove(at: indexPath.row)
+                    self.datemodel.saveData()
                         let app = UIApplication.shared.delegate as! AppDelegate
                         func getContext() -> NSManagedObjectContext{
                             

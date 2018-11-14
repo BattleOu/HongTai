@@ -14,8 +14,11 @@ class LoginViewController: UIViewController {
     var user: pop?
     var carts = [caart]()
     var ccart: caart?
+    var orders = [orderss]()
+    var oorder: orderss?
      var dataModel = DataModel()
     var modeldata = CartModel()
+    var datemodel = Modelorder()
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     override func viewDidLoad() {
@@ -167,20 +170,35 @@ class LoginViewController: UIViewController {
                         action in
                             self.performSegue(withIdentifier: "login", sender: self)
                     })
-//                     modeldata.loadData()
-//                    getLocalData1()
-//                    if carts.isEmpty == false
-//                    {
-//                    for x in 0...carts.count - 1
-//                    {
-//                        if carts[x].username == username.text
-//                        {
-//                            modeldata.cartlist.append(CartList(goodsimg:carts[x].goodsimg, goodstyle: carts[x].goodstyle, goodsname: carts[x].goodsname, introduction: carts[x].introduction,marketprice: carts[x].marketprice,salesnum: carts[x].salesnum,stock: carts[x].stock ,userid: carts[x].userid,total: carts[x].total, number:carts[x].number,username:carts[x].username))
-//                            modeldata.saveData()
-//                        }
-//                        continue
-//                    }
-//                    }
+                    datemodel.loadData()
+                     modeldata.loadData()
+                    getLocalData1()
+                    getLocalData3()
+                    if carts.isEmpty == false
+                    {
+                    for x in 0...carts.count - 1
+                    {
+                        if carts[x].username == username.text
+                        {
+                            modeldata.cartlist.append(CartList(goodsimg:carts[x].goodsimg, goodstyle: carts[x].goodstyle, goodsname: carts[x].goodsname, introduction: carts[x].introduction,marketprice: carts[x].marketprice,salesnum: carts[x].salesnum,stock: carts[x].stock ,userid: carts[x].userid,total: carts[x].total, number:carts[x].number,username:carts[x].username))
+                            modeldata.saveData()
+                        }
+                        continue
+                    }
+                    }
+                    
+                    if orders.isEmpty == false
+                    {
+                        for x in 0...orders.count - 1
+                        {
+                            if orders[x].username == username.text
+                            {
+                                datemodel.listorder.append(Listorder(getadress: orders[x].getadress, getpeople: orders[x].getpeople, getphone: orders[x].getphone, goodimage: orders[x].goodimage, goodnumber: orders[x].goodnumber , goodprice: orders[x].goodprice,goodsname:orders[x].goodsname,goodtotal:orders[x].goodtotal,ordersid:orders[x].ordersid,ordersmoney:orders[x].ordersmoney,orderstate:orders[x].orderstate,ordertime:orders[x].ordertime,username:orders[x].username))
+                                datemodel.saveData()
+                            }
+                            continue
+                        }
+                    }
                     dataModel.loadData()
                     dataModel.userliebiao.append(UserInfo(name: username.text!, password: password.text!, id:users[x].userbianhao, image: users[x].userimg,realname: users[x].realname, update: users[x].userupdate))
                     dataModel.saveData()
@@ -337,4 +355,57 @@ extension LoginViewController {
         }
         return nil
     }
+}
+
+
+extension LoginViewController {
+    fileprivate func getLocalData3() {
+        //        步骤一：获取总代理和托管对象总管
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        //        步骤二：建立一个获取的请求
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
+        
+        //        步骤三：执行请求
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                orders.removeAll()
+                for result in results {
+                    guard let ordersss = translateData3(from: result) else { return }
+                    orders.append(ordersss)
+                }
+            }
+            
+        } catch  {
+            fatalError("获取失败")
+        }
+        
+    }
+    
+    
+    fileprivate func translateData3(from: NSManagedObject) -> (orderss?) {
+        
+        if let name = from.value(forKey: "username") as? String,
+            let id = from.value(forKey: "ordersid") as? String,
+            let image = from.value(forKey: "goodimage") as? String,
+            let goodname = from.value(forKey: "goodsname") as? String,
+            let price = from.value(forKey: "goodprice") as? String,
+            let number = from.value(forKey: "goodnumber") as? String,
+            let total = from.value(forKey: "goodtotal") as? String,
+            let people = from.value(forKey: "getpeople") as? String,
+            let adress = from.value(forKey: "getadress") as? String,
+            let phone = from.value(forKey: "getphone") as? String,
+            let money = from.value(forKey: "ordersmoney") as? String,
+            let state = from.value(forKey: "orderstate") as? String,
+            let time = from.value(forKey: "ordertime") as? String{
+            let user = orderss(getadress: adress, getpeople: people, getphone: phone, goodimage: image, goodnumber: number, goodprice: price, goodsname: goodname, goodtotal: total, ordersid: id, ordersmoney:money, orderstate: state, ordertime:time, username: name)
+            
+            return user
+        }
+        return nil
+    }
+    
 }

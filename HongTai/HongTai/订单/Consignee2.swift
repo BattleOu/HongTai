@@ -17,6 +17,9 @@ class Consignee2: UIViewController {
     @IBOutlet weak var total1: UILabel!
     var dataModel = DataModel()
     var modeldata = CartModel()
+    
+     var datemodel = Modelorder()
+    
     var orderModel = OrdersModel()
     var orders = [orderss]()
     var oorder: orderss?
@@ -72,6 +75,9 @@ class Consignee2: UIViewController {
             let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
             let user1 = orderss(getadress: adress1.text!, getpeople: getname1.text!, getphone: phone1.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
             Consignee.insertData1(contactInfo: user1)
+            datemodel.loadData()
+              datemodel.listorder.append(Listorder(getadress: adress1.text!, getpeople: getname1.text!, getphone: phone1.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name))
+            datemodel.saveData()
             let alertController = UIAlertController(title: "提示!",
                                                     message: "下单成功", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "确认", style: .default,handler: {
@@ -106,6 +112,17 @@ class Consignee2: UIViewController {
                         context.delete(c)
                         app.saveContext()
                     }
+            modeldata.loadData()
+            for x in 0...modeldata.cartlist.count - 1
+            {
+                if modeldata.cartlist[x].goodsname == orderModel.orderslist[0].shangpinname
+                {
+                    modeldata.cartlist.remove(at: x)
+                    modeldata.saveData()
+                }
+                continue
+            }
+            
             
             self.orderModel.loadData()
             self.orderModel.orderslist.removeAll()

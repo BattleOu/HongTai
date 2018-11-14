@@ -14,6 +14,7 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var usernam: UILabel!
     var dataModel = DataModel()
     var modeldata = CartModel()
+     var datemodel = Modelorder()
     override func viewDidLoad() {
         super.viewDidLoad()
         imgview.layer.cornerRadius = min(imgview.bounds.size.width, imgview.bounds.size.height) * 0.5
@@ -56,6 +57,9 @@ class PersonViewController: UIViewController {
         modeldata.loadData()
         modeldata.cartlist.removeAll()
         modeldata.saveData()
+        datemodel.loadData()
+        datemodel.listorder.removeAll()
+        datemodel.saveData()
         print("删除了")
          let controller =
         self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: navigationViewController()))) as! navigationViewController

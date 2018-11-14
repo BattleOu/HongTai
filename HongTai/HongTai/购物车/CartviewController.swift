@@ -102,6 +102,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         getLocalData()
+        modeldata.loadData()
         let app = UIApplication.shared.delegate as! AppDelegate
         func getContext() -> NSManagedObjectContext{
             
@@ -127,18 +128,18 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "cartt", for: indexPath)
             if let myCell = cell as? CartCell
             {
-                if carts[indexPath.row].userid == dataModel.userliebiao[0].id
+                if modeldata.cartlist[indexPath.row].userid == dataModel.userliebiao[0].id
                 {
-                    myCell.godsname.text = carts[indexPath.row].goodsname
-                    myCell.godsprice.text = "￥" + carts[indexPath.row].marketprice
-                    var urlStr = NSURL(string: carts[indexPath.row].goodsimg)
+                    myCell.godsname.text = modeldata.cartlist[indexPath.row].goodsname
+                    myCell.godsprice.text = "￥" + modeldata.cartlist[indexPath.row].marketprice
+                    var urlStr = NSURL(string: modeldata.cartlist[indexPath.row].goodsimg)
                     var request = NSURLRequest(url: urlStr as! URL)
                     var imgData = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
                     var images: UIImage? = nil
                     images = UIImage(data: imgData!)!
                     myCell.imagesgood.image = images
-                    myCell.godsnum.text = carts[indexPath.row].number
-                    myCell.godstotal.text = "￥" + carts[indexPath.row].total
+                    myCell.godsnum.text = modeldata.cartlist[indexPath.row].number
+                    myCell.godstotal.text = "￥" + modeldata.cartlist[indexPath.row].total
                     return myCell
                 }
             }
@@ -154,9 +155,9 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
             //将对应条目的数据删除
-//            self.modeldata.loadData()
-//            self.modeldata.cartlist.remove(at: indexPath.row)
-//            self.modeldata.saveData()
+            self.modeldata.loadData()
+            self.modeldata.cartlist.remove(at: indexPath.row)
+            self.modeldata.saveData()
             
             self.getLocalData()
             let app = UIApplication.shared.delegate as! AppDelegate
@@ -194,13 +195,14 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            let num = Int(shuliang.text!)
 //            let ttotal =  String(money! * num!)
             self.getLocalData()
+            self.modeldata.loadData()
             self.orderModel.loadData()
             self.orderModel.orderslist.append(OrdersList(
-                shangpinimage: self.carts[indexPath.row].goodsimg,
-                shangpinname: self.carts[indexPath.row].goodsname,
-                shangpinprice: self.carts[indexPath.row].marketprice,
-                shangpinnumber: self.carts[indexPath.row].number,
-                shangpintotal: self.carts[indexPath.row].total
+                shangpinimage: self.modeldata.cartlist[indexPath.row].goodsimg,
+                shangpinname: self.modeldata.cartlist[indexPath.row].goodsname,
+                shangpinprice: self.modeldata.cartlist[indexPath.row].marketprice,
+                shangpinnumber: self.modeldata.cartlist[indexPath.row].number,
+                shangpintotal: self.modeldata.cartlist[indexPath.row].total
             ))
             self.orderModel.saveData()
             print("购买加进")
