@@ -1,45 +1,40 @@
 //
-//  Consignee2.swift
+//  Consignee3.swift
 //  HongTai
 //
-//  Created by 欧张帆 on 2018/11/14.
-//  Copyright © 2018 欧张帆. All rights reserved.
+//  Created by 周旭 on 2018/11/15.
+//  Copyright © 2018年 欧张帆. All rights reserved.
 //
 
 import UIKit
 import CoreData
-class Consignee2: UIViewController {
+class Consignee3: UIViewController {
 
-    @IBOutlet weak var username1: UILabel!
-    @IBOutlet weak var getname1: UITextField!
-    @IBOutlet weak var phone1: UITextField!
-    @IBOutlet weak var adress1: UITextField!
-    @IBOutlet weak var total1: UILabel!
-    var dataModel = DataModel()
-    var modeldata = CartModel()
-    
-     var datemodel = Modelorder()
-    
-    var orderModel = OrdersModel()
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var shouhuoren: UITextField!
+    @IBOutlet weak var mobilephone: UITextField!
+    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var ordertotal: UILabel!
     var orders = [orderss]()
     var oorder: orderss?
     var carts = [caart]()
     var ccart: caart?
     var sum:String! = "0"
-    var total: String!
-    var number: String!
-    var marketprice:String!
-    var goodsname: String!
-    var goodsimg: String!
+    var dataModel = DataModel()
+    var modeldata = CartModel()
+    
+    var datemodel = Modelorder()
+    
+    var orderModel = OrdersModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         dataModel.loadData()
         getLocalData()
-        username1.text = dataModel.userliebiao[0].name
+        username.text = dataModel.userliebiao[0].name
         orderModel.loadData()
         if orderModel.orderslist.isEmpty == false
         {
-            total1.text = orderModel.orderslist[0].shangpintotal
+            ordertotal.text = orderModel.orderslist[0].shangpintotal
         }
         else
         {
@@ -47,10 +42,10 @@ class Consignee2: UIViewController {
             {
                 for x in 0...carts.count - 1
                 {
-                    if carts[x].username == username1.text
+                    if carts[x].username == username.text
                     {
                         sum = String(Int(sum)! + Int(carts[x].total)!)
-                        total1.text = "￥" + sum
+                        ordertotal.text = "￥" + sum
                     }
                     continue
                 }
@@ -59,23 +54,29 @@ class Consignee2: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func xiadingdan(_ sender: Any) {
+    @IBAction func back(_ sender: Any) {
+         self.performSegue(withIdentifier: "back", sender: self)
+    }
+    
+    @IBAction func ordersbuy(_ sender: Any) {
         getLocalData1()
-        if(getname1.text != "" && phone1.text != "" && adress1.text != "")
+        dataModel.loadData()
+        getLocalData()
+        if(shouhuoren.text != "" && mobilephone.text != "" && address.text != "")
         {
             let expression = "^((1\\d)|(14[5|7])|(15([0-3]|[5-9]))|(18[^14]))\\d{8}$"//"|"表示什么就不用说了吧，[5|7]表示满足其中任意一个即匹配，数量唯一，"[0-3]"则表示满足0到之间的数字即匹配，数量唯一，[^14]表示匹配除1和4以外的任意字符，这里包括了字母，所以建议弹出键盘类型为数字键盘
             
             let regex = try! NSRegularExpression(pattern: expression, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
             
-            let numberOfMatches = regex.numberOfMatches(in: phone1.text!, options:.reportProgress, range: NSMakeRange(0, (phone1.text! as NSString).length))//获取匹配的个数
+            let numberOfMatches = regex.numberOfMatches(in: mobilephone.text!, options:.reportProgress, range: NSMakeRange(0, (mobilephone.text! as NSString).length))//获取匹配的个数
             let expression1 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
             let regex1 = try! NSRegularExpression(pattern: expression1, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
             
-            let numberOfMatches1 = regex1.numberOfMatches(in: adress1.text!, options:.reportProgress, range: NSMakeRange(0, (adress1.text! as NSString).length))//获取匹配的个数
+            let numberOfMatches1 = regex1.numberOfMatches(in: address.text!, options:.reportProgress, range: NSMakeRange(0, (address.text! as NSString).length))//获取匹配的个数
             let expression2 = "^[a-zA-Z\\u4E00-\\u9FA5]{1,20}"
             let regex2 = try! NSRegularExpression(pattern: expression2, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
             
-            let numberOfMatches2 = regex2.numberOfMatches(in: getname1.text!, options:.reportProgress, range: NSMakeRange(0, (getname1.text! as NSString).length))//获取匹配的个数
+            let numberOfMatches2 = regex2.numberOfMatches(in: shouhuoren.text!, options:.reportProgress, range: NSMakeRange(0, (shouhuoren.text! as NSString).length))//获取匹配的个数
              if(numberOfMatches2 == 0)
             {
                 let alertController = UIAlertController(title: "提示!",
@@ -85,7 +86,7 @@ class Consignee2: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-           else  if numberOfMatches == 0{
+            else if numberOfMatches == 0{
                 let alertController = UIAlertController(title: "提示!",
                                                         message: "请输入正确的电话号码！", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
@@ -103,77 +104,77 @@ class Consignee2: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            let date = NSDate()
-            let timeFormatter = DateFormatter()
-            timeFormatter.timeZone = NSTimeZone.local
-            timeFormatter.dateFormat = "yyyyMMddHHmmss"
-            let strNowTime = timeFormatter.string(from: date as Date) as String
-            let date1 = NSDate()
-            let timeFormatter1 = DateFormatter()
-            timeFormatter1.timeZone = NSTimeZone.local
-            timeFormatter1.dateFormat = "yyyy年MM月dd日 HH:mm"
-            let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
-            let user1 = orderss(getadress: adress1.text!, getpeople: getname1.text!, getphone: phone1.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
-            Consignee.insertData1(contactInfo: user1)
-            datemodel.loadData()
-              datemodel.listorder.append(Listorder(getadress: adress1.text!, getpeople: getname1.text!, getphone: phone1.text!, goodimage: orderModel.orderslist[0].shangpinimage, goodnumber: orderModel.orderslist[0].shangpinnumber , goodprice: orderModel.orderslist[0].shangpinprice,goodsname:orderModel.orderslist[0].shangpinname,goodtotal:orderModel.orderslist[0].shangpintotal,ordersid:strNowTime,ordersmoney:orderModel.orderslist[0].shangpintotal,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name))
-            datemodel.saveData()
-                
-                    self.getLocalData1()
-                    let app = UIApplication.shared.delegate as! AppDelegate
-                    func getContexts() -> NSManagedObjectContext{
-            
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-                        return appDelegate.persistentContainer.viewContext
-                    }
-                    //获取数据上下文对象
-                    let context = getContexts()
-                    //声明数据的请求，声明一个实体结构
-            
-                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
-                    //查询条件
-                    fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.orderModel.orderslist[0].shangpinname)'")
-                    // 返回结果在finalResult中
-            
-                    //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
-                    //            //对返回的数据做处理。
-                    //            let fetchObject  = result.finalResult! as! [Cart]
-                    let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
-                    for c in fetchObject as! [Cart]
-                    {
-                        context.delete(c)
-                        app.saveContext()
-                    }
-                
-                if modeldata.cartlist.isEmpty == false
-                {
-            modeldata.loadData()
-            for x in 0...modeldata.cartlist.count - 1
+            else
             {
-                if modeldata.cartlist[x].goodsname == orderModel.orderslist[0].shangpinname
+                let date = NSDate()
+                let timeFormatter = DateFormatter()
+                timeFormatter.timeZone = NSTimeZone.local
+                timeFormatter.dateFormat = "yyyyMMddHHmmss"
+                let strNowTime = timeFormatter.string(from: date as Date) as String
+                let date1 = NSDate()
+                let timeFormatter1 = DateFormatter()
+                timeFormatter1.timeZone = NSTimeZone.local
+                timeFormatter1.dateFormat = "yyyy年MM月dd日 HH:mm"
+                let strNowTime1 = timeFormatter1.string(from: date1 as Date) as String
+                 datemodel.loadData()
+                if carts.isEmpty == false
                 {
-                    modeldata.cartlist.remove(at: x)
-                    modeldata.saveData()
+                    for x in 0...carts.count - 1
+                    {
+                        if carts[x].username == username.text
+                        {
+                            let user1 = orderss(getadress: address.text!, getpeople: shouhuoren.text!, getphone: mobilephone.text!, goodimage: carts[x].goodsimg, goodnumber: carts[x].number , goodprice: carts[x].marketprice ,goodsname:carts[x].goodsname ,goodtotal:carts[x].total ,ordersid:strNowTime,ordersmoney:carts[x].total ,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name)
+                            Consignee3.insertData1(contactInfo: user1)
+                            datemodel.listorder.append(Listorder(getadress: address.text!, getpeople: shouhuoren.text!, getphone: mobilephone.text!, goodimage: carts[x].goodsimg, goodnumber: carts[x].number , goodprice: carts[x].marketprice ,goodsname:carts[x].goodsname ,goodtotal:carts[x].total ,ordersid:strNowTime,ordersmoney:carts[x].total ,orderstate:"待付款",ordertime:strNowTime1,username:dataModel.userliebiao[0].name))
+                            datemodel.saveData()
+                        }
+                        continue
+                    }
                 }
-                continue
-            }
-            }
-                
-                let alertController1 = UIAlertController(title: "提示!", message: "下单成功", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "提示!",
+                                                        message: "下单成功", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "确认", style: .default,handler: {
                     action in
-                    self.performSegue(withIdentifier: "xiadans", sender: self)
+                    self.performSegue(withIdentifier: "xiaorder", sender: self)
+                    
                 })
                 
-            self.orderModel.loadData()
-            self.orderModel.orderslist.removeAll()
-            self.orderModel.saveData()
-            print("maile meile")
-            alertController1.addAction(okAction)
-            self.present(alertController1, animated: true, completion: nil)
-            
+                self.getLocalData1()
+                let app = UIApplication.shared.delegate as! AppDelegate
+                func getContexts() -> NSManagedObjectContext{
+                    
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    
+                    return appDelegate.persistentContainer.viewContext
+                }
+                //获取数据上下文对象
+                let context = getContexts()
+                //声明数据的请求，声明一个实体结构
+                
+                let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+                //查询条件
+                fetchRequest.predicate = NSPredicate(format: "userid = '\(self.dataModel.userliebiao[0].id)'")
+                // 返回结果在finalResult中
+                
+                //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
+                //            //对返回的数据做处理。
+                //            let fetchObject  = result.finalResult! as! [Cart]
+                let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
+                for c in fetchObject as! [Cart]
+                {
+                    context.delete(c)
+                    app.saveContext()
+                }
+                modeldata.loadData()
+                modeldata.cartlist.removeAll()
+                modeldata.saveData()
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+                
+            }
         }
+            
         else
         {
             let alertController = UIAlertController(title: "提示!",
@@ -182,14 +183,7 @@ class Consignee2: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func huiqu(_ sender: Any) {
-        orderModel.loadData()
-        orderModel.orderslist.removeAll()
-        orderModel.saveData()
-        print("没来没了")
-        self.performSegue(withIdentifier: "back1", sender: self)
+        
     }
     /*
     // MARK: - Navigation
@@ -202,7 +196,8 @@ class Consignee2: UIViewController {
     */
 
 }
-extension Consignee2 {
+
+extension Consignee3 {
     
     fileprivate func getLocalData() {
         //        步骤一：获取总代理和托管对象总管
@@ -242,7 +237,8 @@ extension Consignee2 {
     }
 }
 
-extension Consignee2 {
+
+extension Consignee3 {
     fileprivate func getLocalData1() {
         //        步骤一：获取总代理和托管对象总管
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

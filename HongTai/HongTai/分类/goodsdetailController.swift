@@ -215,7 +215,8 @@ class goodsdetailController: UITableViewController {
             {
                 let temp1 = String(temp! - 1)
                 shuliang.text = temp1
-                if temp1 > stock
+                print(stock)
+                if temp! > temp2!
                 {
                     buy.isEnabled = false
                     cart.isEnabled = false

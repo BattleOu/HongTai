@@ -350,6 +350,8 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         Tabelview.reloadData()
     }
     @IBAction func buyes(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: OrderNavigation3()))) as! OrderNavigation3
+        self.present(controller, animated: true)
     }
     /*
      // MARK: - Navigation
