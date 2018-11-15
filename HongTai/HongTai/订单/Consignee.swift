@@ -75,12 +75,22 @@ class Consignee: UIViewController {
         let regex2 = try! NSRegularExpression(pattern: expression2, options: .allowCommentsAndWhitespace)//生成NSRegularExpression实例
         
         let numberOfMatches2 = regex2.numberOfMatches(in: consigneename.text!, options:.reportProgress, range: NSMakeRange(0, (consigneename.text! as NSString).length))//获取匹配的个数
-        if numberOfMatches == 0{
+        if(numberOfMatches2 == 0)
+        {
+            let alertController = UIAlertController(title: "提示!",
+                                                    message: "收货人名称有误！", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+       else if numberOfMatches == 0{
             let alertController = UIAlertController(title: "提示!",
                                                     message: "请输入正确的电话号码！", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
+            return
             
         }//如果匹配，则登录按钮生效，否则反之
         else if(numberOfMatches1 == 0)
@@ -90,14 +100,7 @@ class Consignee: UIViewController {
             let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
-        }
-        else if(numberOfMatches2 == 0)
-        {
-            let alertController = UIAlertController(title: "提示!",
-                                                    message: "收货人名称有误！", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
+            return
         }
         let date = NSDate()
         let timeFormatter = DateFormatter()

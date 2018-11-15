@@ -13,6 +13,7 @@ class PersonViewController: UIViewController {
     @IBOutlet weak var imgview: UIImageView!
     @IBOutlet weak var usernam: UILabel!
     var dataModel = DataModel()
+     var orderModel = OrdersModel()
     var modeldata = CartModel()
      var datemodel = Modelorder()
     override func viewDidLoad() {
@@ -60,6 +61,9 @@ class PersonViewController: UIViewController {
         datemodel.loadData()
         datemodel.listorder.removeAll()
         datemodel.saveData()
+        orderModel.loadData()
+        orderModel.orderslist.removeAll()
+        orderModel.saveData()
         print("删除了")
          let controller =
         self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: navigationViewController()))) as! navigationViewController
