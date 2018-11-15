@@ -142,6 +142,9 @@ class goodsdetailController: UITableViewController {
 //
 //    }
     
+    @IBAction func viewClick(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     @IBAction func zengjia(_ sender: Any) {
         let temp = Int(shuliang.text!)
         let temp2 = Int(stock)

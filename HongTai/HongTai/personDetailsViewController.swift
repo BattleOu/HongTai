@@ -38,6 +38,9 @@ class personDetailsViewController: UIViewController,UIImagePickerControllerDeleg
         
         // Do any additional setup after loading the view.
     }
+    @IBAction func viewClick(_ sender: Any) {
+         self.view.endEditing(true)
+    }
     @IBAction func chooseimage(_ sender: Any) {
         //判断设置是否支持图片库
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){

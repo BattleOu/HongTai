@@ -139,6 +139,7 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
             return super.tableView(tableView, cellForRowAt: indexPath)
         }
     }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
             return 50
@@ -300,7 +301,7 @@ extension HomeViewController {
             continue
         }
         let alertController = UIAlertController(title: "提示!",
-                                                message: "查无此商品", preferredStyle: .alert)
+                                                message: "查无此商品（请填写完整商品名称）！", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)

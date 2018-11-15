@@ -167,7 +167,7 @@
         <scene sceneID="weM-ZU-cHu">
             <objects>
                 <viewController title="个人中心" id="5cK-V1-jYX" customClass="personDetailsViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="O2q-0o-RJS">
+                    <view key="view" contentMode="scaleToFill" id="O2q-0o-RJS" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -231,6 +231,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gWN-R9-67F"/>
+                        <connections>
+                            <action selector="viewClick:" destination="5cK-V1-jYX" eventType="touchUpInside" id="QWJ-RT-jao"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="gainame" destination="gz8-eF-hCk" id="wTu-MQ-iz6"/>
@@ -335,7 +338,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="EZz-t5-lgt">
                                         <rect key="frame" x="0.0" y="405" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EZz-t5-lgt" id="z0T-VG-BwD">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EZz-t5-lgt" id="z0T-VG-BwD" customClass="UIControl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -377,6 +380,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <connections>
+                                                <action selector="viewClick:" destination="jFd-SJ-Fki" eventType="touchUpInside" id="x3u-6P-hHt"/>
+                                            </connections>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="E4v-V8-xfT">
@@ -506,7 +512,7 @@
         <scene sceneID="jUH-3J-inP">
             <objects>
                 <viewController storyboardIdentifier="Consignee" id="Nlu-2c-Nir" customClass="Consignee" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="er7-rX-2i0">
+                    <view key="view" contentMode="scaleToFill" id="er7-rX-2i0" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -610,6 +616,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q8g-h2-pp0"/>
+                        <connections>
+                            <action selector="viewClick:" destination="Nlu-2c-Nir" eventType="touchUpInside" id="ppg-yj-PPg"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="收货人信息" id="51c-14-P3w"/>
                     <connections>
@@ -1024,12 +1033,12 @@
         <scene sceneID="N0p-bX-hcV">
             <objects>
                 <viewController id="KUR-3M-xDr" customClass="RegisterViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5ua-Do-Wx4">
+                    <view key="view" contentMode="scaleToFill" id="5ua-Do-Wx4" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="登录注册logo" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-NY-yzg">
-                                <rect key="frame" x="101" y="88" width="204" height="126"/>
+                                <rect key="frame" x="52" y="88" width="310" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="HII-HJ-3I4"/>
                                     <constraint firstAttribute="width" constant="100" id="flY-1U-Npa"/>
@@ -1115,6 +1124,9 @@
                             <constraint firstItem="DIJ-Qi-eBn" firstAttribute="bottom" secondItem="Mqw-NC-GIG" secondAttribute="bottom" constant="65" id="zhh-oW-MU8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DIJ-Qi-eBn"/>
+                        <connections>
+                            <action selector="viewClick:" destination="KUR-3M-xDr" eventType="touchUpInside" id="03A-cS-pIR"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Y3K-7c-MxA"/>
                     <connections>
@@ -1323,7 +1335,7 @@
         <scene sceneID="7Zd-B3-7Q4">
             <objects>
                 <viewController id="VIc-1a-YBD" customClass="LoginViewController" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D5i-VT-MuM">
+                    <view key="view" contentMode="scaleToFill" id="D5i-VT-MuM" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1391,7 +1403,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="登录注册logo" translatesAutoresizingMaskIntoConstraints="NO" id="8p7-wC-zEz">
-                                <rect key="frame" x="101" y="90" width="213" height="130"/>
+                                <rect key="frame" x="51" y="90" width="310" height="130"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1403,6 +1415,9 @@
                             <constraint firstItem="8p7-wC-zEz" firstAttribute="top" secondItem="pqO-5E-9p4" secondAttribute="top" constant="20" id="fRf-5E-6yH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pqO-5E-9p4"/>
+                        <connections>
+                            <action selector="viewClick:" destination="VIc-1a-YBD" eventType="touchUpInside" id="qal-8h-uv9"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="kfw-Zg-KuG"/>
                     <connections>
@@ -1522,7 +1537,7 @@
         <scene sceneID="XcQ-Pk-hEz">
             <objects>
                 <viewController storyboardIdentifier="Consignee2" id="QG8-FK-nHd" customClass="Consignee2" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CSf-zb-mmi">
+                    <view key="view" contentMode="scaleToFill" id="CSf-zb-mmi" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1626,6 +1641,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PnZ-jb-DCt"/>
+                        <connections>
+                            <action selector="viewClick:" destination="QG8-FK-nHd" eventType="touchUpInside" id="Ewc-e7-Hdh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="收货人信息" id="wGH-3p-KKF"/>
                     <connections>
@@ -1676,7 +1694,7 @@
         <scene sceneID="41r-EP-JRx">
             <objects>
                 <viewController storyboardIdentifier="Consignee3" id="mo5-e2-Hwr" customClass="Consignee3" customModule="HongTai" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1NS-5k-eKG">
+                    <view key="view" contentMode="scaleToFill" id="1NS-5k-eKG" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1780,6 +1798,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IYm-zA-DBC"/>
+                        <connections>
+                            <action selector="viewclick:" destination="mo5-e2-Hwr" eventType="touchUpInside" id="fRC-Ri-2Hb"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="收货人信息" id="fv1-Gy-0Ti"/>
                     <connections>

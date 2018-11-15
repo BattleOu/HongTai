@@ -36,14 +36,17 @@ class RegisterViewController: UIViewController {
         surepassword.clearButtonMode = .whileEditing
         password.isSecureTextEntry = true //输入内容会显示成小黑点
         surepassword.isSecureTextEntry = true //输入内容会显示成小黑点
-         password.placeholder="请输入密码"
-        usname.placeholder="请输入用户名"
-        Realname.placeholder="请输入姓名"
+         password.placeholder="请输入6-18位英文加数字"
+        usname.placeholder="请输入3-16位的英文或数字"
+        Realname.placeholder="请输入中文或英文"
         surepassword.placeholder="请确认密码"
         // Do any additional setup after loading the view.
     }
     
     
+    @IBAction func viewClick(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     @IBAction func save(_ sender: Any) {
         
       getLocalData()
@@ -93,7 +96,7 @@ class RegisterViewController: UIViewController {
         else if(numberOfMatches == 0)
         {
             let alertController = UIAlertController(title: "提示!",
-                                                    message: "用户名格式错误", preferredStyle: .alert)
+                                                    message: "用户名格式有误", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)

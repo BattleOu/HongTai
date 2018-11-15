@@ -32,9 +32,20 @@ class LoginViewController: UIViewController {
         password.isSecureTextEntry = true //输入内容会显示成小黑点
         username.placeholder="请输入用户名"
         password.placeholder="请输入密码"
+//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector(("handleTap:"))))
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func viewClick(_ sender: Any) {
+         self.view.endEditing(true)
+    }
+    //    func handleTap(sender: UITapGestureRecognizer) {
+//        if sender.state == .ended {
+//            print("收回键盘")
+//            self.view.resignFirstResponder()
+//        }
+//        sender.cancelsTouchesInView = false
+//    }
     @IBAction func xiugaimima(_ sender: Any) {
          getLocalData()
         if(username.text != "")

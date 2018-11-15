@@ -53,6 +53,9 @@ class Consignee3: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    @IBAction func viewclick(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func back(_ sender: Any) {
          self.performSegue(withIdentifier: "back", sender: self)
@@ -80,7 +83,7 @@ class Consignee3: UIViewController {
              if(numberOfMatches2 == 0)
             {
                 let alertController = UIAlertController(title: "提示!",
-                                                        message: "收货人名称有误！", preferredStyle: .alert)
+                                                        message: "收货人名称有误（清输入中文或英文名字）！", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -98,7 +101,7 @@ class Consignee3: UIViewController {
             else if(numberOfMatches1 == 0)
             {
                 let alertController = UIAlertController(title: "提示!",
-                                                        message: "请输入正确的送货地址！", preferredStyle: .alert)
+                                                        message: "请输入正确的送货地址（清输入中文或英文地址）！", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "返回", style: .default,handler: nil)
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
