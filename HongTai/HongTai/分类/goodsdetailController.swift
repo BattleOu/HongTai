@@ -45,7 +45,7 @@ class goodsdetailController: UITableViewController {
         goodnam.text = name
         goodprice.text = "￥" + price
         kucun.text = "库存" + stock + "件"
-        xiaoliang.text = "月销量:" + salesnum + "件"
+//        xiaoliang.text = "月销量:" + salesnum + "件"
         jieshao.text = introduction
         print(stock)
         shuliang.addTarget(self, action:#selector(clearPasswordTextFieldAndRememberPwd(_:)), for: .editingChanged)

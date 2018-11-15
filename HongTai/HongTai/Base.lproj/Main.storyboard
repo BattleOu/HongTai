@@ -370,14 +370,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9u-Vd-Sid">
-                                                    <rect key="frame" x="225" y="19" width="189" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAU-Vd-mDK">
-                                                    <rect key="frame" x="224" y="40" width="123" height="21"/>
+                                                    <rect key="frame" x="225" y="29" width="189" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -486,7 +479,6 @@
                         <outlet property="jieshao" destination="dif-w8-b2a" id="gFT-9u-mpx"/>
                         <outlet property="kucun" destination="m9u-Vd-Sid" id="Y54-d5-GYb"/>
                         <outlet property="shuliang" destination="2tn-Sd-lGY" id="DV2-oc-0vl"/>
-                        <outlet property="xiaoliang" destination="oAU-Vd-mDK" id="N5n-jU-5Jf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqQ-wl-FPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1036,8 +1028,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_03" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-NY-yzg">
-                                <rect key="frame" x="157" y="88" width="100" height="130"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="登录注册logo" translatesAutoresizingMaskIntoConstraints="NO" id="hkh-NY-yzg">
+                                <rect key="frame" x="101" y="88" width="204" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="HII-HJ-3I4"/>
                                     <constraint firstAttribute="width" constant="100" id="flY-1U-Npa"/>
@@ -1134,7 +1126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCQ-3L-25p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="-29"/>
+            <point key="canvasLocation" x="3766.666666666667" y="-29.347826086956523"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="6IG-NZ-DpR">
@@ -1335,13 +1327,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_03" translatesAutoresizingMaskIntoConstraints="NO" id="8p7-wC-zEz">
-                                <rect key="frame" x="157" y="84" width="100" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="A5w-YO-k4w"/>
-                                    <constraint firstAttribute="height" constant="130" id="h6H-Lr-IHD"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-7e-o3Z">
                                 <rect key="frame" x="20" y="474" width="374" height="52"/>
                                 <constraints>
@@ -1405,6 +1390,9 @@
                                     <action selector="xiugaimima:" destination="VIc-1a-YBD" eventType="touchUpInside" id="pQL-Ku-80L"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="登录注册logo" translatesAutoresizingMaskIntoConstraints="NO" id="8p7-wC-zEz">
+                                <rect key="frame" x="101" y="90" width="213" height="130"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1812,7 +1800,6 @@
         <image name="Group-" width="200" height="200"/>
         <image name="daifukuan01" width="200" height="200"/>
         <image name="dianhua" width="200" height="200"/>
-        <image name="img_03" width="134" height="172"/>
         <image name="img_07" width="550" height="4"/>
         <image name="img_11" width="549" height="76"/>
         <image name="jiantoushang" width="200" height="200"/>
@@ -1829,12 +1816,13 @@
         <image name="我" width="20" height="20"/>
         <image name="我的订单" width="200" height="200"/>
         <image name="注册_03" width="549" height="76"/>
+        <image name="登录注册logo" width="100" height="130"/>
         <image name="类目 品类 分类 类别" width="20" height="20"/>
         <image name="购物车" width="20" height="20"/>
         <image name="首页" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YvL-ve-7XQ"/>
-        <segue reference="4O8-jq-EZV"/>
+        <segue reference="V4t-KL-Rv4"/>
+        <segue reference="9jy-Al-zyH"/>
     </inferredMetricsTieBreakers>
 </document>

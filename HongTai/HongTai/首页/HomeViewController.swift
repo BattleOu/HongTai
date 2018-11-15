@@ -59,7 +59,7 @@ class HomeViewController: UITableViewController,UISearchBarDelegate {
         search.barStyle = UIBarStyle(rawValue: 0)!
         search.placeholder = "输入文字搜索商品"
         search.delegate = self
-        var logo = UIImageView(image:UIImage(named: "5b7e86cdcb2cf_03"))
+        var logo = UIImageView(image:UIImage(named: "首页logo"))
         var rightNavBarButton = UIBarButtonItem(customView:search)
         self.navigationItem.rightBarButtonItem = rightNavBarButton
         self.navigationItem.titleView = logo
