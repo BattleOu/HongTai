@@ -133,7 +133,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
             //将对应条目的数据删除
-            
+           self.modeldata.loadData()
             self.getLocalData()
             let app = UIApplication.shared.delegate as! AppDelegate
             func getContext() -> NSManagedObjectContext{
@@ -148,7 +148,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
             //查询条件
-            fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.carts[indexPath.row].goodsname)'")
+            fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.modeldata.cartlist[indexPath.row].goodsname)'")
             // 返回结果在finalResult中
             
             //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
