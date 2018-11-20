@@ -66,31 +66,9 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         modeldata.loadData()
-        getLocalData()
-        let app = UIApplication.shared.delegate as! AppDelegate
-        func getContext() -> NSManagedObjectContext{
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            return appDelegate.persistentContainer.viewContext
-        }
-        //获取数据上下文对象
-        let context = getContext()
-        //声明数据的请求，声明一个实体结构
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
-        //查询条件
-        fetchRequest.predicate = NSPredicate(format: "userid = '\(dataModel.userliebiao[0].id)'")
-        // 返回结果在finalResult中
-        
-        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
-        //            //对返回的数据做处理。
-        //            let fetchObject  = result.finalResult! as! [Cart]
-        let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
-        print(fetchObject!.count)
-        if fetchObject!.count > 0
+        if modeldata.cartlist.count > 0
         {
-            return fetchObject!.count
+            return modeldata.cartlist.count
         }
         else
         {
@@ -155,9 +133,6 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
             //将对应条目的数据删除
-            self.modeldata.loadData()
-            self.modeldata.cartlist.remove(at: indexPath.row)
-            self.modeldata.saveData()
             
             self.getLocalData()
             let app = UIApplication.shared.delegate as! AppDelegate
@@ -184,6 +159,14 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             {
                 context.delete(c)
                 app.saveContext()
+            }
+            self.modeldata.loadData()
+            self.modeldata.cartlist.remove(at: indexPath.row)
+            self.modeldata.saveData()
+            if (self.modeldata.cartlist.isEmpty)
+            {
+                self.goubuy.isHidden = true
+                self.clear.isHidden = true
             }
             self.Tabelview.reloadData()
         }

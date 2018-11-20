@@ -27,6 +27,22 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         getLocalData()
+        datemodel.loadData()
+        if datemodel.listorder.count > 0
+        {
+            return datemodel.listorder.count
+        }
+        else
+        {
+            return 0
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        getLocalData()
+        datemodel.loadData()
         dataModel.loadData()
         let app = UIApplication.shared.delegate as! AppDelegate
         func getContext() -> NSManagedObjectContext{
@@ -41,43 +57,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
         //查询条件
-        fetchRequest.predicate = NSPredicate(format: "username = '\(dataModel.userliebiao[0].name)'")
-        // 返回结果在finalResult中
-        
-        //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
-        //            //对返回的数据做处理。
-        //            let fetchObject  = result.finalResult! as! [Cart]
-        let fetchObject = try? context.fetch(fetchRequest) as! [NSManagedObject]
-        print(fetchObject!.count)
-        if fetchObject!.count > 0
-        {
-            return fetchObject!.count
-        }
-        else
-        {
-            return 0
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        getLocalData()
-        datemodel.loadData()
-        let app = UIApplication.shared.delegate as! AppDelegate
-        func getContext() -> NSManagedObjectContext{
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            return appDelegate.persistentContainer.viewContext
-        }
-        //获取数据上下文对象
-        let context = getContext()
-        //声明数据的请求，声明一个实体结构
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
-        //查询条件
-        fetchRequest.predicate = NSPredicate(format: "username = '\(dataModel.userliebiao[0].name)'")
+        fetchRequest.predicate = NSPredicate(format: "username = '\(datemodel.listorder[0].username)'")
         // 返回结果在finalResult中
         
         //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
@@ -116,11 +96,8 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
-            self.datemodel.loadData()
             if(self.datemodel.listorder[indexPath.row].orderstate == "已完成" || self.datemodel.listorder[indexPath.row].orderstate == "待付款")
                 {
-                    self.datemodel.listorder.remove(at: indexPath.row)
-                    self.datemodel.saveData()
                         let app = UIApplication.shared.delegate as! AppDelegate
                         func getContext() -> NSManagedObjectContext{
                             
@@ -134,7 +111,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
                         
                         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
                         //查询条件
-                        fetchRequest.predicate = NSPredicate(format: "ordersid = '\(self.orders[indexPath.row].ordersid)'")
+                        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.orders[indexPath.row].goodsname)'")
                         // 返回结果在finalResult中
                         
                         //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
@@ -146,6 +123,10 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
                             context.delete(c)
                             app.saveContext()
                         }
+                    
+                    self.datemodel.loadData()
+                    self.datemodel.listorder.remove(at: indexPath.row)
+                    self.datemodel.saveData()
                     
 
                         self.ordertableview.reloadData()
