@@ -196,15 +196,15 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
         return [delete,buy]
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        modeldata.loadData()
+        modeldata.loadData()
         let controller = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: goodsdetailController()))) as! goodsdetailController
-        controller.img = carts[indexPath.row].goodsimg
-        controller.introduction = carts[indexPath.row].introduction
-        controller.name = carts[indexPath.row].goodsname
-        controller.price =  carts[indexPath.row].marketprice
-        controller.salesnum =  carts[indexPath.row].salesnum
-        controller.stock =  carts[indexPath.row].stock
-        controller.godstyle =  carts[indexPath.row].goodstyle
+        controller.img = modeldata.cartlist[indexPath.row].goodsimg
+        controller.introduction = modeldata.cartlist[indexPath.row].introduction
+        controller.name = modeldata.cartlist[indexPath.row].goodsname
+        controller.price =  modeldata.cartlist[indexPath.row].marketprice
+        controller.salesnum =  modeldata.cartlist[indexPath.row].salesnum
+        controller.stock =  modeldata.cartlist[indexPath.row].stock
+        controller.godstyle =  modeldata.cartlist[indexPath.row].goodstyle
         self.present(controller, animated: true)
     }
     @IBAction func jian(_ sender: Any) {
