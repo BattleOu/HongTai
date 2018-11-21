@@ -148,7 +148,7 @@ class CartviewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
             //查询条件
-            fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.modeldata.cartlist[indexPath.row].goodsname)'")
+            fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.modeldata.cartlist[indexPath.row].goodsname)' and username = '\(self.dataModel.userliebiao[0].name)'")
             // 返回结果在finalResult中
             
             //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in

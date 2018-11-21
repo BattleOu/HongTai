@@ -97,6 +97,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
         let delete = UITableViewRowAction(style: .normal, title: "删除") {
             action , index in
             self.datemodel.loadData()
+            self.dataModel.loadData()
             if(self.datemodel.listorder[indexPath.row].orderstate == "已完成" || self.datemodel.listorder[indexPath.row].orderstate == "待付款")
                 {
                         let app = UIApplication.shared.delegate as! AppDelegate
@@ -112,7 +113,7 @@ class OrderViewController: UIViewController, UITableViewDataSource, UITableViewD
                         
                         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Orders")
                         //查询条件
-                        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.datemodel.listorder[indexPath.row].goodsname)'")
+                        fetchRequest.predicate = NSPredicate(format: "goodsname = '\(self.datemodel.listorder[indexPath.row].goodsname)' and username = '\(self.dataModel.userliebiao[0].name)'")
                         // 返回结果在finalResult中
                         
                         //        let asyncFecthRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result: NSAsynchronousFetchResult!) in
