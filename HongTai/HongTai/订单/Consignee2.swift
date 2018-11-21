@@ -148,10 +148,11 @@ class Consignee2: UIViewController {
                         context.delete(c)
                         app.saveContext()
                     }
-                
+            
+            
+                 modeldata.loadData()
                 if modeldata.cartlist.isEmpty == false
                 {
-            modeldata.loadData()
             for x in 0...modeldata.cartlist.count - 1
             {
                 if modeldata.cartlist[x].goodsname == orderModel.orderslist[0].shangpinname
